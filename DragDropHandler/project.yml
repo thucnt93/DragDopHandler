@@ -1,0 +1,57 @@
+name: DragDropHandler
+options:
+  minimumXcodeGenVersion: 2.2.0
+  createIntermediateGroups: true
+targets:
+  #macOS application
+  Samples:
+    platform: macOS
+    deploymentTarget: "10.14"
+    type: application
+    sources:
+      - Samples
+    dependencies:
+      - target: DragDropHandler
+    configFiles:
+      Debug: configs/Samples-Debug.xcconfig
+      Release: configs/Samples-Release.xcconfig
+    scheme:
+      environmentVariables:
+        ENABLE_SIGNPOST: YES
+  # Framework Targets
+  DragDropHandler:
+    platform: macOS
+    type: framework
+    deploymentTarget: "10.14"
+    sources:
+      - DragDropHandler
+    configFiles:
+      Debug: configs/DragDropHandler-Debug.xcconfig
+      Release: configs/DragDropHandler-Release.xcconfig
+  #Test Targets
+  SamplesTests:
+    platform: macOS
+    type: bundle.unit-test
+    configFiles:
+      Debug: configs/SamplesTests.xcconfig
+    sources:
+      - Tests/SamplesTests
+    dependencies:
+      - target: Samples
+    scheme:
+      testTargets:
+        - SamplesTests
+      gatherCoverageData: true
+  DragDropHandlerTests:
+    platform: macOS
+    type: bundle.unit-test
+    configFiles:
+      Debug: configs/DragDropHandlerTests.xcconfig
+    sources:
+      - Tests/DragDropHandlerTests
+    dependencies:
+      - target: DragDropHandler
+    scheme:
+      testTargets:
+        - DragDropHandlerTests
+      gatherCoverageData: true
