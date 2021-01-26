@@ -149,8 +149,7 @@
 		1D61AB14BBB9427769BB957A /* DragDropHandler */ = {
 			isa = PBXGroup;
 			children = (
-				8EEC84A9FE5738EFB4BDC96A /* DragDropHandlerProtocol.h */,
-				1E8BF09725BFCFF600CD3EC5 /* DragDropTrackingDelegate.h */,
+				1E8BF09A25BFD3D900CD3EC5 /* Protocol */,
 				1E8BF03A25BFB40B00CD3EC5 /* DropHandler */,
 				1E8BF03925BFB3FE00CD3EC5 /* DragHandler */,
 				1E75A95825BECA0C00F10EED /* CustomDragOperation */,
@@ -184,6 +183,15 @@
 				1E8BF05925BFB49900CD3EC5 /* DropHandler.m */,
 			);
 			path = DropHandler;
+			sourceTree = "<group>";
+		};
+		1E8BF09A25BFD3D900CD3EC5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8EEC84A9FE5738EFB4BDC96A /* DragDropHandlerProtocol.h */,
+				1E8BF09725BFCFF600CD3EC5 /* DragDropTrackingDelegate.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		2FA0082EAE51B2761256937D /* Products */ = {

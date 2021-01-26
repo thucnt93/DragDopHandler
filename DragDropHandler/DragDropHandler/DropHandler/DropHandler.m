@@ -8,20 +8,18 @@
 #import "DropHandler.h"
 
 @interface DropHandler() {
-    id<DragTrackingDelegate> _trackingDelegate;
+    id<DropTrackingDelegate> _trackingDelegate;
 }
 
 @end
 
 @implementation DropHandler
 
-
-- (instancetype)initWithDropTrackingDelegate:(id<DropTrackingDelegate>)delegate {
+- (instancetype)initWithDropTrackingDelegate:(id<DropTrackingDelegate>)targetDropTrackingDelegate {
     if (self = [super init])
     {
-        _trackingDelegate = delegate;
+        _trackingDelegate = targetDropTrackingDelegate;
     }
-    
     return self;
 }
 

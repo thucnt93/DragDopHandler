@@ -8,10 +8,13 @@
 #import <Foundation/Foundation.h>
 #import "CustomDragOperation.h"
 #import "DragDropHandlerProtocol.h"
+#import "DragDropTrackingDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DragHandler : NSObject<SourceDragHandlerProtocol>
+
+- (instancetype)initWithDragTrackingDelegate:(id<DragTrackingDelegate>)targetDragTrackingDelegate;
 
 @end
 

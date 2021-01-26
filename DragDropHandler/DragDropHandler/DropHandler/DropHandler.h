@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DropHandler : NSObject<DestinationDropHandlerProtocol>
 
-- (instancetype)initWithDropTrackingDelegate:(id<DropTrackingDelegate>)delegate;
+- (instancetype)initWithDropTrackingDelegate:(id<DropTrackingDelegate>)targetDropTrackingDelegate;
 
 @end
 
