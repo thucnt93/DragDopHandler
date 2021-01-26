@@ -7,7 +7,23 @@
 
 #import "DropHandler.h"
 
+@interface DropHandler() {
+    id<DragTrackingDelegate> _trackingDelegate;
+}
+
+@end
+
 @implementation DropHandler
+
+
+- (instancetype)initWithDropTrackingDelegate:(id<DropTrackingDelegate>)delegate {
+    if (self = [super init])
+    {
+        _trackingDelegate = delegate;
+    }
+    
+    return self;
+}
 
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
     

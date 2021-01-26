@@ -90,6 +90,7 @@
 		1E8BF06725BFC2EE00CD3EC5 /* DragSampleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragSampleView.m; sourceTree = "<group>"; };
 		1E8BF06D25BFC49000CD3EC5 /* DropSampleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropSampleView.h; sourceTree = "<group>"; };
 		1E8BF06E25BFC49000CD3EC5 /* DropSampleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropSampleView.m; sourceTree = "<group>"; };
+		1E8BF09725BFCFF600CD3EC5 /* DragDropTrackingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropTrackingDelegate.h; sourceTree = "<group>"; };
 		2028BBDE3B4E7625A3AEA603 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405E3CDD76B02806801BC19F /* DragDropHandlerTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DragDropHandlerTests.xcconfig; sourceTree = "<group>"; };
 		4BB0783768E4C3DFB2B2F88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				8EEC84A9FE5738EFB4BDC96A /* DragDropHandlerProtocol.h */,
+				1E8BF09725BFCFF600CD3EC5 /* DragDropTrackingDelegate.h */,
 				1E8BF03A25BFB40B00CD3EC5 /* DropHandler */,
 				1E8BF03925BFB3FE00CD3EC5 /* DragHandler */,
 				1E75A95825BECA0C00F10EED /* CustomDragOperation */,
