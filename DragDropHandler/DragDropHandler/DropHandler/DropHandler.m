@@ -23,14 +23,23 @@
     return self;
 }
 
-- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
+- (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget {
     
+    NSLog(@"handleDraggingExited on target %@", onTarget);
     
-    return CustomDragOperation_MOVE;
 }
 
-- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo {
+- (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget {
     
+    NSLog(@"handleDraggingUpdated on target %@", onTarget);
+    
+    return NSDragOperationMove;
+    
+}
+
+- (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget {
+    
+    NSLog(@"handlePerformDraggingOperation on target %@", onTarget);
     
     return YES;
 }

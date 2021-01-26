@@ -21,17 +21,21 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 
 @protocol DraggingSourceHandlerProtocol
 
-- (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint;
-- (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint;
-- (void)dragEndWithSource:(id)source atPoint:(NSPoint)atPoint;
+- (void)handleDragBeginWithSource:(id)source atPoint:(NSPoint)atPoint;
+- (void)handleDragMoveWithSource:(id)source atPoint:(NSPoint)atPoint;
+- (void)handleDragEndWithSource:(id)source atPoint:(NSPoint)atPoint;
 
 @end
 
 
 @protocol DropDestinationHandlerProtocol
 
-- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo;
-- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo;
+// NSViewDropFunction
+#pragma mark - NSView drop handler action
+- (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
+- (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
+- (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
+
 
 @end
 
