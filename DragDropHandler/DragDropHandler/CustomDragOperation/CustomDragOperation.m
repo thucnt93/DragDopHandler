@@ -6,6 +6,8 @@
 //
 
 #import "CustomDragOperation.h"
+#import "DraggableNSView.h"
+#import "DraggableNSButton.h"
 
 @implementation DragOperation
 
@@ -55,10 +57,15 @@
 
 + (NSDragOperation)handleCustomDragOperation:(CustomDragOperation)operation draggingSource:(id)draggingSource
 {
-//    if ([draggingSource isKindOfClass:[DraggableNSView class]])
-//    {
-//        ((DraggableNSView *)draggingSource).disableDragTracking = (operation != CustomDragOperation_NONE);
-//    }
+    if ([draggingSource isKindOfClass:[DraggableNSView class]])
+    {
+        ((DraggableNSView *)draggingSource).disableDragTracking = (operation != CustomDragOperation_NONE);
+    }
+    
+    if ([draggingSource isKindOfClass:[DraggableNSButton class]])
+    {
+        ((DraggableNSButton *)draggingSource).disableDragTracking = (operation != CustomDragOperation_NONE);
+    }
     
     NSUInteger allSystemOperations = NSDragOperationCopy
                                     | NSDragOperationLink

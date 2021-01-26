@@ -67,14 +67,17 @@
     return NO;
 }
 
+/*
 - (void)concludeDragOperation:(id<NSDraggingInfo>)sender {
-    
     NSLog(@"CONCLUDE DRAG OPERATION");
 }
+ */
 
+/*
 - (void)draggingEnded:(id<NSDraggingInfo>)sender {
-    NSLog(@"CONCLUDE DRAG OPERATION");
+    NSLog(@"draggingEnded");
 }
+ */
 
 
 
