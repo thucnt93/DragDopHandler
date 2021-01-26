@@ -10,9 +10,10 @@
 		1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE32685DABC1DB8277A5C7CC /* Assets.xcassets */; };
 		1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E75A95925BECA5300F10EED /* CustomDragOperation.h */; };
 		1E75A95C25BECA5300F10EED /* CustomDragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E75A95A25BECA5300F10EED /* CustomDragOperation.m */; };
-		1E75A96125BECF5300F10EED /* CustomDragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E75A95A25BECA5300F10EED /* CustomDragOperation.m */; };
-		1E75A96925BECF5500F10EED /* CustomDragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E75A95A25BECA5300F10EED /* CustomDragOperation.m */; };
-		1E75A96C25BECF6200F10EED /* CustomDragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E75A95A25BECA5300F10EED /* CustomDragOperation.m */; };
+		1E8BF05225BFB48800CD3EC5 /* DragHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8BF05025BFB48800CD3EC5 /* DragHandler.h */; };
+		1E8BF05325BFB48800CD3EC5 /* DragHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF05125BFB48800CD3EC5 /* DragHandler.m */; };
+		1E8BF05A25BFB49900CD3EC5 /* DropHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8BF05825BFB49900CD3EC5 /* DropHandler.h */; };
+		1E8BF05B25BFB49900CD3EC5 /* DropHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF05925BFB49900CD3EC5 /* DropHandler.m */; };
 		4DE0441A71938AB47C27F389 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3380D9E7C336241329AF /* main.m */; };
 		528B978C4EDC2EEFBBADE41C /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
 		5B37AB47524B3CCA62C81974 /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
@@ -20,7 +21,7 @@
 		914353E9AE04549FDD7DC73D /* SamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6015E4026188FEB7DE60B2F8 /* SamplesTests.m */; };
 		98E31475C3B145675C0D75CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA72301B17078A3F85062EB2 /* Main.storyboard */; };
 		9B478EB4B14F717A5D00B275 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8D3D418DBBDE269F4E6221 /* AppDelegate.m */; };
-		C5A9F1D5AC84CD3462769210 /* DragDropHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EEC84A9FE5738EFB4BDC96A /* DragDropHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5A9F1D5AC84CD3462769210 /* DragDropHandlerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EEC84A9FE5738EFB4BDC96A /* DragDropHandlerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E00A44C526D935ED9A7699C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55731A292C32E87AE299BE7A /* ViewController.m */; };
 		E118D22B6FD5530DE2C21ACF /* DragDropHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2552268B4B3F2A2BF214D8 /* DragDropHandlerTests.m */; };
 		F8D6040C546D5D5CD8A5B2F4 /* DragDropHandler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -79,6 +80,10 @@
 		14A3D1BEA3B90F43C5A47887 /* Samples-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Samples-Debug.xcconfig"; sourceTree = "<group>"; };
 		1E75A95925BECA5300F10EED /* CustomDragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomDragOperation.h; sourceTree = "<group>"; };
 		1E75A95A25BECA5300F10EED /* CustomDragOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomDragOperation.m; sourceTree = "<group>"; };
+		1E8BF05025BFB48800CD3EC5 /* DragHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragHandler.h; sourceTree = "<group>"; };
+		1E8BF05125BFB48800CD3EC5 /* DragHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragHandler.m; sourceTree = "<group>"; };
+		1E8BF05825BFB49900CD3EC5 /* DropHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropHandler.h; sourceTree = "<group>"; };
+		1E8BF05925BFB49900CD3EC5 /* DropHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropHandler.m; sourceTree = "<group>"; };
 		2028BBDE3B4E7625A3AEA603 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405E3CDD76B02806801BC19F /* DragDropHandlerTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DragDropHandlerTests.xcconfig; sourceTree = "<group>"; };
 		4BB0783768E4C3DFB2B2F88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -92,7 +97,7 @@
 		7E5F6995A0A5775DF3F178FE /* SamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ECBECA6757F294A8695F30B /* DragDropHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DragDropHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8254A47AF4DCAF3B2417A21B /* DragDropHandlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragDropHandlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EEC84A9FE5738EFB4BDC96A /* DragDropHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropHandler.h; sourceTree = "<group>"; };
+		8EEC84A9FE5738EFB4BDC96A /* DragDropHandlerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropHandlerProtocol.h; sourceTree = "<group>"; };
 		9A8D3D418DBBDE269F4E6221 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9F3E3380D9E7C336241329AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A77A862E012C3525E9C0AAED /* DragDropHandler-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "DragDropHandler-Release.xcconfig"; sourceTree = "<group>"; };
@@ -137,8 +142,10 @@
 		1D61AB14BBB9427769BB957A /* DragDropHandler */ = {
 			isa = PBXGroup;
 			children = (
+				8EEC84A9FE5738EFB4BDC96A /* DragDropHandlerProtocol.h */,
+				1E8BF03A25BFB40B00CD3EC5 /* DropHandler */,
+				1E8BF03925BFB3FE00CD3EC5 /* DragHandler */,
 				1E75A95825BECA0C00F10EED /* CustomDragOperation */,
-				8EEC84A9FE5738EFB4BDC96A /* DragDropHandler.h */,
 				DA271E59DB27677A5D258E5F /* Info.plist */,
 			);
 			path = DragDropHandler;
@@ -151,6 +158,24 @@
 				1E75A95A25BECA5300F10EED /* CustomDragOperation.m */,
 			);
 			path = CustomDragOperation;
+			sourceTree = "<group>";
+		};
+		1E8BF03925BFB3FE00CD3EC5 /* DragHandler */ = {
+			isa = PBXGroup;
+			children = (
+				1E8BF05025BFB48800CD3EC5 /* DragHandler.h */,
+				1E8BF05125BFB48800CD3EC5 /* DragHandler.m */,
+			);
+			path = DragHandler;
+			sourceTree = "<group>";
+		};
+		1E8BF03A25BFB40B00CD3EC5 /* DropHandler */ = {
+			isa = PBXGroup;
+			children = (
+				1E8BF05825BFB49900CD3EC5 /* DropHandler.h */,
+				1E8BF05925BFB49900CD3EC5 /* DropHandler.m */,
+			);
+			path = DropHandler;
 			sourceTree = "<group>";
 		};
 		2FA0082EAE51B2761256937D /* Products */ = {
@@ -237,7 +262,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5A9F1D5AC84CD3462769210 /* DragDropHandler.h in Headers */,
+				C5A9F1D5AC84CD3462769210 /* DragDropHandlerProtocol.h in Headers */,
+				1E8BF05225BFB48800CD3EC5 /* DragHandler.h in Headers */,
+				1E8BF05A25BFB49900CD3EC5 /* DropHandler.h in Headers */,
 				1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +348,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+					54BF462662ABD8DB95320690 = {
+						LastSwiftMigration = 1230;
+					};
+				};
 			};
 			buildConfigurationList = 5DD5317FEABD649D3E708A79 /* Build configuration list for PBXProject "DragDropHandler" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -359,6 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8BF05325BFB48800CD3EC5 /* DragHandler.m in Sources */,
+				1E8BF05B25BFB49900CD3EC5 /* DropHandler.m in Sources */,
 				1E75A95C25BECA5300F10EED /* CustomDragOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +403,6 @@
 			files = (
 				9B478EB4B14F717A5D00B275 /* AppDelegate.m in Sources */,
 				E00A44C526D935ED9A7699C4 /* ViewController.m in Sources */,
-				1E75A96925BECF5500F10EED /* CustomDragOperation.m in Sources */,
 				4DE0441A71938AB47C27F389 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +411,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E75A96125BECF5300F10EED /* CustomDragOperation.m in Sources */,
 				E118D22B6FD5530DE2C21ACF /* DragDropHandlerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +419,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E75A96C25BECF6200F10EED /* CustomDragOperation.m in Sources */,
 				914353E9AE04549FDD7DC73D /* SamplesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +528,7 @@
 			baseConfigurationReference = A77A862E012C3525E9C0AAED /* DragDropHandler-Release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -513,6 +545,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -647,6 +680,7 @@
 			baseConfigurationReference = 5AF246BDF8CB36F647EC63F9 /* DragDropHandler-Debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -663,6 +697,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;

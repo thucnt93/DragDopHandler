@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "DragDropHandler.h"
+#import "DragDropHandlerProtocol.h"
 #import "CustomDragOperation.h"
 
 @implementation ViewController

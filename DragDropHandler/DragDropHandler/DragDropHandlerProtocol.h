@@ -33,7 +33,6 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo;
 - (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo;
 
-
 @end
 
 
