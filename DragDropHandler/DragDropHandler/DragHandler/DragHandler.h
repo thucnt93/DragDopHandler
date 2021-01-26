@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DragHandler : NSObject<SourceDragHandlerProtocol>
+@interface DragHandler : NSObject<DraggingSourceHandlerProtocol>
 
 - (instancetype)initWithDragTrackingDelegate:(id<DragTrackingDelegate>)targetDragTrackingDelegate;
 

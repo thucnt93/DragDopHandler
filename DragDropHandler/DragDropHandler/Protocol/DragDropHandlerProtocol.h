@@ -19,7 +19,7 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <DragDropHandler/PublicHeader.h>
 
-@protocol SourceDragHandlerProtocol
+@protocol DraggingSourceHandlerProtocol
 
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint;
 - (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint;
@@ -28,7 +28,7 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 @end
 
 
-@protocol DestinationDropHandlerProtocol
+@protocol DropDestinationHandlerProtocol
 
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo;
 - (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo;

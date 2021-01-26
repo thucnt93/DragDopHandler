@@ -9,7 +9,7 @@
 
 @interface DragSampleView() {
     
-    id<SourceDragHandlerProtocol> _dragHandler;
+    id<DraggingSourceHandlerProtocol> _dragHandler;
     
 }
 

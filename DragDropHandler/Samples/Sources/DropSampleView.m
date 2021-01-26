@@ -8,7 +8,7 @@
 #import "DropSampleView.h"
 
 @interface DropSampleView() {
-    id<DestinationDropHandlerProtocol> _dropHandler;
+    id<DropDestinationHandlerProtocol> _dropHandler;
 }
 
 @end
