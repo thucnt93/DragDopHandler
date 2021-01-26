@@ -10,16 +10,16 @@
 @implementation DragHandler
 
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
-    
+    NSLog(@"dragBeginWithSource %@", source);
     return CustomDragOperation_MOVE;
 }
 
 - (void)dragEndWithSource:(id)source atPoint:(NSPoint)atPoint {
-        
+    NSLog(@"dragEndWithSource %@", source);
 }
 
 - (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
-    
+    NSLog(@"dragMoveWithSource %@", source);
     return CustomDragOperation_MOVE;
 }
 

@@ -14,6 +14,8 @@
 		1E8BF05325BFB48800CD3EC5 /* DragHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF05125BFB48800CD3EC5 /* DragHandler.m */; };
 		1E8BF05A25BFB49900CD3EC5 /* DropHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8BF05825BFB49900CD3EC5 /* DropHandler.h */; };
 		1E8BF05B25BFB49900CD3EC5 /* DropHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF05925BFB49900CD3EC5 /* DropHandler.m */; };
+		1E8BF06825BFC2EE00CD3EC5 /* DragSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF06725BFC2EE00CD3EC5 /* DragSampleView.m */; };
+		1E8BF06F25BFC49000CD3EC5 /* DropSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF06E25BFC49000CD3EC5 /* DropSampleView.m */; };
 		4DE0441A71938AB47C27F389 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3380D9E7C336241329AF /* main.m */; };
 		528B978C4EDC2EEFBBADE41C /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
 		5B37AB47524B3CCA62C81974 /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
@@ -84,6 +86,10 @@
 		1E8BF05125BFB48800CD3EC5 /* DragHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragHandler.m; sourceTree = "<group>"; };
 		1E8BF05825BFB49900CD3EC5 /* DropHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropHandler.h; sourceTree = "<group>"; };
 		1E8BF05925BFB49900CD3EC5 /* DropHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropHandler.m; sourceTree = "<group>"; };
+		1E8BF06625BFC2EE00CD3EC5 /* DragSampleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragSampleView.h; sourceTree = "<group>"; };
+		1E8BF06725BFC2EE00CD3EC5 /* DragSampleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragSampleView.m; sourceTree = "<group>"; };
+		1E8BF06D25BFC49000CD3EC5 /* DropSampleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropSampleView.h; sourceTree = "<group>"; };
+		1E8BF06E25BFC49000CD3EC5 /* DropSampleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropSampleView.m; sourceTree = "<group>"; };
 		2028BBDE3B4E7625A3AEA603 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405E3CDD76B02806801BC19F /* DragDropHandlerTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DragDropHandlerTests.xcconfig; sourceTree = "<group>"; };
 		4BB0783768E4C3DFB2B2F88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -220,6 +226,10 @@
 				AA72301B17078A3F85062EB2 /* Main.storyboard */,
 				B37E3DCDAED23FC87B44BFC2 /* ViewController.h */,
 				55731A292C32E87AE299BE7A /* ViewController.m */,
+				1E8BF06625BFC2EE00CD3EC5 /* DragSampleView.h */,
+				1E8BF06725BFC2EE00CD3EC5 /* DragSampleView.m */,
+				1E8BF06D25BFC49000CD3EC5 /* DropSampleView.h */,
+				1E8BF06E25BFC49000CD3EC5 /* DropSampleView.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -401,6 +411,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8BF06825BFC2EE00CD3EC5 /* DragSampleView.m in Sources */,
+				1E8BF06F25BFC49000CD3EC5 /* DropSampleView.m in Sources */,
 				9B478EB4B14F717A5D00B275 /* AppDelegate.m in Sources */,
 				E00A44C526D935ED9A7699C4 /* ViewController.m in Sources */,
 				4DE0441A71938AB47C27F389 /* main.m in Sources */,
