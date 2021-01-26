@@ -710,7 +710,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="713" height="527"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP">
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP" customClass="DraggableNSButton">
                                 <rect key="frame" x="20" y="459" width="48" height="48.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="Files" bezelStyle="shadowlessSquare" image="NSTouchBarFolderTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="qd4-AP-ZQ5">
@@ -821,7 +821,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-pV-lUx">
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-pV-lUx" customClass="DroppableNSView">
                                 <rect key="frame" x="250" y="24" width="443" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
