@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, CustomDragOperation)
 @interface DragOperation : NSObject
 
 + (void)changeCursorByOperation:(CustomDragOperation)operation;
++ (NSDragOperation)handleCustomDragOperation:(CustomDragOperation)operation draggingSource:(id)draggingSource;
 
 @end
 NS_ASSUME_NONNULL_END

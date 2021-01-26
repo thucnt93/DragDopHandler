@@ -53,4 +53,31 @@
     }
 }
 
++ (NSDragOperation)handleCustomDragOperation:(CustomDragOperation)operation draggingSource:(id)draggingSource
+{
+//    if ([draggingSource isKindOfClass:[DraggableNSView class]])
+//    {
+//        ((DraggableNSView *)draggingSource).disableDragTracking = (operation != CustomDragOperation_NONE);
+//    }
+    
+    NSUInteger allSystemOperations = NSDragOperationCopy
+                                    | NSDragOperationLink
+                                    | NSDragOperationGeneric
+                                    | NSDragOperationPrivate
+                                    | NSDragOperationMove
+                                    | NSDragOperationDelete
+                                    | NSDragOperationNone;
+    
+    if (operation & allSystemOperations)
+    {
+        //system operations
+        
+        return (NSDragOperation) operation;
+    }
+        
+    [DragOperation changeCursorByOperation:operation];
+    
+    return (operation == CustomDragOperation_NONE || operation == CustomDragOperation_STOP)?NSDragOperationNone:NSDragOperationGeneric;
+}
+
 @end
