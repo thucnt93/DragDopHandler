@@ -765,14 +765,14 @@
                                     <rect key="frame" x="1" y="1" width="220" height="425"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="0rI-sT-Zfa" viewBased="YES" id="Cct-lN-teu" customClass="TableView">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="0rI-sT-Zfa" viewBased="YES" id="Cct-lN-teu">
                                             <rect key="frame" x="0.0" y="0.0" width="220" height="400"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="208" minWidth="40" maxWidth="1000" id="pVL-1A-S2u">
+                                                <tableColumn width="179" minWidth="40" maxWidth="1000" id="pVL-1A-S2u">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -785,11 +785,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="l9z-ZR-Dnv">
-                                                            <rect key="frame" x="1" y="1" width="217" height="17"/>
+                                                            <rect key="frame" x="11" y="1" width="188" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k30-M6-NmG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="217" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Yeh-fM-0mQ">
                                                                         <font key="font" metaFont="system"/>
@@ -827,6 +827,11 @@
                             </customView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="dropView" destination="TIZ-pV-lUx" id="trj-f5-9Sq"/>
+                        <outlet property="fileDragButton" destination="Ol0-q3-oeP" id="9fT-uV-klI"/>
+                        <outlet property="tableView" destination="Cct-lN-teu" id="Hn4-zR-bk8"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

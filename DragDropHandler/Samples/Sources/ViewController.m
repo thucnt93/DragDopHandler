@@ -8,6 +8,15 @@
 
 #import "ViewController.h"
 
+@interface ViewController() {
+    
+}
+@property (weak) IBOutlet NSButton *fileDragButton;
+@property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSView *dropView;
+
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad {

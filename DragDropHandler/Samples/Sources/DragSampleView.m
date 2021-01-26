@@ -28,7 +28,7 @@
 {
     self = [super init];
     if (self) {
-        _dragHandler = [[DragHandler alloc] init];
+        _dragHandler = [[DragHandler alloc] initWithDragTrackingDelegate:self];
     }
     return self;
 }
@@ -37,7 +37,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _dragHandler = [[DragHandler alloc] init];
+        _dragHandler = [[DragHandler alloc] initWithDragTrackingDelegate:self];
     }
     return self;
 }

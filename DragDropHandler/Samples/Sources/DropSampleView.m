@@ -25,7 +25,7 @@
 {
     self = [super init];
     if (self) {
-        _dropHandler = [[DropHandler alloc] init];
+        _dropHandler = [[DropHandler alloc] initWithDropTrackingDelegate:self];
     }
     return self;
 }
