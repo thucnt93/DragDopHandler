@@ -28,18 +28,35 @@
     
     NSLog(@"handleDragBeginWithSource %@", source);
     
+    if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(dragBeginWithSource:atPoint:)])
+    {
+        CustomDragOperation op = [_dragTrackingDelegate dragBeginWithSource:source atPoint:atPoint];
+        [DragOperation changeCursorByOperation:op];
+    }
+    
+}
+
+- (void)handleDragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
+    
+    NSLog(@"handleDragMoveWithSource %@", source);
+    
+    if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(dragMoveWithSource:atPoint:)])
+    {
+        CustomDragOperation op = [_dragTrackingDelegate dragMoveWithSource:source atPoint:atPoint];
+        [DragOperation changeCursorByOperation:op];
+    }
 }
 
 - (void)handleDragEndWithSource:(id)source atPoint:(NSPoint)atPoint {
     
     NSLog(@"handleDragEndWithSource %@", source);
     
+    if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(dragEndWithSource:atPoint:)])
+    {
+        [_dragTrackingDelegate dragEndWithSource:source atPoint:atPoint];
+    }
 }
 
-- (void)handleDragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
-   
-    NSLog(@"handleDragMoveWithSource %@", source);
-    
-}
+
 
 @end
