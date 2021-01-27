@@ -8,9 +8,11 @@
 #import "DropHandler.h"
 
 @interface DropHandler() {
-    id<DropTrackingDelegate> _trackingDelegate;
     CustomDragOperation _dragOperation;
 }
+
+// weak property to make sure for avoid memory leak
+@property (weak, nonatomic) id<DropTrackingDelegate> trackingDelegate;
 
 @end
 
