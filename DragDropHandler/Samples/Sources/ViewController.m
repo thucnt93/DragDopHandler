@@ -77,6 +77,10 @@
     
     NSLog(@"Validate dragging info");
     
+    if ([onTarget isKindOfClass: TableViewManager.self]) {
+        NSLog(@"TableViewManager validate drop");
+    }
+    
     return CustomDragOperation_MOVE;
 }
 
