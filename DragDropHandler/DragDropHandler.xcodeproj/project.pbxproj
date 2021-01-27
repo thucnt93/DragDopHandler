@@ -27,8 +27,8 @@
 		1E88691725C00AD5001EB54C /* TableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E88690525C00AD5001EB54C /* TableViewManager.m */; };
 		1E88691825C00AD5001EB54C /* DraggableNSView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E88690725C00AD5001EB54C /* DraggableNSView.h */; };
 		1E88691925C00AD5001EB54C /* DraggableNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E88690825C00AD5001EB54C /* DraggableNSView.m */; };
-		1E88692325C02DD6001EB54C /* AbtractHandlerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E88692125C02DD6001EB54C /* AbtractHandlerModel.h */; };
-		1E88692425C02DD6001EB54C /* AbtractHandlerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E88692225C02DD6001EB54C /* AbtractHandlerModel.m */; };
+		1E88692325C02DD6001EB54C /* DragDropHandlerInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E88692125C02DD6001EB54C /* DragDropHandlerInfo.h */; };
+		1E88692425C02DD6001EB54C /* DragDropHandlerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E88692225C02DD6001EB54C /* DragDropHandlerInfo.m */; };
 		1E8BF05225BFB48800CD3EC5 /* DragHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8BF05025BFB48800CD3EC5 /* DragHandler.h */; };
 		1E8BF05325BFB48800CD3EC5 /* DragHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF05125BFB48800CD3EC5 /* DragHandler.m */; };
 		1E8BF05A25BFB49900CD3EC5 /* DropHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8BF05825BFB49900CD3EC5 /* DropHandler.h */; };
@@ -116,8 +116,8 @@
 		1E88690525C00AD5001EB54C /* TableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewManager.m; sourceTree = "<group>"; };
 		1E88690725C00AD5001EB54C /* DraggableNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableNSView.h; sourceTree = "<group>"; };
 		1E88690825C00AD5001EB54C /* DraggableNSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableNSView.m; sourceTree = "<group>"; };
-		1E88692125C02DD6001EB54C /* AbtractHandlerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbtractHandlerModel.h; sourceTree = "<group>"; };
-		1E88692225C02DD6001EB54C /* AbtractHandlerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbtractHandlerModel.m; sourceTree = "<group>"; };
+		1E88692125C02DD6001EB54C /* DragDropHandlerInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropHandlerInfo.h; sourceTree = "<group>"; };
+		1E88692225C02DD6001EB54C /* DragDropHandlerInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragDropHandlerInfo.m; sourceTree = "<group>"; };
 		1E8BF05025BFB48800CD3EC5 /* DragHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragHandler.h; sourceTree = "<group>"; };
 		1E8BF05125BFB48800CD3EC5 /* DragHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DragHandler.m; sourceTree = "<group>"; };
 		1E8BF05825BFB49900CD3EC5 /* DropHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropHandler.h; sourceTree = "<group>"; };
@@ -300,8 +300,8 @@
 		1E88692025C02DAC001EB54C /* AbstractHandlerModel */ = {
 			isa = PBXGroup;
 			children = (
-				1E88692125C02DD6001EB54C /* AbtractHandlerModel.h */,
-				1E88692225C02DD6001EB54C /* AbtractHandlerModel.m */,
+				1E88692125C02DD6001EB54C /* DragDropHandlerInfo.h */,
+				1E88692225C02DD6001EB54C /* DragDropHandlerInfo.m */,
 			);
 			path = AbstractHandlerModel;
 			sourceTree = "<group>";
@@ -428,7 +428,7 @@
 				1E8BF05225BFB48800CD3EC5 /* DragHandler.h in Headers */,
 				1E8BF05A25BFB49900CD3EC5 /* DropHandler.h in Headers */,
 				1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */,
-				1E88692325C02DD6001EB54C /* AbtractHandlerModel.h in Headers */,
+				1E88692325C02DD6001EB54C /* DragDropHandlerInfo.h in Headers */,
 				1E88690925C00AD5001EB54C /* DroppableNSView.h in Headers */,
 				1E88690A25C00AD5001EB54C /* DraggableNSButton.h in Headers */,
 				1E88690E25C00AD5001EB54C /* DataProviderProtocols.h in Headers */,
@@ -564,7 +564,7 @@
 				1E8BF05B25BFB49900CD3EC5 /* DropHandler.m in Sources */,
 				1E75A95C25BECA5300F10EED /* CustomDragOperation.m in Sources */,
 				1E88691525C00AD5001EB54C /* OutlineViewManager.m in Sources */,
-				1E88692425C02DD6001EB54C /* AbtractHandlerModel.m in Sources */,
+				1E88692425C02DD6001EB54C /* DragDropHandlerInfo.m in Sources */,
 				1E88691925C00AD5001EB54C /* DraggableNSView.m in Sources */,
 				1E88690C25C00AD5001EB54C /* DroppableNSView.m in Sources */,
 				1E88691325C00AD5001EB54C /* CollectionViewManager.m in Sources */,

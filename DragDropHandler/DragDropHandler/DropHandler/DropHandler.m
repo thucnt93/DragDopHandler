@@ -18,21 +18,18 @@
 
 - (instancetype)initWithDropTrackingDelegate:(id<DropTrackingDelegate>)targetDropTrackingDelegate {
     if (self = [super init])
-{
+    {
         _trackingDelegate = targetDropTrackingDelegate;
     }
     return self;
 }
 
-- (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget
-{
+- (void)handleDraggingExited:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget {
     NSLog(@"handleDraggingExited on target %@", onTarget);
-    [DragOperation handleCustomDragOperation:CustomDragOperation_NONE draggingSource:draggingInfo.draggingSource]; //enable disableDragTracking on DraggableNSView
+    [DragOperation handleCustomDragOperation:CustomDragOperation_NONE draggingSource:draggingInfo.info.draggingSource]; //enable disableDragTracking on DraggableNSView
 }
 
-- (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget
-{
-    
+- (NSDragOperation)handleDraggingUpdated:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget {
     NSLog(@"handleDraggingUpdated on target %@", onTarget);
     
     _dragOperation = CustomDragOperation_NONE;
@@ -41,10 +38,10 @@
     {
         _dragOperation = [_trackingDelegate dragUpdatedOnTarget:onTarget withInfo:draggingInfo];
     }
-    return [DragOperation handleCustomDragOperation:_dragOperation draggingSource:draggingInfo.draggingSource];
+    return [DragOperation handleCustomDragOperation:_dragOperation draggingSource:draggingInfo.info.draggingSource];
 }
 
-- (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget
+- (BOOL)handlePerformDraggingOperation:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget
 {
     NSLog(@"handlePerformDraggingOperation on target %@", onTarget);
     

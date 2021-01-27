@@ -607,12 +607,14 @@
 {
     @try
     {
-        if (self.protocols && [self.protocols respondsToSelector:@selector(validateDropWithTableViewManager:validateDrop:proposedItem:proposedRow:proposedDropOperation:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(handleDraggingUpdated:onTarget:)])
         {
             // TODO: change to 1 function template
-//            NSDragOperation op = [_dropHandler handleValidateDropWithTableViewManager:self validateDrop:info proposedItem:[_provider objectForRow:row] proposedRow:row proposedDropOperation:dropOperation];
-//            return op;
-            return NSDragOperationNone;
+            DragDropHandlerInfo *newInfo = [[DragDropHandlerInfo alloc] initWithInfo:info];
+            newInfo.dropOperation = dropOperation;
+            newInfo.proposedRow = row;
+            NSDragOperation op = [_dropHandler handleDraggingUpdated:newInfo onTarget:self];
+            return op;
         }
     }
     @catch (NSException *exception)
@@ -631,11 +633,13 @@
     @try
     {
         NSLog(@"Did accept drop");
-        if (self.protocols && [self.protocols respondsToSelector:@selector(acceptDropWithTableViewManager:acceptDrop:item:row:dropOperation:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(handlePerformDraggingOperation:onTarget:)])
         {
             // TODO: change to 1 function template
-//            return [_dropHandler handleAcceptDropWithTableViewManager:self acceptDrop:info item:[_provider objectForRow:row] row:row dropOperation:dropOperation];
-            return YES;
+            DragDropHandlerInfo *newInfo = [[DragDropHandlerInfo alloc] initWithInfo:info];
+            newInfo.dropOperation = dropOperation;
+            newInfo.proposedRow = row;
+            return [_dropHandler handlePerformDraggingOperation:newInfo onTarget:self];
         }
     }
     @catch (NSException *exception)

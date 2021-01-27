@@ -7,6 +7,7 @@
 
 #import <AppKit/AppKit.h>
 #import "CustomDragOperation.h"
+#import "DragDropHandlerInfo.h"
 
 #ifndef DragDropTrackingDelegate_h
 #define DragDropTrackingDelegate_h
@@ -16,8 +17,8 @@
 @protocol DropTrackingDelegate <NSObject>
 @optional
 
-- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo;
-- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo;
+- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(DragDropHandlerInfo *)draggingInfo;
+- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(DragDropHandlerInfo *)draggingInfo;
 
 @end
 

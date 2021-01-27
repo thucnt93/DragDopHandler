@@ -12,9 +12,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol NSDraggingInfo;
+@interface DragDropHandlerInfo : NSObject
 
-@interface AbtractHandlerModel : NSObject<NSDraggingInfo>
+@property (strong, nonatomic) id<NSDraggingInfo> info;
+@property (nonatomic) NSInteger proposedRow;
+@property (nonatomic) NSTableViewDropOperation dropOperation;
+
+- (instancetype)initWithInfo:(id<NSDraggingInfo>)info;
 
 @end
 

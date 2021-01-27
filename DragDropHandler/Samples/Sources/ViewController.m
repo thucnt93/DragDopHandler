@@ -50,11 +50,26 @@
     return CustomDragOperation_LINK;;
 }
 
-- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
-    
+- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(DragDropHandlerInfo *)draggingInfo {
     return CustomDragOperation_MOVE;
 }
 
+- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(DragDropHandlerInfo *)draggingInfo {
+    
+    if ([onTarget isKindOfClass: TableViewManager.self]) {
+        NSLog(@"TableViewManager drop");
+    }
+    
+    if ([onTarget isKindOfClass: DraggableNSButton.self]) {
+        NSLog(@"DraggableNSButton drop");
+    }
+    
+    if ([onTarget isKindOfClass: DroppableNSView.self]) {
+        NSLog(@"DroppableNSView drop");
+    }
+    
+    return YES;
+}
 
 
 @end

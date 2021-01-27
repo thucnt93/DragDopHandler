@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <AppKit/AppKit.h>
 #import "CustomDragOperation.h"
+#import "DragDropHandlerInfo.h"
 
 
 //! Project version number for DragDropHandler.
@@ -32,9 +33,9 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 
 // NSViewDropFunction
 #pragma mark - NSView drop handler action
-- (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
-- (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
-- (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
+- (NSDragOperation)handleDraggingUpdated:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget;
+- (void)handleDraggingExited:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget;
+- (BOOL)handlePerformDraggingOperation:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget;
 
 
 @end

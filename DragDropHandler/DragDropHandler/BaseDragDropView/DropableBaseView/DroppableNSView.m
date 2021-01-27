@@ -7,6 +7,7 @@
 //
 
 #import "DroppableNSView.h"
+#import "DragDropHandlerInfo.h"
 
 @interface DroppableNSView ()<NSDraggingDestination>
 {
@@ -42,7 +43,9 @@
 {
     if (_dropHandler != nil)
     {
-        return [_dropHandler handleDraggingUpdated:draggingInfo onTarget:self];
+        
+        DragDropHandlerInfo *info = [[DragDropHandlerInfo alloc] initWithInfo:draggingInfo];
+        return [_dropHandler handleDraggingUpdated:info onTarget:self];
     }
     
     return NSDragOperationNone;
@@ -52,7 +55,8 @@
 {
     if (_dropHandler != nil)
     {
-        return [_dropHandler handleDraggingExited:draggingInfo onTarget:self];
+        DragDropHandlerInfo *info = [[DragDropHandlerInfo alloc] initWithInfo:draggingInfo];
+        return [_dropHandler handleDraggingExited:info onTarget:self];
     }
 }
 
@@ -60,7 +64,8 @@
 {
     if (_dropHandler != nil)
     {
-        BOOL result = [_dropHandler handlePerformDraggingOperation:draggingInfo onTarget:self];
+        DragDropHandlerInfo *info = [[DragDropHandlerInfo alloc] initWithInfo:draggingInfo];
+        BOOL result = [_dropHandler handlePerformDraggingOperation:info onTarget:self];
         return result;
     }
     
