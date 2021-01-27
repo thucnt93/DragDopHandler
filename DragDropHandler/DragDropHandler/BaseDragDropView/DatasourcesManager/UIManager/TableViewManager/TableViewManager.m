@@ -597,7 +597,7 @@
 //        return [_dragHandler handlePasteboardWriterWithTableViewManager:self writeRow:row item:item];
     }
     
-    return nil;
+    return @"fff";
 }
 
 /**
@@ -607,9 +607,8 @@
 {
     @try
     {
-        if (self.protocols && [self.protocols respondsToSelector:@selector(handleDraggingUpdated:onTarget:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(dragUpdatedOnTarget:withInfo:)])
         {
-            // TODO: change to 1 function template
             DragDropHandlerInfo *newInfo = [[DragDropHandlerInfo alloc] initWithInfo:info];
             newInfo.dropOperation = dropOperation;
             newInfo.proposedRow = row;
@@ -633,9 +632,8 @@
     @try
     {
         NSLog(@"Did accept drop");
-        if (self.protocols && [self.protocols respondsToSelector:@selector(handlePerformDraggingOperation:onTarget:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(performDropOnTarget:draggingInfo:)])
         {
-            // TODO: change to 1 function template
             DragDropHandlerInfo *newInfo = [[DragDropHandlerInfo alloc] initWithInfo:info];
             newInfo.dropOperation = dropOperation;
             newInfo.proposedRow = row;

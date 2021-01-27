@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MockViewModel.h"
 
 @interface ViewController : NSViewController
 

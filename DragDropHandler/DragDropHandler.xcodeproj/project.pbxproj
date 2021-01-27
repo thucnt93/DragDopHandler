@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE32685DABC1DB8277A5C7CC /* Assets.xcassets */; };
+		1E71A62925C14093001C01AC /* MockViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E71A62725C14093001C01AC /* MockViewModel.h */; };
+		1E71A62A25C14093001C01AC /* MockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A62825C14093001C01AC /* MockViewModel.m */; };
 		1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E75A95925BECA5300F10EED /* CustomDragOperation.h */; };
 		1E75A95C25BECA5300F10EED /* CustomDragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E75A95A25BECA5300F10EED /* CustomDragOperation.m */; };
 		1E88690925C00AD5001EB54C /* DroppableNSView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8868F025C00AD5001EB54C /* DroppableNSView.h */; };
@@ -97,6 +99,8 @@
 
 /* Begin PBXFileReference section */
 		14A3D1BEA3B90F43C5A47887 /* Samples-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Samples-Debug.xcconfig"; sourceTree = "<group>"; };
+		1E71A62725C14093001C01AC /* MockViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockViewModel.h; sourceTree = "<group>"; };
+		1E71A62825C14093001C01AC /* MockViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockViewModel.m; sourceTree = "<group>"; };
 		1E75A95925BECA5300F10EED /* CustomDragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomDragOperation.h; sourceTree = "<group>"; };
 		1E75A95A25BECA5300F10EED /* CustomDragOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomDragOperation.m; sourceTree = "<group>"; };
 		1E8868F025C00AD5001EB54C /* DroppableNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DroppableNSView.h; sourceTree = "<group>"; };
@@ -302,6 +306,8 @@
 			children = (
 				1E88692125C02DD6001EB54C /* DragDropHandlerInfo.h */,
 				1E88692225C02DD6001EB54C /* DragDropHandlerInfo.m */,
+				1E71A62725C14093001C01AC /* MockViewModel.h */,
+				1E71A62825C14093001C01AC /* MockViewModel.m */,
 			);
 			path = AbstractHandlerModel;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 				1E8BF05225BFB48800CD3EC5 /* DragHandler.h in Headers */,
 				1E8BF05A25BFB49900CD3EC5 /* DropHandler.h in Headers */,
 				1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */,
+				1E71A62925C14093001C01AC /* MockViewModel.h in Headers */,
 				1E88692325C02DD6001EB54C /* DragDropHandlerInfo.h in Headers */,
 				1E88690925C00AD5001EB54C /* DroppableNSView.h in Headers */,
 				1E88690A25C00AD5001EB54C /* DraggableNSButton.h in Headers */,
@@ -561,6 +568,7 @@
 				1E88691725C00AD5001EB54C /* TableViewManager.m in Sources */,
 				1E8BF05325BFB48800CD3EC5 /* DragHandler.m in Sources */,
 				1E88690D25C00AD5001EB54C /* DataProvider.m in Sources */,
+				1E71A62A25C14093001C01AC /* MockViewModel.m in Sources */,
 				1E8BF05B25BFB49900CD3EC5 /* DropHandler.m in Sources */,
 				1E75A95C25BECA5300F10EED /* CustomDragOperation.m in Sources */,
 				1E88691525C00AD5001EB54C /* OutlineViewManager.m in Sources */,

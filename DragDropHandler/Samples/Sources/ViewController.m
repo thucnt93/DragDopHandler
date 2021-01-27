@@ -12,8 +12,9 @@
 #import "DroppableNSView.h"
 #import "DraggableNSView.h"
 
-@interface ViewController()<DragTrackingDelegate, DropTrackingDelegate> {
-    
+@interface ViewController()<DragTrackingDelegate, DropTrackingDelegate, TableViewManagerProtocols> {
+    TableViewManager *_tableViewManager;
+    MockViewModel *_mockViewModel;
 }
 @property (weak) IBOutlet DraggableNSButton *fileDragButton;
 @property (weak) IBOutlet NSTableView *tableView;
@@ -29,6 +30,7 @@
     // Do any additional setup after loading the view.
     [self setupDragDropTracking];
     [self setupView];
+    [self setupTableViewManagerTracking];
 }
 
 - (void)setupView {
@@ -39,7 +41,28 @@
 - (void)setupDragDropTracking {
     self.fileDragButton.dragTrackingDelegate = self;
     self.dropView.dropTrackingDelegate = self;
-    
+}
+
+- (void)setupTableViewManagerTracking {
+    NSArray *initArray = @[@"TEST", @"TEST1",@"TEST2",@"TEST3",@"TEST4",@"TEST5",@"TEST6", @"TEST7"];
+    NSArray *models = [[NSMutableArray alloc] initWithArray:initArray];
+    _mockViewModel = [[MockViewModel alloc] initWithModel:models];
+    [_mockViewModel setupProvider];
+    [_mockViewModel buildDataSource];
+    _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider: _mockViewModel.provider];
+    [_tableViewManager setDropTrackingDelegate:self];
+}
+
+- (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
+    return 40;
+}
+
+- (NSTableRowView *)tableViewManager:(TableViewManager *)manager rowViewForRow:(NSInteger)row byItem:(id)item {
+    NSTextField *label = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, self.view.frame.size.width, 40)];
+    label.stringValue = _mockViewModel.models[row];
+    NSTableRowView *rowView = [[NSTableRowView alloc] initWithFrame:NSMakeRect(0, 0, self.view.frame.size.width, 40)];
+    [rowView addSubview:label];
+    return rowView;
 }
 
 - (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
@@ -51,6 +74,9 @@
 }
 
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(DragDropHandlerInfo *)draggingInfo {
+    
+    NSLog(@"Validate dragging info");
+    
     return CustomDragOperation_MOVE;
 }
 
