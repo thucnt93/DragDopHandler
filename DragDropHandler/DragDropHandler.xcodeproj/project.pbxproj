@@ -12,9 +12,9 @@
 		1E71A62A25C14093001C01AC /* MockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A62825C14093001C01AC /* MockViewModel.m */; };
 		1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E75A95925BECA5300F10EED /* CustomDragOperation.h */; };
 		1E75A95C25BECA5300F10EED /* CustomDragOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E75A95A25BECA5300F10EED /* CustomDragOperation.m */; };
+		1E84801125C26B3600CDF249 /* DraggableNSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E84800F25C26B3600CDF249 /* DraggableNSButton.m */; };
+		1E84801225C26B3600CDF249 /* DraggableNSButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E84801025C26B3600CDF249 /* DraggableNSButton.h */; };
 		1E88690925C00AD5001EB54C /* DroppableNSView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8868F025C00AD5001EB54C /* DroppableNSView.h */; };
-		1E88690A25C00AD5001EB54C /* DraggableNSButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8868F125C00AD5001EB54C /* DraggableNSButton.h */; };
-		1E88690B25C00AD5001EB54C /* DraggableNSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8868F225C00AD5001EB54C /* DraggableNSButton.m */; };
 		1E88690C25C00AD5001EB54C /* DroppableNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8868F325C00AD5001EB54C /* DroppableNSView.m */; };
 		1E88690D25C00AD5001EB54C /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8868F625C00AD5001EB54C /* DataProvider.m */; };
 		1E88690E25C00AD5001EB54C /* DataProviderProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8868F725C00AD5001EB54C /* DataProviderProtocols.h */; };
@@ -107,9 +107,9 @@
 		1E71A62825C14093001C01AC /* MockViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockViewModel.m; sourceTree = "<group>"; };
 		1E75A95925BECA5300F10EED /* CustomDragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomDragOperation.h; sourceTree = "<group>"; };
 		1E75A95A25BECA5300F10EED /* CustomDragOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomDragOperation.m; sourceTree = "<group>"; };
+		1E84800F25C26B3600CDF249 /* DraggableNSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableNSButton.m; sourceTree = "<group>"; };
+		1E84801025C26B3600CDF249 /* DraggableNSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableNSButton.h; sourceTree = "<group>"; };
 		1E8868F025C00AD5001EB54C /* DroppableNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DroppableNSView.h; sourceTree = "<group>"; };
-		1E8868F125C00AD5001EB54C /* DraggableNSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableNSButton.h; sourceTree = "<group>"; };
-		1E8868F225C00AD5001EB54C /* DraggableNSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableNSButton.m; sourceTree = "<group>"; };
 		1E8868F325C00AD5001EB54C /* DroppableNSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DroppableNSView.m; sourceTree = "<group>"; };
 		1E8868F625C00AD5001EB54C /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
 		1E8868F725C00AD5001EB54C /* DataProviderProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProviderProtocols.h; sourceTree = "<group>"; };
@@ -232,8 +232,6 @@
 			children = (
 				1E8868F025C00AD5001EB54C /* DroppableNSView.h */,
 				1E8868F325C00AD5001EB54C /* DroppableNSView.m */,
-				1E8868F125C00AD5001EB54C /* DraggableNSButton.h */,
-				1E8868F225C00AD5001EB54C /* DraggableNSButton.m */,
 			);
 			path = DropableBaseView;
 			sourceTree = "<group>";
@@ -307,10 +305,10 @@
 		1E88690625C00AD5001EB54C /* DragableBaseView */ = {
 			isa = PBXGroup;
 			children = (
-				1E8868F125C00AD5001EB54C /* DraggableNSButton.h */,
-				1E8868F225C00AD5001EB54C /* DraggableNSButton.m */,
 				1E88690725C00AD5001EB54C /* DraggableNSView.h */,
 				1E88690825C00AD5001EB54C /* DraggableNSView.m */,
+				1E84801025C26B3600CDF249 /* DraggableNSButton.h */,
+				1E84800F25C26B3600CDF249 /* DraggableNSButton.m */,
 			);
 			path = DragableBaseView;
 			sourceTree = "<group>";
@@ -466,6 +464,7 @@
 				1E88691125C00AD5001EB54C /* ItemCellViewProtocols.h in Headers */,
 				C5A9F1D5AC84CD3462769210 /* DragDropHandlerProtocol.h in Headers */,
 				1E88691825C00AD5001EB54C /* DraggableNSView.h in Headers */,
+				1E84801225C26B3600CDF249 /* DraggableNSButton.h in Headers */,
 				1E88690F25C00AD5001EB54C /* DataProvider.h in Headers */,
 				1E88691625C00AD5001EB54C /* TableViewManager.h in Headers */,
 				1E88691025C00AD5001EB54C /* ListSupplierProtocol.h in Headers */,
@@ -475,7 +474,6 @@
 				1E71A62925C14093001C01AC /* MockViewModel.h in Headers */,
 				1E88692325C02DD6001EB54C /* DragDropHandlerInfo.h in Headers */,
 				1E88690925C00AD5001EB54C /* DroppableNSView.h in Headers */,
-				1E88690A25C00AD5001EB54C /* DraggableNSButton.h in Headers */,
 				1E88690E25C00AD5001EB54C /* DataProviderProtocols.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,7 +600,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E88690B25C00AD5001EB54C /* DraggableNSButton.m in Sources */,
 				1E88691725C00AD5001EB54C /* TableViewManager.m in Sources */,
 				1E8BF05325BFB48800CD3EC5 /* DragHandler.m in Sources */,
 				1E88690D25C00AD5001EB54C /* DataProvider.m in Sources */,
@@ -614,6 +611,7 @@
 				1E88691925C00AD5001EB54C /* DraggableNSView.m in Sources */,
 				1E88690C25C00AD5001EB54C /* DroppableNSView.m in Sources */,
 				1E88691325C00AD5001EB54C /* CollectionViewManager.m in Sources */,
+				1E84801125C26B3600CDF249 /* DraggableNSButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
