@@ -533,7 +533,7 @@
 /**
  * Dragging Source Support - Optional. Implement this method to know when the dragging session has ended. This delegate method can be used to know when the dragging source operation ended at a specific location, such as the trash (by checking for an operation of CustomDragOperationDelete).
  */
-- (void)tableView:(NSTableView *)tableView draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(CustomDragOperation)operation
+- (void)tableView:(NSTableView *)tableView draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation
 {
     if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:draggingSession:endedAtPoint:operation:)])
     {
@@ -556,35 +556,6 @@
     }
 }
 
-/**
- * Dragging Source Support - Optional for single-image dragging. Implement this method to support single-image dragging. Use the more modern tableView:pasteboardWriterForRow: to support multi-image dragging. This method is called after it has been determined that a drag should begin, but before the drag has been started.  To refuse the drag, return NO.  To start a drag, return YES and place the drag data onto the pasteboard (data, owner, etc...).  The drag image and other drag related information will be set up and provided by the table view once this call returns with YES.  'rowIndexes' contains the row indexes that will be participating in the drag.
- */
-- (BOOL)tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard
-{
-    @try
-    {
-        /*
-         
-       
-         - (BOOL)writeToPasteboardWithTableViewManager:(TableViewManager *)manager writeRowsWithIndexes:(NSIndexSet *)rowIndexes items:(NSArray *)items toPasteboard:(NSPasteboard *)pasteboard
-         */
-        if (self.protocols && [self.protocols respondsToSelector:@selector(writeToPasteboardWithTableViewManager:writeRowsWithIndexes:items:toPasteboard:)])
-        {
-            NSArray<id<ListSupplierProtocol>> *items = [_provider objectsForRowIndexes:rowIndexes];
-            
-//            return [self.protocols tableViewManager:self writeRowsWithIndexes:rowIndexes items:items toPasteboard:pboard];
-            // TODO: change to 1 function template
-//            return [_dragHandler handleWriteToPasteboardWithTableViewManager:self writeRowsWithIndexes:rowIndexes items:items toPasteboard:pboard];
-        }
-    }
-    @catch (NSException *exception)
-    {
-        NSLog(@"%s-[%d] exception - reason = %@, [NSThread callStackSymbols] = %@", __PRETTY_FUNCTION__, __LINE__, exception.reason, [NSThread callStackSymbols]);
-    }
-    
-    return YES;
-}
-
 - (id<NSPasteboardWriting>)tableView:(NSTableView *)tableView pasteboardWriterForRow:(NSInteger)row {
     
     if (self.protocols && [self.protocols respondsToSelector:@selector(pasteboardWriterWithTableViewManager:writeRow:item:)])
@@ -597,7 +568,7 @@
 //        return [_dragHandler handlePasteboardWriterWithTableViewManager:self writeRow:row item:item];
     }
     
-    return @"fff";
+    return nil;
 }
 
 /**

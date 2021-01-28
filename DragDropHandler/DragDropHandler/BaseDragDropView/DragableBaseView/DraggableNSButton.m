@@ -102,6 +102,10 @@
     if (_dragHandler != nil && !self.disableDragTracking) {
         [_dragHandler handleDragMoveWithSource:self atPoint:screenPoint];
     }
+    
+    NSLog(@"Session location x: %f", session.draggingLocation.x);
+    
+    NSLog(@"screenPoint x: %f", screenPoint.x);
 }
 
 - (void)draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {

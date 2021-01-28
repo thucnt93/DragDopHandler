@@ -219,8 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				1E8868F025C00AD5001EB54C /* DroppableNSView.h */,
-				1E8868F125C00AD5001EB54C /* DraggableNSButton.h */,
-				1E8868F225C00AD5001EB54C /* DraggableNSButton.m */,
 				1E8868F325C00AD5001EB54C /* DroppableNSView.m */,
 			);
 			path = DropableBaseView;
@@ -295,6 +293,8 @@
 		1E88690625C00AD5001EB54C /* DragableBaseView */ = {
 			isa = PBXGroup;
 			children = (
+				1E8868F125C00AD5001EB54C /* DraggableNSButton.h */,
+				1E8868F225C00AD5001EB54C /* DraggableNSButton.m */,
 				1E88690725C00AD5001EB54C /* DraggableNSView.h */,
 				1E88690825C00AD5001EB54C /* DraggableNSView.m */,
 			);

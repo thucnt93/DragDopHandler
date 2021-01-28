@@ -7,9 +7,7 @@
 
 #import "DragHandler.h"
 
-@interface DragHandler() {
-    
-}
+@interface DragHandler()
 
 // weak property to make sure for avoid memory leak
 @property (weak, nonatomic) id<DragTrackingDelegate> dragTrackingDelegate;
