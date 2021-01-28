@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -707,91 +707,94 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="713" height="527"/>
+                        <rect key="frame" x="0.0" y="0.0" width="720" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP" customClass="DraggableNSButton">
-                                <rect key="frame" x="20" y="459" width="48" height="48.5"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP" customClass="DragableButton">
+                                <rect key="frame" x="20" y="532" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="Files" bezelStyle="shadowlessSquare" image="NSTouchBarFolderTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="qd4-AP-ZQ5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu" size="10"/>
+                                    <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ">
-                                <rect key="frame" x="78" y="459" width="48" height="48"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ" customClass="DragableButton">
+                                <rect key="frame" x="78" y="532" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="Email" bezelStyle="shadowlessSquare" image="NSTouchBarMailTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="RFt-PX-yV7">
+                                <buttonCell key="cell" type="square" title="Emails" bezelStyle="shadowlessSquare" image="NSTouchBarMailTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="RFt-PX-yV7">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu" size="10"/>
+                                    <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB">
-                                <rect key="frame" x="136" y="459" width="48" height="48.5"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
+                                <rect key="frame" x="136" y="532" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="Notes" bezelStyle="shadowlessSquare" image="NSTouchBarComposeTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="DQ9-iw-7RN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu" size="10"/>
+                                    <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI">
-                                <rect key="frame" x="194" y="459" width="48" height="48.5"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI" customClass="DragableButton">
+                                <rect key="frame" x="194" y="532" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="Contacts" bezelStyle="shadowlessSquare" image="NSTouchBarUserGroupTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="Xh2-W7-qvz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu" size="10"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-UL-Phn">
-                                <rect key="frame" x="587" y="460" width="48" height="47.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="Search" bezelStyle="shadowlessSquare" image="NSTouchBarSearchTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="8bw-bU-KUY">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu" size="10"/>
+                                    <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JkD-ZU-mAM">
-                                <rect key="frame" x="645" y="460" width="48" height="47.5"/>
+                                <rect key="frame" x="652" y="532" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="You" bezelStyle="shadowlessSquare" image="NSTouchBarUserTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="gwo-jl-zuK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu" size="10"/>
+                                    <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1g0-l9-qQF">
-                                <rect key="frame" x="20" y="23" width="222" height="427"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                <clipView key="contentView" id="S3x-qS-jgn">
-                                    <rect key="frame" x="1" y="1" width="220" height="425"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-pV-lUx" customClass="CustomView">
+                                <rect key="frame" x="250" y="20" width="450" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </customView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-UL-Phn">
+                                <rect key="frame" x="594" y="532" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" title="Search" bezelStyle="shadowlessSquare" image="NSTouchBarSearchTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="8bw-bU-KUY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                </buttonCell>
+                            </button>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0K-E7-FkJ">
+                                <rect key="frame" x="20" y="20" width="222" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" id="DFS-IJ-8Ad">
+                                    <rect key="frame" x="1" y="0.0" width="220" height="503"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="0rI-sT-Zfa" viewBased="YES" id="Cct-lN-teu">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="400"/>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="BSZ-ob-0Eu" viewBased="YES" id="f0s-vm-dJ5">
+                                            <rect key="frame" x="0.0" y="0.0" width="220" height="478"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="179" minWidth="40" maxWidth="1000" id="pVL-1A-S2u">
+                                                <tableColumn width="110" minWidth="110" maxWidth="1000" id="IKT-5D-7aC">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="r7k-EQ-jlW">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="Jjf-iw-6Kh">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="l9z-ZR-Dnv">
-                                                            <rect key="frame" x="11" y="1" width="188" height="17"/>
+                                                        <tableCellView id="q34-Rx-3He">
+                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k30-M6-NmG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="17"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sxo-MF-zZv">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Yeh-fM-0mQ">
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="txg-qX-vV2">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -799,7 +802,39 @@
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
-                                                                <outlet property="textField" destination="k30-M6-NmG" id="KRu-IY-t8U"/>
+                                                                <outlet property="textField" destination="Sxo-MF-zZv" id="IzO-ZY-Ymy"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                                <tableColumn width="110" minWidth="110" maxWidth="1000" id="gx4-yr-kaq">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="WmI-FG-veB">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="y4j-Vi-bD4">
+                                                            <rect key="frame" x="110" y="0.0" width="110" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yk6-QF-IYf">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="CYz-5L-BKu">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="yk6-QF-IYf" id="m20-HO-Pta"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -808,42 +843,43 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Lbl-CL-4gp">
-                                    <rect key="frame" x="1" y="477" width="220" height="16"/>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="s4v-Si-sXJ">
+                                    <rect key="frame" x="1" y="487" width="220" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="BTS-ZZ-1bi">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="blN-Yg-cPR">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <tableHeaderView key="headerView" wantsLayer="YES" id="0rI-sT-Zfa">
+                                <tableHeaderView key="headerView" id="BSZ-ob-0Eu">
                                     <rect key="frame" x="0.0" y="0.0" width="220" height="25"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-pV-lUx" customClass="DroppableNSView">
-                                <rect key="frame" x="250" y="24" width="443" height="427"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </customView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="dropView" destination="TIZ-pV-lUx" id="trj-f5-9Sq"/>
-                        <outlet property="fileDragButton" destination="Ol0-q3-oeP" id="9fT-uV-klI"/>
-                        <outlet property="tableView" destination="Cct-lN-teu" id="Hn4-zR-bk8"/>
+                        <outlet property="contactsButton" destination="z2S-Td-SxI" id="CE3-Pc-yDx"/>
+                        <outlet property="emailsButton" destination="zz6-i3-UUZ" id="m8f-si-Bda"/>
+                        <outlet property="filesButton" destination="Ol0-q3-oeP" id="nQT-Y7-4oj"/>
+                        <outlet property="notesButton" destination="xKz-Pr-ZtB" id="UMs-od-fYT"/>
+                        <outlet property="searchButton" destination="FJ9-UL-Phn" id="6ti-9i-fNQ"/>
+                        <outlet property="theCustomView" destination="TIZ-pV-lUx" id="HUn-3R-TqS"/>
+                        <outlet property="theTableView" destination="f0s-vm-dJ5" id="hpW-Rq-0ha"/>
+                        <outlet property="youButton" destination="JkD-ZU-mAM" id="fsa-bA-Vuh"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="890"/>
+            <point key="canvasLocation" x="68" y="890"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NSTouchBarComposeTemplate" width="17" height="15"/>
-        <image name="NSTouchBarFolderTemplate" width="18" height="14"/>
-        <image name="NSTouchBarMailTemplate" width="18" height="13"/>
-        <image name="NSTouchBarSearchTemplate" width="15" height="15"/>
-        <image name="NSTouchBarUserGroupTemplate" width="21" height="14"/>
-        <image name="NSTouchBarUserTemplate" width="14" height="14"/>
+        <image name="NSTouchBarComposeTemplate" width="21" height="30"/>
+        <image name="NSTouchBarFolderTemplate" width="22" height="30"/>
+        <image name="NSTouchBarMailTemplate" width="21" height="30"/>
+        <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
+        <image name="NSTouchBarUserGroupTemplate" width="24" height="30"/>
+        <image name="NSTouchBarUserTemplate" width="15" height="30"/>
     </resources>
 </document>

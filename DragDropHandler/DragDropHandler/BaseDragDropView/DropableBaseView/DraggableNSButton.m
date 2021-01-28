@@ -22,7 +22,7 @@
     [super awakeFromNib];
     self.disableDragTracking = NO;
     self.wantsLayer = YES;
-    self.layer.backgroundColor = [[NSColor brownColor] CGColor];
+//    self.layer.backgroundColor = [[NSColor brownColor] CGColor];
     [self registerForDraggedTypes:[NSArray arrayWithObjects:(id)kUTTypeData, NSPasteboardTypeFileURL, nil]];
 }
 

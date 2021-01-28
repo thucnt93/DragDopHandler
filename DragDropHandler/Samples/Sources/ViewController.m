@@ -8,17 +8,30 @@
 
 #import "ViewController.h"
 #import "DraggableNSButton.h"
-#import "TableViewManager.h"
 #import "DroppableNSView.h"
 #import "DraggableNSView.h"
+#import "TableViewManager.h"
+#import "DataProvider.h"
+#import "MockViewModel.h"
+#import "TableView.h"
+#import "CustomView.h"
+#import "DragableButton.h"
 
 @interface ViewController()<DragTrackingDelegate, DropTrackingDelegate, TableViewManagerProtocols> {
     TableViewManager *_tableViewManager;
     MockViewModel *_mockViewModel;
 }
-@property (weak) IBOutlet DraggableNSButton *fileDragButton;
-@property (weak) IBOutlet NSTableView *tableView;
-@property (weak) IBOutlet DroppableNSView *dropView;
+
+@property (weak) IBOutlet DragableButton* filesButton;
+@property (weak) IBOutlet DragableButton* emailsButton;
+@property (weak) IBOutlet DragableButton* notesButton;
+@property (weak) IBOutlet DragableButton* contactsButton;
+
+@property (weak) IBOutlet NSButton* searchButton;
+@property (weak) IBOutlet NSButton* youButton;
+
+@property (weak) IBOutlet NSTableView* theTableView;
+@property (weak) IBOutlet CustomView* theCustomView;
 
 @end
 
@@ -28,28 +41,34 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    [self setupDragDropTracking];
     [self setupView];
+    [self setupDragDropTracking];
     [self setupTableViewManagerTracking];
 }
 
 - (void)setupView {
-    self.dropView.wantsLayer = YES;
-    self.dropView.layer.backgroundColor = [[NSColor systemYellowColor] CGColor];
+    self.theCustomView.wantsLayer = YES;
+    self.theCustomView.layer.backgroundColor = [[NSColor systemGrayColor] CGColor];
 }
 
 - (void)setupDragDropTracking {
-    self.fileDragButton.dragTrackingDelegate = self;
-    self.dropView.dropTrackingDelegate = self;
+//    self.fileDragButton.dragTrackingDelegate = self;
+//    self.dropView.dropTrackingDelegate = self;
+    self.filesButton.dragTrackingDelegate = self;
+    self.theCustomView.dropTrackingDelegate = self;
+    //    tableViewManager = [[TableViewManager alloc] initWithTableView:self.theTableView
+    //                                                            source:self
+    //                                                          provider:[[DataProvider alloc] initProviderForOwner:self]];
+//    [tableViewManager setDropTrackingDelegate:self];
 }
 
 - (void)setupTableViewManagerTracking {
-    NSArray *initArray = @[@"TEST", @"TEST1",@"TEST2",@"TEST3",@"TEST4",@"TEST5",@"TEST6", @"TEST7"];
+    NSArray *initArray = @[@"Test 0", @"Test 1", @"Test 2"];
     NSArray *models = [[NSMutableArray alloc] initWithArray:initArray];
     _mockViewModel = [[MockViewModel alloc] initWithModel:models];
     [_mockViewModel setupProvider];
     [_mockViewModel buildDataSource];
-    _tableViewManager = [[TableViewManager alloc] initWithTableView:self.tableView source:self provider: _mockViewModel.provider];
+    _tableViewManager = [[TableViewManager alloc] initWithTableView:self.theTableView source:self provider: _mockViewModel.provider];
     [_tableViewManager setDropTrackingDelegate:self];
 }
 
@@ -65,12 +84,15 @@
     return rowView;
 }
 
-- (CustomDragOperation)dragBeginWithSource:(id)source atPoint:(NSPoint)atPoint {
-    return CustomDragOperation_LINK;
+- (void) awakeFromNib {
+    [self.theCustomView registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil]];
 }
 
-- (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint {
-    return CustomDragOperation_LINK;;
+#pragma mark - DragTrackingDelegate
+
+- (CustomDragOperation)dragBeginWithSource:(id)source
+                                   atPoint:(NSPoint)atPoint {
+    return CustomDragOperation_MOVE;
 }
 
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(DragDropHandlerInfo *)draggingInfo {
@@ -100,6 +122,48 @@
     
     return YES;
 }
+- (CustomDragOperation)dragMoveWithSource:(id)source
+                                  atPoint:(NSPoint)atPoint {
+    return CustomDragOperation_MOVE;
+}
 
+- (void)dragEndWithSource:(id)source
+                  atPoint:(NSPoint)atPoint {
+    
+}
+
+#pragma mark - DropTrackingDelegate
+
+//- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget
+//                                  withInfo:(id<NSDraggingInfo>)draggingInfo {
+//    return CustomDragOperation_ALLOW;
+//}
+//
+//- (BOOL)performDropOnTarget:(id)onTarget
+//               draggingInfo:(id<NSDraggingInfo>)draggingInfo {
+//    return YES;
+//}
+
+
+
+#pragma mark - TableViewManagerProtocols
+
+- (CustomDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager
+                                           validateDrop:(id<NSDraggingInfo>)draggingInfo
+                                           proposedItem:(id)item
+                                            proposedRow:(NSInteger)row
+                                  proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+    
+    return CustomDragOperation_ALLOW;
+}
+
+- (BOOL)acceptDropWithTableViewManager:(TableViewManager *)manager
+                            acceptDrop:(id<NSDraggingInfo>)draggingInfo
+                                  item:(id)item
+                                   row:(NSInteger)row
+                         dropOperation:(NSTableViewDropOperation)dropOperation{
+    
+    return YES;
+}
 
 @end

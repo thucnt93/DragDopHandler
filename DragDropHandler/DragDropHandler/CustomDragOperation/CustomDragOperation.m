@@ -13,45 +13,33 @@
 
 + (void)changeCursorByOperation:(CustomDragOperation)operation
 {
-    if (operation == CustomDragOperation_NONE)
-    {
-        [[NSCursor arrowCursor] set];
-        
-        return;
-    }
-
-    NSImage *cursorIcon = nil;
-    
-    if (operation == CustomDragOperation_STOP)
-    {
-        NSLog(@"====THUC====Stop cursor");
-        cursorIcon = [NSImage imageNamed:@"cursor-stop"];
-    }
-    else if (operation == CustomDragOperation_LINK)
-    {
-        cursorIcon = [NSImage imageNamed:@"cursor-linking"];
-    }
-    else if (operation == CustomDragOperation_MOVE)
-    {
-        NSLog(@"====THUC====MOVE cursor");
-        cursorIcon = [NSImage imageNamed:@"cursor-move"];
-    }
-    else if (operation == CustomDragOperation_ALLOW)
-    {
-        cursorIcon = [NSImage imageNamed:@"cursor-green"];
-    }
-    else if (operation == CustomDragOperation_RIGHT)
-    {
-        cursorIcon = [NSImage imageNamed:@"cursor-right"];
-    }
-
-    if (cursorIcon != nil)
-    {
-        [cursorIcon setSize:NSMakeSize(35, 35)];
-        
-        NSCursor *mCustomCursor = [[NSCursor alloc] initWithImage:cursorIcon hotSpot:NSZeroPoint];
-        
-        [mCustomCursor set];
+    switch (operation) {
+        case CustomDragOperation_NONE:
+            [[NSCursor arrowCursor] set];
+            break;
+            
+        case CustomDragOperation_STOP:
+            [[NSCursor operationNotAllowedCursor] set];
+            break;
+            
+        case CustomDragOperation_MOVE:
+            [[NSCursor closedHandCursor] set];
+            break;
+            
+        case CustomDragOperation_LINK:
+            [[NSCursor dragLinkCursor] set];
+            break;
+            
+        case CustomDragOperation_ALLOW:
+            [[NSCursor dragCopyCursor] set];
+            break;
+            
+        case CustomDragOperation_RIGHT:
+            [[NSCursor resizeRightCursor] set];
+            break;
+            
+        default:
+            break;
     }
 }
 
