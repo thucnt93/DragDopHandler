@@ -11,8 +11,6 @@
 
 @interface DragOperation()
 
-
-
 @end
 
 @implementation DragOperation
@@ -37,7 +35,6 @@ NSString * const RIGHT_CURSOR = @"cursor-right";
     
     if (operation == CustomDragOperation_STOP)
     {
-        NSLog(@"====THUC====Stop cursor");
         cursorIcon = [NSImage imageNamed:STOP_CURSOR];
     }
     else if (operation == CustomDragOperation_LINK)
@@ -46,7 +43,6 @@ NSString * const RIGHT_CURSOR = @"cursor-right";
     }
     else if (operation == CustomDragOperation_MOVE)
     {
-        NSLog(@"====THUC====MOVE cursor");
         cursorIcon = [NSImage imageNamed:MOVE_CURSOR];
     }
     else if (operation == CustomDragOperation_ALLOW)
