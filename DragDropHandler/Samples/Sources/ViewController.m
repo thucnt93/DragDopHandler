@@ -16,6 +16,7 @@
 #import "TableView.h"
 #import "CustomView.h"
 #import "DragableButton.h"
+#import "CellView.h"
 
 @interface ViewController()<DragTrackingDelegate, DropTrackingDelegate, TableViewManagerProtocols> {
     TableViewManager *_tableViewManager;
@@ -47,6 +48,13 @@
 }
 
 - (void)setupView {
+    if (@available(macOS 11.0, *)) {
+        [self.theTableView setStyle:NSTableViewStyleFullWidth];
+    } else {
+        // Fallback on earlier versions
+    }
+    NSNib *nib = [[NSNib alloc] initWithNibNamed:@"CellView" bundle:nil];
+    [_theTableView registerNib:nib forIdentifier:@"CellView"];
     self.theCustomView.wantsLayer = YES;
     self.theCustomView.layer.backgroundColor = [[NSColor systemGrayColor] CGColor];
 }
@@ -57,7 +65,7 @@
 }
 
 - (void)setupTableViewManagerTracking {
-    NSArray *initArray = @[@"Test 0", @"Test 1", @"Test 2"];
+    NSArray *initArray = @[@"Test 0", @"Test 1", @"Test 2", @"Test 3", @"Test 4"];
     NSArray *models = [[NSMutableArray alloc] initWithArray:initArray];
     
     _mockViewModel = [[MockViewModel alloc] initWithModel:models];
@@ -71,19 +79,13 @@
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
-    return 60;
+    return 50;
 }
 
-- (NSTableRowView *)tableViewManager:(TableViewManager *)manager rowViewForRow:(NSInteger)row byItem:(id)item {
-    NSTextField *label = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 100, 40)];
-    label.stringValue = _mockViewModel.models[row];
-    NSTableRowView *rowView = [[NSTableRowView alloc] initWithFrame:NSMakeRect(0, 0, 100, 40)];
-    [rowView addSubview:label];
-    return rowView;
-}
-
-- (NSUserInterfaceItemIdentifier)tableViewManager:(TableViewManager *)manager makeViewWithIdentifierForRow:(NSInteger)row byItem:(id)item {
-    return @"CustomView";
+- (NSView *)tableViewManager:(TableViewManager *)manager makeViewForRow:(NSInteger)row byItem:(id)item {
+    CellView *cell = [manager.tableView makeViewWithIdentifier:@"CellView" owner:self];
+    cell.titleLabel.stringValue = _mockViewModel.models[row];
+    return cell;
 }
 
 - (void) awakeFromNib {
@@ -154,6 +156,8 @@
     }
     return nil;
 }
+
+
 
 #pragma mark - DropTrackingDelegate
 

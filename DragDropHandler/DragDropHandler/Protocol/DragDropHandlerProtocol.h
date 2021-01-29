@@ -47,9 +47,6 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 - (void)handleDraggingExited:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget;
 - (BOOL)handlePerformDraggingOperation:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget;
 
-
-
-
 @end
 
 

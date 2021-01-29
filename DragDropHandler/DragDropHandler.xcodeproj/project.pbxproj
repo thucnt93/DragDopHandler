@@ -37,7 +37,9 @@
 		1E8BF05325BFB48800CD3EC5 /* DragHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF05125BFB48800CD3EC5 /* DragHandler.m */; };
 		1E8BF05A25BFB49900CD3EC5 /* DropHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8BF05825BFB49900CD3EC5 /* DropHandler.h */; };
 		1E8BF05B25BFB49900CD3EC5 /* DropHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8BF05925BFB49900CD3EC5 /* DropHandler.m */; };
-		1EBF22F925C3B63D00DBCE7F /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EBF22F825C3B63D00DBCE7F /* CustomView.xib */; };
+		1EBF22F925C3B63D00DBCE7F /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EBF22F825C3B63D00DBCE7F /* CellView.xib */; };
+		1EBF230025C3CCF700DBCE7F /* NSView+init.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBF22FF25C3CCF700DBCE7F /* NSView+init.m */; };
+		1EBF230525C3EBEA00DBCE7F /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBF230425C3EBEA00DBCE7F /* CellView.m */; };
 		4DE0441A71938AB47C27F389 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3380D9E7C336241329AF /* main.m */; };
 		528B978C4EDC2EEFBBADE41C /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
 		5B37AB47524B3CCA62C81974 /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
@@ -136,7 +138,11 @@
 		1E8BF05825BFB49900CD3EC5 /* DropHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DropHandler.h; sourceTree = "<group>"; };
 		1E8BF05925BFB49900CD3EC5 /* DropHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropHandler.m; sourceTree = "<group>"; };
 		1E8BF09725BFCFF600CD3EC5 /* DragDropTrackingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragDropTrackingDelegate.h; sourceTree = "<group>"; };
-		1EBF22F825C3B63D00DBCE7F /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		1EBF22F825C3B63D00DBCE7F /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		1EBF22FE25C3CCF700DBCE7F /* NSView+init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSView+init.h"; sourceTree = "<group>"; };
+		1EBF22FF25C3CCF700DBCE7F /* NSView+init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSView+init.m"; sourceTree = "<group>"; };
+		1EBF230325C3EBEA00DBCE7F /* CellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
+		1EBF230425C3EBEA00DBCE7F /* CellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
 		2028BBDE3B4E7625A3AEA603 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405E3CDD76B02806801BC19F /* DragDropHandlerTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DragDropHandlerTests.xcconfig; sourceTree = "<group>"; };
 		4BB0783768E4C3DFB2B2F88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -389,7 +395,11 @@
 				64C3919E25C11284003270D8 /* CustomView.m */,
 				64C3919C25C11284003270D8 /* DragableButton.h */,
 				64C3919D25C11284003270D8 /* DragableButton.m */,
-				1EBF22F825C3B63D00DBCE7F /* CustomView.xib */,
+				1EBF22F825C3B63D00DBCE7F /* CellView.xib */,
+				1EBF22FE25C3CCF700DBCE7F /* NSView+init.h */,
+				1EBF22FF25C3CCF700DBCE7F /* NSView+init.m */,
+				1EBF230325C3EBEA00DBCE7F /* CellView.h */,
+				1EBF230425C3EBEA00DBCE7F /* CellView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -599,7 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */,
-				1EBF22F925C3B63D00DBCE7F /* CustomView.xib in Resources */,
+				1EBF22F925C3B63D00DBCE7F /* CellView.xib in Resources */,
 				98E31475C3B145675C0D75CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,8 +642,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				64C391A125C11284003270D8 /* CustomView.m in Sources */,
+				1EBF230525C3EBEA00DBCE7F /* CellView.m in Sources */,
 				9B478EB4B14F717A5D00B275 /* AppDelegate.m in Sources */,
 				64C391A625C1558E003270D8 /* TableViewModel.m in Sources */,
+				1EBF230025C3CCF700DBCE7F /* NSView+init.m in Sources */,
 				64C391A025C11284003270D8 /* DragableButton.m in Sources */,
 				64C391A225C11284003270D8 /* TableView.m in Sources */,
 				E00A44C526D935ED9A7699C4 /* ViewController.m in Sources */,
