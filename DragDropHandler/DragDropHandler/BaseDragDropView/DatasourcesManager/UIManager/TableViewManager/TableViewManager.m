@@ -510,7 +510,6 @@
  * Dragging Source Support - Optional. Implement this method to know when the dragging session is about to begin and to potentially modify the dragging session.'rowIndexes' are the row indexes being dragged, excluding rows that were not dragged due to tableView:pasteboardWriterForRow: returning nil. The order will directly match the pasteboard writer array used to begin the dragging session with [NSView beginDraggingSessionWithItems:event:source]. Hence, the order is deterministic, and can be used in -tableView:acceptDrop:row:dropOperation: when enumerating the NSDraggingInfo's pasteboard classes.
  */
 
-
 - (void)tableView:(NSTableView *)tableView draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes
 {
     @try
@@ -564,7 +563,7 @@
         id<ListSupplierProtocol> item = [_provider objectForItemAtIndexPath:indexPath];
 
 //            return [self.protocols tableViewManager:self writeRowsWithIndexes:rowIndexes items:items toPasteboard:pboard];
-        // TODO: change to 1 function template
+//         TODO: change to 1 function template
 //        return [_dragHandler handlePasteboardWriterWithTableViewManager:self writeRow:row item:item];
     }
     
@@ -580,7 +579,7 @@
     {
         if (self.protocols && [self.protocols respondsToSelector:@selector(dragUpdatedOnTarget:withInfo:)])
         {
-            DragDropHandlerInfo *newInfo = [[DragDropHandlerInfo alloc] initWithInfo:info];
+            DraggingDestinationInfo *newInfo = [[DraggingDestinationInfo alloc] initWithInfo:info];
             newInfo.dropOperation = dropOperation;
             newInfo.proposedRow = row;
             NSDragOperation op = [_dropHandler handleDraggingUpdated:newInfo onTarget:self];
@@ -605,7 +604,7 @@
         NSLog(@"Did accept drop");
         if (self.protocols && [self.protocols respondsToSelector:@selector(performDropOnTarget:draggingInfo:)])
         {
-            DragDropHandlerInfo *newInfo = [[DragDropHandlerInfo alloc] initWithInfo:info];
+            DraggingDestinationInfo *newInfo = [[DraggingDestinationInfo alloc] initWithInfo:info];
             newInfo.dropOperation = dropOperation;
             newInfo.proposedRow = row;
             return [_dropHandler handlePerformDraggingOperation:newInfo onTarget:self];

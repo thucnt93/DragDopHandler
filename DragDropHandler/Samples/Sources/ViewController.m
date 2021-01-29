@@ -95,7 +95,7 @@
     return CustomDragOperation_MOVE;
 }
 
-- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(DragDropHandlerInfo *)draggingInfo {
+- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(DraggingDestinationInfo *)draggingInfo {
     
     NSLog(@"Validate dragging info");
     
@@ -106,7 +106,7 @@
     return CustomDragOperation_MOVE;
 }
 
-- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(DragDropHandlerInfo *)draggingInfo {
+- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(DraggingDestinationInfo *)draggingInfo {
     
     if ([onTarget isKindOfClass: TableViewManager.self]) {
         NSLog(@"TableViewManager drop");

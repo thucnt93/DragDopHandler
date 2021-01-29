@@ -5,9 +5,9 @@
 //  Created by Thuc Nguyen on 26/01/2021.
 //
 
-#import "DragDropHandlerInfo.h"
+#import "DraggingDestinationInfo.h"
 
-@implementation DragDropHandlerInfo
+@implementation DraggingDestinationInfo
 
 - (instancetype)initWithInfo:(id<NSDraggingInfo>)info {
     self = [super init];

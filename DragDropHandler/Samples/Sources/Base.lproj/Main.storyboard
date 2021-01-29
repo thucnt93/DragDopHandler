@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -711,7 +711,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP" customClass="DragableButton">
-                                <rect key="frame" x="20" y="532" width="48" height="48"/>
+                                <rect key="frame" x="20" y="532" width="48" height="48.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="Files" bezelStyle="shadowlessSquare" image="NSTouchBarFolderTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="qd4-AP-ZQ5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -727,7 +727,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
-                                <rect key="frame" x="136" y="532" width="48" height="48"/>
+                                <rect key="frame" x="136" y="532" width="48" height="48.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="Notes" bezelStyle="shadowlessSquare" image="NSTouchBarComposeTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="DQ9-iw-7RN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -735,7 +735,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI" customClass="DragableButton">
-                                <rect key="frame" x="194" y="532" width="48" height="48"/>
+                                <rect key="frame" x="194" y="532" width="48" height="48.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="Contacts" bezelStyle="shadowlessSquare" image="NSTouchBarUserGroupTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="Xh2-W7-qvz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -743,7 +743,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JkD-ZU-mAM">
-                                <rect key="frame" x="652" y="532" width="48" height="48"/>
+                                <rect key="frame" x="652" y="532" width="48" height="48.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="You" bezelStyle="shadowlessSquare" image="NSTouchBarUserTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="gwo-jl-zuK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -751,11 +751,11 @@
                                 </buttonCell>
                             </button>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-pV-lUx" customClass="CustomView">
-                                <rect key="frame" x="250" y="20" width="450" height="504"/>
+                                <rect key="frame" x="270" y="20" width="430" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-UL-Phn">
-                                <rect key="frame" x="594" y="532" width="48" height="48"/>
+                                <rect key="frame" x="594" y="532" width="48" height="48.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="square" title="Search" bezelStyle="shadowlessSquare" image="NSTouchBarSearchTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="8bw-bU-KUY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -763,14 +763,14 @@
                                 </buttonCell>
                             </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0K-E7-FkJ">
-                                <rect key="frame" x="20" y="20" width="222" height="504"/>
+                                <rect key="frame" x="20" y="20" width="242" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" id="DFS-IJ-8Ad">
-                                    <rect key="frame" x="1" y="0.0" width="220" height="503"/>
+                                    <rect key="frame" x="1" y="1" width="240" height="502"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="BSZ-ob-0Eu" viewBased="YES" id="f0s-vm-dJ5">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="478"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="477"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -788,11 +788,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="q34-Rx-3He">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="116" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sxo-MF-zZv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="txg-qX-vV2">
                                                                         <font key="font" metaFont="system"/>
@@ -807,7 +807,7 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn width="110" minWidth="110" maxWidth="1000" id="gx4-yr-kaq">
+                                                <tableColumn width="118" minWidth="110" maxWidth="1000" id="gx4-yr-kaq">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -820,11 +820,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="y4j-Vi-bD4">
-                                                            <rect key="frame" x="110" y="0.0" width="110" height="17"/>
+                                                            <rect key="frame" x="116" y="0.0" width="124" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yk6-QF-IYf">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="CYz-5L-BKu">
                                                                         <font key="font" metaFont="system"/>
@@ -844,15 +844,15 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="s4v-Si-sXJ">
-                                    <rect key="frame" x="1" y="487" width="220" height="16"/>
+                                    <rect key="frame" x="1" y="488" width="231" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="blN-Yg-cPR">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <tableHeaderView key="headerView" id="BSZ-ob-0Eu">
-                                    <rect key="frame" x="0.0" y="0.0" width="220" height="25"/>
+                                <tableHeaderView key="headerView" wantsLayer="YES" id="BSZ-ob-0Eu">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="25"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
@@ -871,15 +871,15 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="890"/>
+            <point key="canvasLocation" x="75" y="869"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NSTouchBarComposeTemplate" width="21" height="30"/>
-        <image name="NSTouchBarFolderTemplate" width="22" height="30"/>
-        <image name="NSTouchBarMailTemplate" width="21" height="30"/>
-        <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
-        <image name="NSTouchBarUserGroupTemplate" width="24" height="30"/>
-        <image name="NSTouchBarUserTemplate" width="15" height="30"/>
+        <image name="NSTouchBarComposeTemplate" width="17" height="15"/>
+        <image name="NSTouchBarFolderTemplate" width="18" height="14"/>
+        <image name="NSTouchBarMailTemplate" width="18" height="13"/>
+        <image name="NSTouchBarSearchTemplate" width="15" height="15"/>
+        <image name="NSTouchBarUserGroupTemplate" width="21" height="14"/>
+        <image name="NSTouchBarUserTemplate" width="14" height="14"/>
     </resources>
 </document>

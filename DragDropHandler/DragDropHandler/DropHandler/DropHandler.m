@@ -26,12 +26,12 @@
     return self;
 }
 
-- (void)handleDraggingExited:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget {
+- (void)handleDraggingExited:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget {
     NSLog(@"handleDraggingExited on target %@", onTarget);
     [DragOperation handleCustomDragOperation:CustomDragOperation_NONE draggingSource:draggingInfo.info.draggingSource]; //enable disableDragTracking on DraggableNSView
 }
 
-- (NSDragOperation)handleDraggingUpdated:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget {
+- (NSDragOperation)handleDraggingUpdated:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget {
     NSLog(@"handleDraggingUpdated on target %@", onTarget);
     
     _dragOperation = CustomDragOperation_NONE;
@@ -43,7 +43,7 @@
     return [DragOperation handleCustomDragOperation:_dragOperation draggingSource:draggingInfo.info.draggingSource];
 }
 
-- (BOOL)handlePerformDraggingOperation:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget
+- (BOOL)handlePerformDraggingOperation:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget
 {
     NSLog(@"handlePerformDraggingOperation on target %@", onTarget);
     

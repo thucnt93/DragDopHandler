@@ -8,7 +8,7 @@
 
 #import "DraggableNSView.h"
 
-@interface DraggableNSView ()<NSPasteboardItemDataProvider>
+@interface DraggableNSView ()<NSPasteboardItemDataProvider, NSDraggingSource>
 {
     DragHandler *_dragHandler;
 }
@@ -37,7 +37,8 @@
 
 #pragma mark - Mouse events
 
-- (void)pasteboard:(NSPasteboard *)pasteboard item:(NSPasteboardItem *)item provideDataForType:(NSPasteboardType)type {
+- (void)pasteboard:(NSPasteboard *)pasteboard item:(NSPasteboardItem *)item provideDataForType:(NSPasteboardType)type
+{
     NSString *typeTIFF = (NSString*)kUTTypeTIFF;
     NSImage *image = [NSImage imageNamed:@"cursor-stop"];
     NSImage *finalImage = [self tintImageWithImage:image];
@@ -69,7 +70,8 @@
 
 #pragma mark - Local methods
 
-- (NSImage *)tintImageWithImage:(NSImage *)image {
+- (NSImage *)tintImageWithImage:(NSImage *)image
+{
     NSImage *newImage = [[NSImage alloc] initWithSize:image.size];
     [newImage lockFocus];
     [image drawAtPoint:NSZeroPoint fromRect:NSZeroRect operation:NSCompositingOperationDestinationIn fraction:1.0];

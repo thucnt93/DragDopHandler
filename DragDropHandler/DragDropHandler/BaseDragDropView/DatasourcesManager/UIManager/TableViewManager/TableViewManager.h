@@ -152,11 +152,10 @@
  */
 - (void)tableViewManager:(TableViewManager *_Nullable)manager updateDraggingItemsForDrag:(id<NSDraggingInfo>_Nullable)draggingInfo;
 
-/**
- * Returns a Boolean value that indicates whether a drag operation is allowed.
+/*
+ * Dragging Source Support - Required for multi-image dragging. Implement this method to allow the table to be an NSDraggingSource that supports multiple item dragging. Return a custom object that implements NSPasteboardWriting (or simply use NSPasteboardItem). If this method is implemented, then tableView:writeRowsWithIndexes:toPasteboard: will not be called.
  */
-- (BOOL)tableViewManager:(TableViewManager *_Nullable)manager writeRowsWithIndexes:(NSIndexSet *_Nullable)rowIndexes items:(NSArray *_Nullable)items toPasteboard:(NSPasteboard *_Nullable)pasteboard;
-
+- (id<NSPasteboardWriting>_Nullable)tableViewManager:(TableViewManager *_Nullable)manager pasteboardWriterForRow:(NSInteger)row;
 /**
  * Ask the delegate for a valid drop target.
  */

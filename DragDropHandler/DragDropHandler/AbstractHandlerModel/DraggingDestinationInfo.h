@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DragDropHandlerInfo : NSObject
+@interface DraggingDestinationInfo : NSObject
 
 @property (strong, nonatomic) id<NSDraggingInfo> info;
 @property (nonatomic) NSInteger proposedRow;

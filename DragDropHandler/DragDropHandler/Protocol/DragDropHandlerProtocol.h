@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <AppKit/AppKit.h>
 #import "CustomDragOperation.h"
-#import "DragDropHandlerInfo.h"
+#import "DraggingDestinationInfo.h"
 
 
 //! Project version number for DragDropHandler.
@@ -22,10 +22,20 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 
 @protocol DraggingSourceHandlerProtocol
 
+/*
+ NSView draging handler
+ */
 - (void)handleDragBeginWithSource:(id)source atPoint:(NSPoint)atPoint;
 - (void)handleDragMoveWithSource:(id)source atPoint:(NSPoint)atPoint;
 - (void)handleDragEndWithSource:(id)source atPoint:(NSPoint)atPoint;
 
+/*
+ table view dragging handler
+ */
+- (void)handleDragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes;
+- (void)handleDragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation;
+- (void)handleUpdateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo;
+- (id<NSPasteboardWriting>)handlePasteboardWriterWithSource:(id)source forRow:(NSInteger)row;
 @end
 
 
@@ -33,9 +43,11 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 
 // NSViewDropFunction
 #pragma mark - NSView drop handler action
-- (NSDragOperation)handleDraggingUpdated:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget;
-- (void)handleDraggingExited:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget;
-- (BOOL)handlePerformDraggingOperation:(DragDropHandlerInfo *)draggingInfo onTarget:(id)onTarget;
+- (NSDragOperation)handleDraggingUpdated:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget;
+- (void)handleDraggingExited:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget;
+- (BOOL)handlePerformDraggingOperation:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget;
+
+
 
 
 @end
