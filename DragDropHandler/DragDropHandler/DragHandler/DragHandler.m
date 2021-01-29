@@ -58,6 +58,47 @@
     }
 }
 
+- (void)handleDragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
+    NSLog(@"handleDragBeginTableViewWithSource %@", source);
+    
+    if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(dragBeginTableViewWithSource:willBeginAtPoint:forRowIndexes:)])
+    {
+        [_dragTrackingDelegate dragBeginTableViewWithSource:source willBeginAtPoint:screenPoint forRowIndexes:rowIndexes];
+    }
+}
+
+- (void)handleDragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
+    
+    NSLog(@"handleDragEndTableViewWithSource %@", source);
+    
+    if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(dragEndTableViewWithSource:endedAtPoint:operation:)])
+    {
+        [_dragTrackingDelegate dragEndTableViewWithSource:source endedAtPoint:screenPoint operation:operation];
+    }
+}
+
+- (id<NSPasteboardWriting>)handlePasteboardWriterWithSource:(id)source forRow:(NSInteger)row {
+    
+    NSLog(@"handlePasteboardWriterWithSource %@", source);
+    
+    if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(pasteboardWriterWithSource:forRow:)])
+    {
+        return [_dragTrackingDelegate pasteboardWriterWithSource:source forRow:row];
+    }
+    return nil;
+}
+
+- (void)handleUpdateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
+    
+    NSLog(@"handleUpdateDraggingItemsForDrag %@", draggingInfo);
+    
+    if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(updateDraggingItemsForDrag:)])
+    {
+        return [_dragTrackingDelegate updateDraggingItemsForDrag:draggingInfo];
+    }
+}
+
+
 
 
 @end

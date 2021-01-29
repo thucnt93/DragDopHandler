@@ -132,6 +132,27 @@
     
 }
 
+
+#pragma mark: - TableView drag manager
+- (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
+    NSLog(@"dragBeginTableViewWithSource");
+}
+
+- (void)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
+    NSLog(@"dragEndTableViewWithSource");
+}
+
+- (void)updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
+    NSLog(@"updateDraggingItemsForDrag");
+}
+
+- (id<NSPasteboardWriting>)pasteboardWriterWithSource:(id)source forRow:(NSInteger)row {
+    if (_mockViewModel.models[row] || ![_mockViewModel.models[row] isEqualToString:@""]) {
+        return _mockViewModel.models[row];
+    }
+    return nil;
+}
+
 #pragma mark - DropTrackingDelegate
 
 //- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget

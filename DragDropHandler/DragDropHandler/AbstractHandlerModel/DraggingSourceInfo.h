@@ -31,21 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 // */
 
 //*/
-
-/*
- - the way number 1: using single object to contain all info
- 
- some limitation: when using single object to transfer, it come with couple info, so we will hard to understand couple info if it together in 1 function, hard to manage property, can make mistake data
- some advance: it easy to manage function because just have some function to manage
- 
- - the way number 2: using function with more param, same header
- 
- some limitation: when using this way, it have a lot of function, so somehow it hard to manage code
- 
- some advance: easy to manage property, easy to mantain property, easy to understand, avoid mistake property, not need to create instance, not need to create model or class
-
-
- */
 @interface DraggingSourceInfo : NSObject
 
 @property (strong, nonatomic) NSDraggingSession *sessionInfo;

@@ -514,13 +514,14 @@
 {
     @try
     {
-        if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:draggingSession:willBeginAtPoint:forRowIndexes:items:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(dragBeginTableViewWithSource:willBeginAtPoint:forRowIndexes:)])
         {
-            NSArray<id<ListSupplierProtocol>> *items = [_provider objectsForRowIndexes:rowIndexes];
-            
-//            [self.protocols tableViewManager:self draggingSession:session willBeginAtPoint:screenPoint forRowIndexes:rowIndexes items:items];
+            //NSArray<id<ListSupplierProtocol>> *items = [_provider objectsForRowIndexes:rowIndexes];
+            //[self.protocols tableViewManager:self draggingSession:session willBeginAtPoint:screenPoint forRowIndexes:rowIndexes items:items];
             // TODO: change to 1 function template
-//            [_dragHandler handleDragBeginWithTableViewManager:self draggingSession:session willBeginAtPoint:screenPoint forRowIndexes:rowIndexes items:items];
+            //[_dragHandler handleDragBeginWithTableViewManager:self draggingSession:session willBeginAtPoint:screenPoint forRowIndexes:rowIndexes items:items];
+            
+            [_dragHandler handleDragBeginTableViewWithSource:self willBeginAtPoint:screenPoint forRowIndexes:rowIndexes];
         }
     }
     @catch (NSException *exception)
@@ -534,37 +535,43 @@
  */
 - (void)tableView:(NSTableView *)tableView draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation
 {
-    if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:draggingSession:endedAtPoint:operation:)])
+    if (self.protocols && [self.protocols respondsToSelector:@selector(dragEndTableViewWithSource:endedAtPoint:operation:)])
     {
 //        [self.protocols tableViewManager:self draggingSession:session endedAtPoint:screenPoint operation:operation];
         // TODO: change to 1 function template
 //        [_dragHandler handleDragEndedWithTableViewManager:self draggingSession:session endedAtPoint:screenPoint operation:operation];
+        [_dragHandler handleDragEndTableViewWithSource:self endedAtPoint:screenPoint operation:operation];
+        
     }
 }
 
 /**
  * Dragging Destination Support - Required for multi-image dragging. Implement this method to allow the table to update dragging items as they are dragged over the view. Typically this will involve calling [draggingInfo enumerateDraggingItemsWithOptions:forView:classes:searchOptions:usingBlock:] and setting the draggingItem's imageComponentsProvider to a proper image based on the content. For View Based TableViews, one can use NSTableCellView's -draggingImageComponents. For cell based TableViews, use NSCell's draggingImageComponentsWithFrame:inView:.
  */
+ 
 - (void)tableView:(NSTableView *)tableView updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo
 {
-    if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:updateDraggingItemsForDrag:)])
+    if (self.protocols && [self.protocols respondsToSelector:@selector(updateDraggingItemsForDrag:draggingInfo:)])
     {
 //        [self.protocols tableViewManager:self updateDraggingItemsForDrag:draggingInfo];
         // TODO: change to 1 function template
 //        [_dragHandler handleUpdateDraggingWithTableViewManager:self updateDraggingItemsForDrag:draggingInfo];
+        [_dragHandler handleUpdateDraggingItemsForDrag:draggingInfo];
     }
 }
 
+
 - (id<NSPasteboardWriting>)tableView:(NSTableView *)tableView pasteboardWriterForRow:(NSInteger)row {
     
-    if (self.protocols && [self.protocols respondsToSelector:@selector(pasteboardWriterWithTableViewManager:writeRow:item:)])
+    if (self.protocols && [self.protocols respondsToSelector:@selector(pasteboardWriterWithSource:forRow:)])
     {
-        NSIndexPath *indexPath = [[NSIndexPath alloc] initWithIndex:row];
-        id<ListSupplierProtocol> item = [_provider objectForItemAtIndexPath:indexPath];
+        //NSIndexPath *indexPath = [[NSIndexPath alloc] initWithIndex:row];
+        //id<ListSupplierProtocol> item = [_provider objectForItemAtIndexPath:indexPath];
 
 //            return [self.protocols tableViewManager:self writeRowsWithIndexes:rowIndexes items:items toPasteboard:pboard];
 //         TODO: change to 1 function template
 //        return [_dragHandler handlePasteboardWriterWithTableViewManager:self writeRow:row item:item];
+        return [_dragHandler handlePasteboardWriterWithSource:self forRow:row];
     }
     
     return nil;
