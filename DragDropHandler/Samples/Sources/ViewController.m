@@ -99,8 +99,7 @@
     return CustomDragOperation_MOVE;
 }
 
-- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(DraggingDestinationInfo *)draggingInfo {
-    
+- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"Validate dragging info");
     
     if ([onTarget isKindOfClass: TableViewManager.self]) {
@@ -110,11 +109,10 @@
     return CustomDragOperation_MOVE;
 }
 
-- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(DraggingDestinationInfo *)draggingInfo {
-    
-    if ([onTarget isKindOfClass: TableViewManager.self]) {
-        NSLog(@"TableViewManager drop");
-    }
+
+#pragma mark - NSView drop tracking delegate
+
+- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo {
     
     if ([onTarget isKindOfClass: DraggableNSButton.self]) {
         NSLog(@"DraggableNSButton drop");
@@ -126,6 +124,7 @@
     
     return YES;
 }
+
 - (CustomDragOperation)dragMoveWithSource:(id)source
                                   atPoint:(NSPoint)atPoint {
     return CustomDragOperation_MOVE;
@@ -138,6 +137,7 @@
 
 
 #pragma mark: - TableView drag manager
+
 - (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
     NSLog(@"dragBeginTableViewWithSource");
 }
@@ -157,40 +157,15 @@
     return nil;
 }
 
+#pragma mark - TableView drop manager
 
-
-#pragma mark - DropTrackingDelegate
-
-//- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget
-//                                  withInfo:(id<NSDraggingInfo>)draggingInfo {
-//    return CustomDragOperation_ALLOW;
-//}
-//
-//- (BOOL)performDropOnTarget:(id)onTarget
-//               draggingInfo:(id<NSDraggingInfo>)draggingInfo {
-//    return YES;
-//}
-
-
-
-#pragma mark - TableViewManagerProtocols
-
-- (CustomDragOperation)validateDropWithTableViewManager:(TableViewManager *)manager
-                                           validateDrop:(id<NSDraggingInfo>)draggingInfo
-                                           proposedItem:(id)item
-                                            proposedRow:(NSInteger)row
-                                  proposedDropOperation:(NSTableViewDropOperation)dropOperation {
-    
-    return CustomDragOperation_ALLOW;
+- (NSDragOperation)tableViewValidateDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+    return NSDragOperationMove;
 }
 
-- (BOOL)acceptDropWithTableViewManager:(TableViewManager *)manager
-                            acceptDrop:(id<NSDraggingInfo>)draggingInfo
-                                  item:(id)item
-                                   row:(NSInteger)row
-                         dropOperation:(NSTableViewDropOperation)dropOperation{
-    
+- (BOOL)tableViewAcceptDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
     return YES;
 }
+
 
 @end

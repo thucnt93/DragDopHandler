@@ -26,12 +26,12 @@
     return self;
 }
 
-- (void)handleDraggingExited:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget {
+- (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget {
     NSLog(@"handleDraggingExited on target %@", onTarget);
-    [DragOperation handleCustomDragOperation:CustomDragOperation_NONE draggingSource:draggingInfo.info.draggingSource]; //enable disableDragTracking on DraggableNSView
+    [DragOperation handleCustomDragOperation:CustomDragOperation_NONE draggingSource:draggingInfo.draggingSource]; //enable disableDragTracking on DraggableNSView
 }
 
-- (NSDragOperation)handleDraggingUpdated:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget {
+- (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget {
     NSLog(@"handleDraggingUpdated on target %@", onTarget);
     
     _dragOperation = CustomDragOperation_NONE;
@@ -40,10 +40,10 @@
     {
         _dragOperation = [_trackingDelegate dragUpdatedOnTarget:onTarget withInfo:draggingInfo];
     }
-    return [DragOperation handleCustomDragOperation:_dragOperation draggingSource:draggingInfo.info.draggingSource];
+    return [DragOperation handleCustomDragOperation:_dragOperation draggingSource:draggingInfo.draggingSource];
 }
 
-- (BOOL)handlePerformDraggingOperation:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget
+- (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget
 {
     NSLog(@"handlePerformDraggingOperation on target %@", onTarget);
     
@@ -53,6 +53,30 @@
         return result;
     }
     return YES;
+}
+
+- (NSDragOperation)handleTableViewValidateDrop:(id<NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation onTarget:(id)onTarget {
+    
+    NSLog(@"handleTableViewValidateDrop on target %@", onTarget);
+    
+    if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(tableViewValidateDropOnTarget:draggingInfo:proposedRow:proposedDropOperation:)])
+    {
+        NSDragOperation tableOp = [_trackingDelegate tableViewValidateDropOnTarget:onTarget draggingInfo:info proposedRow:row proposedDropOperation:dropOperation];
+        return tableOp;
+    }
+    return NSDragOperationNone;
+}
+
+- (BOOL)handleTableViewAcceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation onTarget:(id)onTarget {
+    
+    NSLog(@"handleTableViewAcceptDrop on target %@", onTarget);
+    
+    if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(tableViewValidateDropOnTarget:draggingInfo:proposedRow:proposedDropOperation:)])
+    {
+        BOOL shouldAccept = [_trackingDelegate tableViewAcceptDropOnTarget:onTarget draggingInfo:info row:row dropOperation:dropOperation];
+        return shouldAccept;
+    }
+    return NO;
 }
 
 @end

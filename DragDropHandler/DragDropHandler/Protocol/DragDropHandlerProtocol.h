@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import <AppKit/AppKit.h>
 #import "CustomDragOperation.h"
-#import "DraggingDestinationInfo.h"
 
 
 //! Project version number for DragDropHandler.
@@ -22,16 +21,13 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 
 @protocol DraggingSourceHandlerProtocol
 
-/*
- NSView draging handler
- */
+#pragma mark - NSView draging handler
 - (void)handleDragBeginWithSource:(id)source atPoint:(NSPoint)atPoint;
 - (void)handleDragMoveWithSource:(id)source atPoint:(NSPoint)atPoint;
 - (void)handleDragEndWithSource:(id)source atPoint:(NSPoint)atPoint;
 
-/*
- table view dragging handler
- */
+
+#pragma mark - Table view dragging handler
 - (void)handleDragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes;
 - (void)handleDragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation;
 - (void)handleUpdateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo;
@@ -43,9 +39,14 @@ FOUNDATION_EXPORT const unsigned char DragDropHandlerVersionString[];
 
 // NSViewDropFunction
 #pragma mark - NSView drop handler action
-- (NSDragOperation)handleDraggingUpdated:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget;
-- (void)handleDraggingExited:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget;
-- (BOOL)handlePerformDraggingOperation:(DraggingDestinationInfo *)draggingInfo onTarget:(id)onTarget;
+- (NSDragOperation)handleDraggingUpdated:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
+- (void)handleDraggingExited:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
+- (BOOL)handlePerformDraggingOperation:(id<NSDraggingInfo>)draggingInfo onTarget:(id)onTarget;
+
+
+#pragma mark - Table view drop handler action
+- (NSDragOperation)handleTableViewValidateDrop:(id<NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation onTarget:(id)onTarget;
+- (BOOL)handleTableViewAcceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation onTarget:(id)onTarget;
 
 @end
 

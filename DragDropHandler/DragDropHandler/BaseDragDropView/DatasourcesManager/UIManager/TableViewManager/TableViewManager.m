@@ -580,9 +580,6 @@
 //         TODO: change to 1 function template
 //        return [_dragHandler handlePasteboardWriterWithTableViewManager:self writeRow:row item:item];
         return [_dragHandler handlePasteboardWriterWithSource:self forRow:row];
-        
-        
-        
     }
     
     return nil;
@@ -595,12 +592,9 @@
 {
     @try
     {
-        if (self.protocols && [self.protocols respondsToSelector:@selector(dragUpdatedOnTarget:withInfo:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewValidateDropOnTarget:draggingInfo:proposedRow:proposedDropOperation:)])
         {
-            DraggingDestinationInfo *newInfo = [[DraggingDestinationInfo alloc] initWithInfo:info];
-            newInfo.dropOperation = dropOperation;
-            newInfo.proposedRow = row;
-            NSDragOperation op = [_dropHandler handleDraggingUpdated:newInfo onTarget:self];
+            NSDragOperation op = [_dropHandler handleTableViewValidateDrop:info proposedRow:row proposedDropOperation:dropOperation onTarget:self];
             return op;
         }
     }
@@ -620,12 +614,10 @@
     @try
     {
         NSLog(@"Did accept drop");
-        if (self.protocols && [self.protocols respondsToSelector:@selector(performDropOnTarget:draggingInfo:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewAcceptDropOnTarget:draggingInfo:row:dropOperation:)])
         {
-            DraggingDestinationInfo *newInfo = [[DraggingDestinationInfo alloc] initWithInfo:info];
-            newInfo.dropOperation = dropOperation;
-            newInfo.proposedRow = row;
-            return [_dropHandler handlePerformDraggingOperation:newInfo onTarget:self];
+            BOOL shouldAcceptDrop = [_dropHandler handleTableViewAcceptDrop:info row:row dropOperation:dropOperation onTarget:self];
+            return shouldAcceptDrop;
         }
     }
     @catch (NSException *exception)
