@@ -52,36 +52,38 @@
 }
 
 - (void)setupDragDropTracking {
-//    self.fileDragButton.dragTrackingDelegate = self;
-//    self.dropView.dropTrackingDelegate = self;
     self.filesButton.dragTrackingDelegate = self;
     self.theCustomView.dropTrackingDelegate = self;
-    //    tableViewManager = [[TableViewManager alloc] initWithTableView:self.theTableView
-    //                                                            source:self
-    //                                                          provider:[[DataProvider alloc] initProviderForOwner:self]];
-//    [tableViewManager setDropTrackingDelegate:self];
 }
 
 - (void)setupTableViewManagerTracking {
     NSArray *initArray = @[@"Test 0", @"Test 1", @"Test 2"];
     NSArray *models = [[NSMutableArray alloc] initWithArray:initArray];
+    
     _mockViewModel = [[MockViewModel alloc] initWithModel:models];
     [_mockViewModel setupProvider];
     [_mockViewModel buildDataSource];
+    
     _tableViewManager = [[TableViewManager alloc] initWithTableView:self.theTableView source:self provider: _mockViewModel.provider];
+    
     [_tableViewManager setDropTrackingDelegate:self];
+    [_tableViewManager setDragTrackingDelegate:self];
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
-    return 40;
+    return 60;
 }
 
 - (NSTableRowView *)tableViewManager:(TableViewManager *)manager rowViewForRow:(NSInteger)row byItem:(id)item {
-    NSTextField *label = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, self.view.frame.size.width, 40)];
+    NSTextField *label = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 100, 40)];
     label.stringValue = _mockViewModel.models[row];
-    NSTableRowView *rowView = [[NSTableRowView alloc] initWithFrame:NSMakeRect(0, 0, self.view.frame.size.width, 40)];
+    NSTableRowView *rowView = [[NSTableRowView alloc] initWithFrame:NSMakeRect(0, 0, 100, 40)];
     [rowView addSubview:label];
     return rowView;
+}
+
+- (NSUserInterfaceItemIdentifier)tableViewManager:(TableViewManager *)manager makeViewWithIdentifierForRow:(NSInteger)row byItem:(id)item {
+    return @"CustomView";
 }
 
 - (void) awakeFromNib {

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="CustomView" id="c22-O7-iKe" customClass="CustomView">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="tli-Uq-3XE">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <view key="contentView" id="hru-b1-kGH">
+                        <rect key="frame" x="1" y="1" width="478" height="270"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="fillColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="tli-Uq-3XE" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="I01-V6-kRe"/>
+                <constraint firstAttribute="trailing" secondItem="tli-Uq-3XE" secondAttribute="trailing" id="JcU-Sa-ZDl"/>
+                <constraint firstAttribute="bottom" secondItem="tli-Uq-3XE" secondAttribute="bottom" id="YAz-6S-tcK"/>
+                <constraint firstItem="tli-Uq-3XE" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="cYM-68-Dff"/>
+            </constraints>
+            <point key="canvasLocation" x="-144" y="92"/>
+        </customView>
+    </objects>
+</document>

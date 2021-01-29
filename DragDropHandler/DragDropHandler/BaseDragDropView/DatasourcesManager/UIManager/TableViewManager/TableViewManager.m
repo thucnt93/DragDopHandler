@@ -572,6 +572,9 @@
 //         TODO: change to 1 function template
 //        return [_dragHandler handlePasteboardWriterWithTableViewManager:self writeRow:row item:item];
         return [_dragHandler handlePasteboardWriterWithSource:self forRow:row];
+        
+        
+        
     }
     
     return nil;
