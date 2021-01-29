@@ -9,7 +9,20 @@
 #import "DraggableNSView.h"
 #import "DraggableNSButton.h"
 
+@interface DragOperation()
+
+
+
+@end
+
 @implementation DragOperation
+
+NSString * const STOP_CURSOR = @"cursor-stop";
+NSString * const LINK_CUSOR = @"cursor-linking";
+NSString * const MOVE_CURSOR = @"cursor-move";
+NSString * const ALLOW_CURSOR = @"cursor-green";
+NSString * const RIGHT_CURSOR = @"cursor-right";
+
 
 + (void)changeCursorByOperation:(CustomDragOperation)operation
 {
@@ -25,24 +38,24 @@
     if (operation == CustomDragOperation_STOP)
     {
         NSLog(@"====THUC====Stop cursor");
-        cursorIcon = [NSImage imageNamed:@"cursor-stop"];
+        cursorIcon = [NSImage imageNamed:STOP_CURSOR];
     }
     else if (operation == CustomDragOperation_LINK)
     {
-        cursorIcon = [NSImage imageNamed:@"cursor-linking"];
+        cursorIcon = [NSImage imageNamed:LINK_CUSOR];
     }
     else if (operation == CustomDragOperation_MOVE)
     {
         NSLog(@"====THUC====MOVE cursor");
-        cursorIcon = [NSImage imageNamed:@"cursor-move"];
+        cursorIcon = [NSImage imageNamed:MOVE_CURSOR];
     }
     else if (operation == CustomDragOperation_ALLOW)
     {
-        cursorIcon = [NSImage imageNamed:@"cursor-green"];
+        cursorIcon = [NSImage imageNamed:ALLOW_CURSOR];
     }
     else if (operation == CustomDragOperation_RIGHT)
     {
-        cursorIcon = [NSImage imageNamed:@"cursor-right"];
+        cursorIcon = [NSImage imageNamed:RIGHT_CURSOR];
     }
 
     if (cursorIcon != nil)

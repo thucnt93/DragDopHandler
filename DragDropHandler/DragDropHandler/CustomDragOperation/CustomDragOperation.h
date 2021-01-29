@@ -22,6 +22,8 @@ typedef NS_ENUM(NSUInteger, CustomDragOperation)
     CustomDragOperation_NONE        = 128 << 10,
 };
 
+
+
 @interface DragOperation : NSObject
 
 + (void)changeCursorByOperation:(CustomDragOperation)operation;
