@@ -711,36 +711,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP" customClass="DragableButton">
-                                <rect key="frame" x="30" y="552" width="40" height="41.5"/>
+                                <rect key="frame" x="30" y="552" width="27" height="41.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FNO-bS-l03"/>
-                                    <constraint firstAttribute="width" constant="40" id="JWT-uP-WdI"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="Files" bezelStyle="shadowlessSquare" image="NSTouchBarFolderTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="qd4-AP-ZQ5">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="10"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ" customClass="DragableButton">
-                                <rect key="frame" x="78" y="544" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="Emails" bezelStyle="shadowlessSquare" image="NSTouchBarMailTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="RFt-PX-yV7">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="10"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
-                                <rect key="frame" x="136" y="544" width="48" height="48.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="Notes" bezelStyle="shadowlessSquare" image="NSTouchBarComposeTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="DQ9-iw-7RN">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="10"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI" customClass="DragableButton">
-                                <rect key="frame" x="194" y="544" width="48" height="48.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" title="Contacts" bezelStyle="shadowlessSquare" image="NSTouchBarUserGroupTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="Xh2-W7-qvz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
@@ -817,7 +792,7 @@
                                     <constraint firstAttribute="width" constant="300" id="KJ0-9v-VHN"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="s4v-Si-sXJ">
-                                    <rect key="frame" x="1" y="476" width="298" height="15"/>
+                                    <rect key="frame" x="1" y="476" width="198" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="blN-Yg-cPR">
@@ -825,6 +800,30 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ" customClass="DragableButton">
+                                <rect key="frame" x="78" y="548" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" title="Emails" bezelStyle="shadowlessSquare" image="NSTouchBarMailTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="RFt-PX-yV7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                </buttonCell>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
+                                <rect key="frame" x="136" y="548" width="48" height="48.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" title="Notes" bezelStyle="shadowlessSquare" image="NSTouchBarComposeTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="DQ9-iw-7RN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                </buttonCell>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI" customClass="DragableButton">
+                                <rect key="frame" x="194" y="548" width="48" height="48.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" title="Contacts" bezelStyle="shadowlessSquare" image="NSTouchBarUserGroupTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="Xh2-W7-qvz">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="10"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="JkD-ZU-mAM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="58g-Ph-Qi2"/>
