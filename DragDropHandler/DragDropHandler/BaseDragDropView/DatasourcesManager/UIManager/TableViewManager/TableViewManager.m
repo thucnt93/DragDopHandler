@@ -154,8 +154,13 @@
         id<ListSupplierProtocol> object = [_provider objectForRow:row];
         
         NSUserInterfaceItemIdentifier identifier;
+        NSView *cell = nil;
         
-        if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:makeViewWithIdentifierForRow:byItem:)])
+        if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:makeViewForRow:byItem:)])
+        {
+            cell = [self.protocols tableViewManager:self makeViewForRow:row byItem:object];
+        }
+        else if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:makeViewWithIdentifierForRow:byItem:)])
         {
             identifier = [self.protocols tableViewManager:self makeViewWithIdentifierForRow:row byItem:object];
         }
@@ -166,9 +171,12 @@
             NSAssert(false, @"%s-[%d] failed", __PRETTY_FUNCTION__, __LINE__);
         }
         
-        [self registerForRowItemWithIdentifier:identifier];
-        
-        NSTableCellView *cell = [tableView makeViewWithIdentifier:identifier owner:self];
+        if (![cell isKindOfClass:[NSView class]] && (identifier != nil))
+        {
+            [self registerForRowItemWithIdentifier:identifier];
+            
+            cell = [tableView makeViewWithIdentifier:identifier owner:self];
+        }
         
         if (self.protocols && [self.protocols respondsToSelector:@selector(tableViewManager:itemView:willLoadData:forRow:)])
         {

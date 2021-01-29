@@ -34,6 +34,11 @@
 #pragma mark - UI
 
 /**
+ * Asks the delegate for the item view cell of the specified row.
+ */
+- (NSView *_Nullable)tableViewManager:(TableViewManager *_Nonnull)manager makeViewForRow:(NSInteger)row byItem:(id _Nullable)item;
+
+/**
  * Asks the delegate for the item identifier of the specified row.
  */
 - (NSUserInterfaceItemIdentifier _Nullable )tableViewManager:(TableViewManager *_Nullable)manager makeViewWithIdentifierForRow:(NSInteger)row byItem:(id _Nullable )item;
