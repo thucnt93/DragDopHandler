@@ -136,7 +136,7 @@
 }
 
 
-#pragma mark: - TableView drag manager
+#pragma mark - TableView drag manager
 
 - (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
     NSLog(@"dragBeginTableViewWithSource");
