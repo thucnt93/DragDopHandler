@@ -28,7 +28,6 @@
     TabMenuButtonModel* _tabMenuModel;
     SystemMenuButtonModel* _systemMenuModel;
     NSUInteger indexTableViewSource;
-    
 }
 
 
@@ -54,7 +53,6 @@
     
     // Do any additional setup after loading the view.
     [self setupView];
-    [self setupDragDropTracking];
     [self setupTableViewManagerTracking];
     indexTableViewSource = -1;
 }
@@ -74,22 +72,12 @@
 - (void)setupView {
     NSNib *nib = [[NSNib alloc] initWithNibNamed:@"CellView" bundle:nil];
     [_theTableView registerNib:nib forIdentifier:@"CellView"];
-    // self.theCustomView.wantsLayer = YES;
-    // self.theCustomView.layer.backgroundColor = [[NSColor systemGrayColor] CGColor];
-    
     _tabMenuModel = [[TabMenuButtonModel alloc] init];
     _systemMenuModel = [[SystemMenuButtonModel alloc] init];
     self.filesButton.model = _systemMenuModel;
     self.emailsButton.model = _tabMenuModel;
     self.notesButton.model = _tabMenuModel;
     self.contactsButton.model = _systemMenuModel;
-    self.theDropableCustomView.wantsLayer = YES;
-    self.theDropableCustomView.layer.backgroundColor = [[NSColor systemGreenColor] CGColor];
-}
-
-- (void)setupDragDropTracking {
-    self.filesButton.dragTrackingDelegate = self;
-//    self.theDropableCustomView.dropTrackingDelegate = self;
 }
 
 - (void)setupTableViewManagerTracking {
@@ -101,7 +89,6 @@
     [_mockViewModel buildDataSource];
     
     _tableViewManager = [[TableViewManager alloc] initWithTableView:self.theTableView source:self provider: _mockViewModel.provider];
-    
     [_tableViewManager setDropTrackingDelegate:self];
     [_tableViewManager setDragTrackingDelegate:self];
     
@@ -124,54 +111,6 @@
     [self.theDropableCustomView registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil]];
 }
 
-#pragma mark - NSView view drag delegate
-
-- (CustomDragOperation)dragBeginWithSource:(id)source
-                                   atPoint:(NSPoint)atPoint {
-    return CustomDragOperation_MOVE;
-}
-
-- (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
-    NSLog(@"Validate dragging info");
-    
-    if ([onTarget isKindOfClass: TableViewManager.self]) {
-        NSLog(@"TableViewManager validate drop");
-    }
-    
-    return CustomDragOperation_MOVE;
-}
-
-- (CustomDragOperation)dragMoveWithSource:(id)source
-                                  atPoint:(NSPoint)atPoint {
-    return CustomDragOperation_MOVE;
-}
-
-- (void)dragEndWithSource:(id)source
-                  atPoint:(NSPoint)atPoint {
-    
-}
-
-
-#pragma mark - NSView drop tracking delegate
-
-- (BOOL)performDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)draggingInfo {
-    
-    if ([onTarget isKindOfClass: DraggableNSButton.self]) {
-        NSLog(@"DraggableNSButton drop");
-    }
-    
-    if ([onTarget isKindOfClass: DroppableNSView.self]) {
-        NSLog(@"DroppableNSView drop");
-        NSString *stringFromPasteboard = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
-        NSInteger index = [self.mockViewModel.models indexOfObject:stringFromPasteboard];
-        if (index != NSNotFound) {
-//            deleteRowCallBack(index);
-        }
-    }
-    
-    return YES;
-}
-
 #pragma mark - Table view drag delegate
 
 - (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
@@ -180,8 +119,6 @@
 
 - (void)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
     NSLog(@"dragEndTableViewWithSource");
-    
-    
 }
 
 - (void)updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
@@ -196,7 +133,6 @@
 }
 
 #pragma mark - TableView drop manager
-
 - (CustomDragOperation)tableViewValidateDropOnTarget:(id)onTarget
                                         draggingInfo:(id<NSDraggingInfo>)info
                                          proposedRow:(NSInteger)row
