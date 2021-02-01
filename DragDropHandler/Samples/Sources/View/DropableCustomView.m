@@ -66,7 +66,7 @@
         NSLog(@"DroppableNSView drop");
         NSString *stringFromPasteboard = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
         self.dropDataNotify.stringValue = stringFromPasteboard;
-        if (![stringFromPasteboard  isEqual: @""]) {
+        if (![stringFromPasteboard  isEqual: @""] && ![draggingInfo.draggingSource isKindOfClass:DragableButton.self]) {
             self.deleteRowCallBack(stringFromPasteboard);
         }
     }
