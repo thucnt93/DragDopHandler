@@ -88,7 +88,7 @@
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
-    return 50;
+    return 70;
 }
 
 - (NSView *)tableViewManager:(TableViewManager *)manager makeViewForRow:(NSInteger)row byItem:(id)item {
@@ -184,7 +184,7 @@
 - (BOOL)tableViewAcceptDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
     
     if (dropOperation == NSTableViewDropOn) {
-        _mockViewModel.models[row] = [info.draggingPasteboard stringForType:NSPasteboardTypeString];
+        NSLog(@"Drop %lu",(unsigned long)dropOperation);
     }
     
     if (dropOperation == NSTableViewDropAbove) {

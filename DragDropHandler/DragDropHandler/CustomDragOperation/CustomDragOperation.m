@@ -94,7 +94,7 @@ NSString * const RIGHT_CURSOR = @"cursor-right";
         
     [DragOperation changeCursorByOperation:operation];
     
-    return (operation == CustomDragOperation_NONE || operation == CustomDragOperation_STOP)?NSDragOperationNone:NSDragOperationGeneric;
+    return (operation == CustomDragOperation_NONE)?NSDragOperationNone:NSDragOperationGeneric;
 }
 
 @end

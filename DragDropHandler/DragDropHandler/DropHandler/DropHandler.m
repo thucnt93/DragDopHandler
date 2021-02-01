@@ -73,7 +73,7 @@
     
     NSLog(@"handleTableViewAcceptDrop on target %@", onTarget);
     
-    if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(tableViewValidateDropOnTarget:draggingInfo:proposedRow:proposedDropOperation:)])
+    if (_trackingDelegateFiles != nil && [_trackingDelegate respondsToSelector:@selector(tableViewValidateDropOnTarget:draggingInfo:proposedRow:proposedDropOperation:)])
     {
         BOOL shouldAccept = [_trackingDelegate tableViewAcceptDropOnTarget:onTarget draggingInfo:info row:row dropOperation:dropOperation];
         return shouldAccept;
