@@ -6,6 +6,7 @@
 //
 
 #import "DropHandler.h"
+#import "CustomDragOperation.h"
 
 @interface DropHandler() {
     CustomDragOperation _dragOperation;
@@ -61,8 +62,9 @@
     
     if (_trackingDelegate != nil && [_trackingDelegate respondsToSelector:@selector(tableViewValidateDropOnTarget:draggingInfo:proposedRow:proposedDropOperation:)])
     {
-        NSDragOperation tableOp = [_trackingDelegate tableViewValidateDropOnTarget:onTarget draggingInfo:info proposedRow:row proposedDropOperation:dropOperation];
-        return tableOp;
+        CustomDragOperation tableOp = [_trackingDelegate tableViewValidateDropOnTarget:onTarget draggingInfo:info proposedRow:row proposedDropOperation:dropOperation];
+        NSDragOperation operation = [DragOperation handleCustomDragOperation:tableOp draggingSource:info.draggingSource];
+        return operation;
     }
     return NSDragOperationNone;
 }

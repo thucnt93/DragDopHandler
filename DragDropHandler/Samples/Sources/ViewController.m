@@ -171,18 +171,14 @@
 
 #pragma mark - TableView drop manager
 
-- (NSDragOperation)tableViewValidateDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)inFilesfo proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+- (CustomDragOperation)tableViewValidateDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)inFilesfo proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     
-    if (dropOperation == NSTableViewDropAbove) {
+    if (dropOperation == NSTableViewDropOn) {
         
-        
+        return CustomDragOperation_STOP;
     } else {
-        
+        return CustomDragOperation_ALLOW;
     }
-    
-    return NSDragOperationMove;
-    
-    
 }
 
 - (BOOL)tableViewAcceptDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
