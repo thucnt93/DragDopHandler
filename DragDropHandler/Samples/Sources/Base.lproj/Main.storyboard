@@ -721,9 +721,8 @@
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="JkD-ZU-mAM">
-                                <rect key="frame" x="650" y="552" width="40" height="41.5"/>
+                                <rect key="frame" x="658" y="552" width="32" height="41.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="cmK-9b-1io"/>
                                     <constraint firstAttribute="height" constant="40" id="tpG-2v-wwp"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="You" bezelStyle="shadowlessSquare" image="NSTouchBarUserTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="gwo-jl-zuK">
@@ -733,9 +732,23 @@
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-pV-lUx" customClass="CustomView">
                                 <rect key="frame" x="338" y="30" width="352" height="492"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-IM-Hxc">
+                                        <rect key="frame" x="130" y="238" width="92" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Data Received" id="6O1-pB-7gR">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JoK-IM-Hxc" firstAttribute="centerY" secondItem="TIZ-pV-lUx" secondAttribute="centerY" id="Hu4-z6-dCh"/>
+                                    <constraint firstItem="JoK-IM-Hxc" firstAttribute="centerX" secondItem="TIZ-pV-lUx" secondAttribute="centerX" id="KI9-BS-Tee"/>
+                                </constraints>
                             </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-UL-Phn">
-                                <rect key="frame" x="594" y="552" width="48" height="42.5"/>
+                                <rect key="frame" x="612" y="552" width="38" height="42.5"/>
                                 <buttonCell key="cell" type="square" title="Search" bezelStyle="shadowlessSquare" image="NSTouchBarSearchTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="8bw-bU-KUY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="10"/>
@@ -768,9 +781,11 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="298" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sxo-MF-zZv">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Sxo-MF-zZv">
                                                                     <rect key="frame" x="0.0" y="0.0" width="298" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="17" id="yBY-Qd-I4u"/>
+                                                                    </constraints>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="txg-qX-vV2">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -778,6 +793,11 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="Sxo-MF-zZv" firstAttribute="centerY" secondItem="q34-Rx-3He" secondAttribute="centerY" id="BCJ-sK-lue"/>
+                                                                <constraint firstItem="Sxo-MF-zZv" firstAttribute="leading" secondItem="q34-Rx-3He" secondAttribute="leading" constant="2" id="Jc6-0a-K35"/>
+                                                                <constraint firstItem="Sxo-MF-zZv" firstAttribute="centerX" secondItem="q34-Rx-3He" secondAttribute="centerX" id="ZOI-GV-EBo"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="Sxo-MF-zZv" id="IzO-ZY-Ymy"/>
                                                             </connections>
@@ -792,7 +812,7 @@
                                     <constraint firstAttribute="width" constant="300" id="KJ0-9v-VHN"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="s4v-Si-sXJ">
-                                    <rect key="frame" x="1" y="476" width="198" height="15"/>
+                                    <rect key="frame" x="1" y="476" width="298" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="blN-Yg-cPR">
@@ -800,25 +820,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ" customClass="DragableButton">
-                                <rect key="frame" x="78" y="548" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ" customClass="DragableButton">
+                                <rect key="frame" x="67" y="552" width="36" height="42"/>
                                 <buttonCell key="cell" type="square" title="Emails" bezelStyle="shadowlessSquare" image="NSTouchBarMailTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="RFt-PX-yV7">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
-                                <rect key="frame" x="136" y="548" width="48" height="48.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
+                                <rect key="frame" x="113" y="552" width="48" height="42.5"/>
                                 <buttonCell key="cell" type="square" title="Notes" bezelStyle="shadowlessSquare" image="NSTouchBarComposeTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="DQ9-iw-7RN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI" customClass="DragableButton">
-                                <rect key="frame" x="194" y="548" width="48" height="48.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI" customClass="DragableButton">
+                                <rect key="frame" x="171" y="552" width="48" height="41.5"/>
                                 <buttonCell key="cell" type="square" title="Contacts" bezelStyle="shadowlessSquare" image="NSTouchBarUserGroupTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="Xh2-W7-qvz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="10"/>
@@ -826,27 +843,39 @@
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="z2S-Td-SxI" firstAttribute="leading" secondItem="xKz-Pr-ZtB" secondAttribute="trailing" constant="10" symbolic="YES" id="0ie-Qm-EPf"/>
                             <constraint firstItem="JkD-ZU-mAM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="58g-Ph-Qi2"/>
                             <constraint firstAttribute="trailing" secondItem="TIZ-pV-lUx" secondAttribute="trailing" constant="30" id="9Qd-8a-Zc1"/>
                             <constraint firstItem="TIZ-pV-lUx" firstAttribute="top" secondItem="JkD-ZU-mAM" secondAttribute="bottom" constant="30" id="Gzx-F0-bHy"/>
                             <constraint firstItem="z0K-E7-FkJ" firstAttribute="top" secondItem="Ol0-q3-oeP" secondAttribute="bottom" constant="30" id="KNB-Jh-oiA"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="width" secondItem="JkD-ZU-mAM" secondAttribute="width" multiplier="1.2" id="Ptg-DY-52C"/>
                             <constraint firstItem="TIZ-pV-lUx" firstAttribute="leading" secondItem="f0s-vm-dJ5" secondAttribute="trailing" constant="9" id="VCO-Fn-UbF"/>
+                            <constraint firstItem="FJ9-UL-Phn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z2S-Td-SxI" secondAttribute="trailing" constant="10" symbolic="YES" id="Vzj-TD-xdj"/>
+                            <constraint firstItem="zz6-i3-UUZ" firstAttribute="top" secondItem="Ol0-q3-oeP" secondAttribute="top" id="Xqr-nk-jr8"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="bottom" secondItem="JkD-ZU-mAM" secondAttribute="bottom" id="auu-qS-6eF"/>
                             <constraint firstItem="Ol0-q3-oeP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="dG8-Ro-0wp"/>
                             <constraint firstAttribute="trailing" secondItem="JkD-ZU-mAM" secondAttribute="trailing" constant="30" id="dmV-WD-S0L"/>
+                            <constraint firstItem="xKz-Pr-ZtB" firstAttribute="bottom" secondItem="zz6-i3-UUZ" secondAttribute="bottom" id="gvr-zp-Coh"/>
                             <constraint firstItem="Ol0-q3-oeP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="iRZ-Ec-1pD"/>
+                            <constraint firstItem="z2S-Td-SxI" firstAttribute="bottom" secondItem="xKz-Pr-ZtB" secondAttribute="bottom" id="lhI-x9-LXH"/>
+                            <constraint firstItem="z2S-Td-SxI" firstAttribute="top" secondItem="xKz-Pr-ZtB" secondAttribute="top" id="nFe-oo-2ZW"/>
                             <constraint firstItem="z0K-E7-FkJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="p5k-j9-zhr"/>
+                            <constraint firstItem="xKz-Pr-ZtB" firstAttribute="width" secondItem="zz6-i3-UUZ" secondAttribute="width" multiplier="1.33333" id="p8N-Yf-liV"/>
+                            <constraint firstItem="zz6-i3-UUZ" firstAttribute="leading" secondItem="Ol0-q3-oeP" secondAttribute="trailing" constant="10" id="pAW-hE-PRV"/>
+                            <constraint firstItem="xKz-Pr-ZtB" firstAttribute="leading" secondItem="zz6-i3-UUZ" secondAttribute="trailing" constant="10" id="pYk-PE-Nkd"/>
+                            <constraint firstItem="xKz-Pr-ZtB" firstAttribute="top" secondItem="zz6-i3-UUZ" secondAttribute="top" id="pZW-d1-nbz"/>
                             <constraint firstItem="JkD-ZU-mAM" firstAttribute="leading" secondItem="FJ9-UL-Phn" secondAttribute="trailing" constant="8" id="r1n-6n-8gl"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="top" secondItem="JkD-ZU-mAM" secondAttribute="top" id="tk3-sK-lZm"/>
                             <constraint firstAttribute="bottom" secondItem="z0K-E7-FkJ" secondAttribute="bottom" constant="30" id="u0t-1f-Lif"/>
                             <constraint firstAttribute="bottom" secondItem="TIZ-pV-lUx" secondAttribute="bottom" constant="30" id="vpk-i1-9Pe"/>
+                            <constraint firstItem="zz6-i3-UUZ" firstAttribute="bottom" secondItem="Ol0-q3-oeP" secondAttribute="bottom" id="xQR-dx-7F2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="contactsButton" destination="z2S-Td-SxI" id="CE3-Pc-yDx"/>
                         <outlet property="emailsButton" destination="zz6-i3-UUZ" id="m8f-si-Bda"/>
                         <outlet property="filesButton" destination="Ol0-q3-oeP" id="nQT-Y7-4oj"/>
+                        <outlet property="lableDropNotify" destination="JoK-IM-Hxc" id="HY1-29-kvI"/>
                         <outlet property="notesButton" destination="xKz-Pr-ZtB" id="UMs-od-fYT"/>
                         <outlet property="searchButton" destination="FJ9-UL-Phn" id="6ti-9i-fNQ"/>
                         <outlet property="theCustomView" destination="TIZ-pV-lUx" id="HUn-3R-TqS"/>

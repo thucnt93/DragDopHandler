@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE32685DABC1DB8277A5C7CC /* Assets.xcassets */; };
+		1E5BAEC025C6981C00452C2D /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5BAEBF25C6981C00452C2D /* Test.xib */; };
 		1E71A62925C14093001C01AC /* MockViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E71A62725C14093001C01AC /* MockViewModel.h */; };
 		1E71A62A25C14093001C01AC /* MockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A62825C14093001C01AC /* MockViewModel.m */; };
 		1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E75A95925BECA5300F10EED /* CustomDragOperation.h */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		14A3D1BEA3B90F43C5A47887 /* Samples-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Samples-Debug.xcconfig"; sourceTree = "<group>"; };
+		1E5BAEBF25C6981C00452C2D /* Test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
 		1E71A62725C14093001C01AC /* MockViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockViewModel.h; sourceTree = "<group>"; };
 		1E71A62825C14093001C01AC /* MockViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockViewModel.m; sourceTree = "<group>"; };
 		1E75A95925BECA5300F10EED /* CustomDragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomDragOperation.h; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				1EBF22FF25C3CCF700DBCE7F /* NSView+init.m */,
 				1EBF230325C3EBEA00DBCE7F /* CellView.h */,
 				1EBF230425C3EBEA00DBCE7F /* CellView.m */,
+				1E5BAEBF25C6981C00452C2D /* Test.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */,
+				1E5BAEC025C6981C00452C2D /* Test.xib in Resources */,
 				1EBF22F925C3B63D00DBCE7F /* CellView.xib in Resources */,
 				98E31475C3B145675C0D75CA /* Main.storyboard in Resources */,
 			);

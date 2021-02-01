@@ -21,6 +21,7 @@
 @interface ViewController()<DragTrackingDelegate, DropTrackingDelegate, TableViewManagerProtocols> {
     TableViewManager *_tableViewManager;
     MockViewModel *_mockViewModel;
+    NSUInteger indexTableViewSource;
 }
 
 @property (weak) IBOutlet DragableButton* filesButton;
@@ -33,6 +34,9 @@
 
 @property (weak) IBOutlet NSTableView* theTableView;
 @property (weak) IBOutlet CustomView* theCustomView;
+@property (weak) IBOutlet NSTextField *lableDropNotify;
+
+
 
 @end
 
@@ -45,14 +49,11 @@
     [self setupView];
     [self setupDragDropTracking];
     [self setupTableViewManagerTracking];
+    indexTableViewSource = -1;
 }
 
 - (void)setupView {
-    if (@available(macOS 11.0, *)) {
-        [self.theTableView setStyle:NSTableViewStyleFullWidth];
-    } else {
-        // Fallback on earlier versions
-    }
+    
     NSNib *nib = [[NSNib alloc] initWithNibNamed:@"CellView" bundle:nil];
     [_theTableView registerNib:nib forIdentifier:@"CellView"];
     self.theCustomView.wantsLayer = YES;
@@ -76,6 +77,14 @@
     
     [_tableViewManager setDropTrackingDelegate:self];
     [_tableViewManager setDragTrackingDelegate:self];
+    
+    _theTableView.wantsLayer = YES;
+    _theTableView.layer.backgroundColor = [[NSColor brownColor] CGColor];
+    self.theTableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
+    
+    
+    
+    
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
@@ -120,6 +129,10 @@
     
     if ([onTarget isKindOfClass: DroppableNSView.self]) {
         NSLog(@"DroppableNSView drop");
+        self.lableDropNotify.stringValue = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
+        
+        
+//        if ()
     }
     
     return YES;
@@ -136,10 +149,16 @@
 }
 
 
+#pragma mark: CALL BACK for DELETE ROW
+
 #pragma mark - TableView drag manager
 
 - (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
-    NSLog(@"dragBeginTableViewWithSource");
+    
+    indexTableViewSource = rowIndexes.firstIndex;
+    NSLog(@"dragBeginTableViewWithSource at index %lu", (unsigned long)rowIndexes.firstIndex);
+    
+    
 }
 
 - (void)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
@@ -159,13 +178,49 @@
 
 #pragma mark - TableView drop manager
 
-- (NSDragOperation)tableViewValidateDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+- (NSDragOperation)tableViewValidateDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)inFilesfo proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+    
+    if (dropOperation == NSTableViewDropAbove) {
+        
+        
+    } else {
+        
+    }
+    
     return NSDragOperationMove;
+    
+    
 }
 
 - (BOOL)tableViewAcceptDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
+    
+    if (dropOperation == NSTableViewDropOn) {
+        _mockViewModel.models[row] = [info.draggingPasteboard stringForType:NSPasteboardTypeString];
+    }
+    
+    if (dropOperation == NSTableViewDropAbove) {
+        if (indexTableViewSource != -1 && indexTableViewSource != NSNotFound) {
+            [_mockViewModel.models removeObjectAtIndex:indexTableViewSource];
+            [_mockViewModel.models insertObject:[info.draggingPasteboard stringForType:NSPasteboardTypeString] atIndex:row];
+        } else {
+            [_mockViewModel.models insertObject:[info.draggingPasteboard stringForType:NSPasteboardTypeString] atIndex:row];
+        }
+    }
+    indexTableViewSource = -1;
+    
+    [_mockViewModel buildDataSource];
+    [_theTableView reloadData];
+    
+    // Update constraint
+    
+    
+    
     return YES;
 }
 
+
+- (void)tableViewManager:(TableViewManager *)manager itemView:(NSTableCellView *)itemView willLoadData:(id<ListSupplierProtocol>)data forRow:(NSInteger)row {
+    
+}
 
 @end
