@@ -203,8 +203,8 @@
 		1D61AB14BBB9427769BB957A /* DragDropHandler */ = {
 			isa = PBXGroup;
 			children = (
-				1E88692025C02DAC001EB54C /* AbstractHandlerModel */,
 				1E8868EE25C00959001EB54C /* BaseDragDropView */,
+				1E88692025C02DAC001EB54C /* AbstractHandlerModel */,
 				1E8BF09A25BFD3D900CD3EC5 /* Protocol */,
 				1E8BF03A25BFB40B00CD3EC5 /* DropHandler */,
 				1E8BF03925BFB3FE00CD3EC5 /* DragHandler */,

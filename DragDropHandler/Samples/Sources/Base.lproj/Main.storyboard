@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -711,7 +711,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP" customClass="DragableButton">
-                                <rect key="frame" x="30" y="260" width="48" height="48"/>
+                                <rect key="frame" x="30" y="260" width="48" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="FNO-bS-l03"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="uOc-kz-DDd"/>
@@ -722,7 +722,7 @@
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="JkD-ZU-mAM">
-                                <rect key="frame" x="670" y="260" width="48" height="48"/>
+                                <rect key="frame" x="670" y="260" width="48" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="TPb-aT-Ch6"/>
                                     <constraint firstAttribute="height" constant="48" id="tpG-2v-wwp"/>
@@ -736,7 +736,7 @@
                                 <rect key="frame" x="338" y="30" width="380" height="200"/>
                             </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-UL-Phn">
-                                <rect key="frame" x="612" y="260" width="48" height="48"/>
+                                <rect key="frame" x="612" y="260" width="48" height="51"/>
                                 <buttonCell key="cell" type="square" title="Search" bezelStyle="shadowlessSquare" image="NSTouchBarSearchTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="8bw-bU-KUY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="10"/>
@@ -766,11 +766,11 @@
                                                     </textFieldCell>
                                                     <prototypeCellViews>
                                                         <tableCellView id="q34-Rx-3He">
-                                                            <rect key="frame" x="0.0" y="0.0" width="286" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Sxo-MF-zZv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="298" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="yBY-Qd-I4u"/>
                                                                     </constraints>
@@ -801,7 +801,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="lP9-gS-q1a"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="s4v-Si-sXJ">
-                                    <rect key="frame" x="1" y="476" width="298" height="15"/>
+                                    <rect key="frame" x="1" y="184" width="298" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="blN-Yg-cPR">
@@ -810,27 +810,27 @@
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ" customClass="DragableButton">
-                                <rect key="frame" x="259" y="273" width="70" height="21"/>
+                                <rect key="frame" x="261" y="273" width="72" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="gDj-S2-fjt"/>
                                 </constraints>
                                 <buttonCell key="cell" type="roundRect" title="Emails" bezelStyle="roundedRect" image="NSTouchBarMailTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RFt-PX-yV7">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="controlContent"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI" customClass="DragableButton">
-                                <rect key="frame" x="88" y="260" width="48" height="48"/>
+                                <rect key="frame" x="88" y="260" width="48" height="50"/>
                                 <buttonCell key="cell" type="square" title="Contacts" bezelStyle="shadowlessSquare" image="NSTouchBarUserGroupTemplate" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="Xh2-W7-qvz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
-                                <rect key="frame" x="182" y="274" width="67" height="19"/>
+                                <rect key="frame" x="182" y="274" width="69" height="19"/>
                                 <buttonCell key="cell" type="roundRect" title="Notes" bezelStyle="roundedRect" image="NSTouchBarComposeTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DQ9-iw-7RN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="controlContent"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                             </button>
                         </subviews>
@@ -851,7 +851,7 @@
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="bottom" secondItem="JkD-ZU-mAM" secondAttribute="bottom" id="dKN-Q3-MMG"/>
                             <constraint firstAttribute="trailing" secondItem="JkD-ZU-mAM" secondAttribute="trailing" constant="30" id="dmV-WD-S0L"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="top" secondItem="JkD-ZU-mAM" secondAttribute="top" id="eM7-vj-6a2"/>
-                            <constraint firstItem="xKz-Pr-ZtB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z2S-Td-SxI" secondAttribute="trailing" constant="46" id="glE-sE-yMn"/>
+                            <constraint firstItem="xKz-Pr-ZtB" firstAttribute="leading" secondItem="z2S-Td-SxI" secondAttribute="trailing" constant="46" id="glE-sE-yMn"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="width" secondItem="JkD-ZU-mAM" secondAttribute="width" id="iwq-WW-ioU"/>
                             <constraint firstItem="zz6-i3-UUZ" firstAttribute="trailing" secondItem="f0s-vm-dJ5" secondAttribute="trailing" id="m4G-iD-CCL"/>
                             <constraint firstItem="Ol0-q3-oeP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="nla-MC-p3u"/>
@@ -880,11 +880,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NSTouchBarComposeTemplate" width="21" height="30"/>
-        <image name="NSTouchBarFolderTemplate" width="22" height="30"/>
-        <image name="NSTouchBarMailTemplate" width="21" height="30"/>
-        <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
-        <image name="NSTouchBarUserGroupTemplate" width="24" height="30"/>
-        <image name="NSTouchBarUserTemplate" width="15" height="30"/>
+        <image name="NSTouchBarComposeTemplate" width="16" height="15"/>
+        <image name="NSTouchBarFolderTemplate" width="19" height="14"/>
+        <image name="NSTouchBarMailTemplate" width="19" height="13"/>
+        <image name="NSTouchBarSearchTemplate" width="14" height="15"/>
+        <image name="NSTouchBarUserGroupTemplate" width="22" height="14"/>
+        <image name="NSTouchBarUserTemplate" width="15" height="14"/>
     </resources>
 </document>

@@ -22,6 +22,9 @@ typedef NS_ENUM(NSUInteger, CustomDragOperation)
     CustomDragOperation_NONE        = 128 << 10,
 };
 
+#pragma mark: TODO
+// Define constant for clear meaning
+
 
 
 @interface DragOperation : NSObject
