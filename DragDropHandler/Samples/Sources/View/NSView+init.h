@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSView (Init)
 - (instancetype)createFromNib;
++ (void)addAutoResizingView:(NSView *)subView toView:(NSView *)containerView;
 @end
 
 NS_ASSUME_NONNULL_END

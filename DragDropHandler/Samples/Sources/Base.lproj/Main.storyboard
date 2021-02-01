@@ -730,22 +730,8 @@
                                     <font key="font" metaFont="system" size="10"/>
                                 </buttonCell>
                             </button>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-pV-lUx" customClass="CustomView">
+                            <customView identifier="DropableCustomView" translatesAutoresizingMaskIntoConstraints="NO" id="TIZ-pV-lUx">
                                 <rect key="frame" x="338" y="30" width="352" height="492"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-IM-Hxc">
-                                        <rect key="frame" x="130" y="238" width="92" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Data Received" id="6O1-pB-7gR">
-                                            <font key="font" usesAppearanceFont="YES"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="JoK-IM-Hxc" firstAttribute="centerY" secondItem="TIZ-pV-lUx" secondAttribute="centerY" id="Hu4-z6-dCh"/>
-                                    <constraint firstItem="JoK-IM-Hxc" firstAttribute="centerX" secondItem="TIZ-pV-lUx" secondAttribute="centerX" id="KI9-BS-Tee"/>
-                                </constraints>
                             </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-UL-Phn">
                                 <rect key="frame" x="622" y="552" width="38" height="50.5"/>
@@ -873,10 +859,9 @@
                         <outlet property="contactsButton" destination="z2S-Td-SxI" id="CE3-Pc-yDx"/>
                         <outlet property="emailsButton" destination="zz6-i3-UUZ" id="m8f-si-Bda"/>
                         <outlet property="filesButton" destination="Ol0-q3-oeP" id="nQT-Y7-4oj"/>
-                        <outlet property="lableDropNotify" destination="JoK-IM-Hxc" id="HY1-29-kvI"/>
                         <outlet property="notesButton" destination="xKz-Pr-ZtB" id="UMs-od-fYT"/>
                         <outlet property="searchButton" destination="FJ9-UL-Phn" id="6ti-9i-fNQ"/>
-                        <outlet property="theCustomView" destination="TIZ-pV-lUx" id="HUn-3R-TqS"/>
+                        <outlet property="theDropableCustomView" destination="TIZ-pV-lUx" id="Lw2-SW-pfz"/>
                         <outlet property="theTableView" destination="f0s-vm-dJ5" id="hpW-Rq-0ha"/>
                         <outlet property="youButton" destination="JkD-ZU-mAM" id="fsa-bA-Vuh"/>
                     </connections>

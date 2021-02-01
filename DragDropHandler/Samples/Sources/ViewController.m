@@ -7,20 +7,20 @@
 //
 
 #import "ViewController.h"
-#import "DraggableNSButton.h"
 #import "DroppableNSView.h"
 #import "DraggableNSView.h"
 #import "TableViewManager.h"
 #import "DataProvider.h"
 #import "MockViewModel.h"
 #import "TableView.h"
-#import "CustomView.h"
+#import "DropableCustomView.h"
 #import "DragableButton.h"
 #import "CellView.h"
 #import "TabMenuButtonModel.h"
 #import "SystemMenuButtonModel.h"
+#import "NSView+init.h"
 
-typedef void(^DeleteRowCallBack)(NSInteger row);
+//typedef void(^DeleteRowCallBack)(NSInteger row);
 
 @interface ViewController()<DragTrackingDelegate, DropTrackingDelegate, TableViewManagerProtocols> {
     TableViewManager *_tableViewManager;
@@ -28,7 +28,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     TabMenuButtonModel* _tabMenuModel;
     SystemMenuButtonModel* _systemMenuModel;
     NSUInteger indexTableViewSource;
-    DeleteRowCallBack deleteRowCallBack;
+    
 }
 
 
@@ -41,9 +41,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 @property (weak) IBOutlet NSButton* youButton;
 
 @property (weak) IBOutlet NSTableView* theTableView;
-@property (weak) IBOutlet CustomView* theCustomView;
-@property (weak) IBOutlet NSTextField *lableDropNotify;
-
+@property (weak) IBOutlet NSView* theDropableCustomView;
 @property (strong, nonatomic) MockViewModel *mockViewModel;
 
 @end
@@ -53,6 +51,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
     // Do any additional setup after loading the view.
     [self setupView];
     [self setupDragDropTracking];
@@ -60,12 +59,23 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     indexTableViewSource = -1;
 }
 
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    DropableCustomView *dropView = [[DropableCustomView alloc] init];
+    __weak typeof(self) weakSelf = self;
+    dropView.deleteRowCallBack = ^(NSString *string) {
+        [weakSelf.mockViewModel.models removeObject:string];
+        [weakSelf.mockViewModel buildDataSource];
+        [weakSelf.theTableView reloadData];
+    };
+    [NSView addAutoResizingView:dropView toView:self.theDropableCustomView];
+}
+
 - (void)setupView {
-    
     NSNib *nib = [[NSNib alloc] initWithNibNamed:@"CellView" bundle:nil];
     [_theTableView registerNib:nib forIdentifier:@"CellView"];
-    self.theCustomView.wantsLayer = YES;
-    self.theCustomView.layer.backgroundColor = [[NSColor systemGrayColor] CGColor];
+    // self.theCustomView.wantsLayer = YES;
+    // self.theCustomView.layer.backgroundColor = [[NSColor systemGrayColor] CGColor];
     
     _tabMenuModel = [[TabMenuButtonModel alloc] init];
     _systemMenuModel = [[SystemMenuButtonModel alloc] init];
@@ -73,11 +83,13 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     self.emailsButton.model = _tabMenuModel;
     self.notesButton.model = _tabMenuModel;
     self.contactsButton.model = _systemMenuModel;
+    self.theDropableCustomView.wantsLayer = YES;
+    self.theDropableCustomView.layer.backgroundColor = [[NSColor systemGreenColor] CGColor];
 }
 
 - (void)setupDragDropTracking {
     self.filesButton.dragTrackingDelegate = self;
-    self.theCustomView.dropTrackingDelegate = self;
+//    self.theDropableCustomView.dropTrackingDelegate = self;
 }
 
 - (void)setupTableViewManagerTracking {
@@ -96,15 +108,6 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     _theTableView.wantsLayer = YES;
     _theTableView.layer.backgroundColor = [[NSColor brownColor] CGColor];
     self.theTableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
-    
-    
-    __weak typeof(self) weakSelf = self;
-    deleteRowCallBack = ^(NSInteger row) {
-        [weakSelf.mockViewModel.models removeObjectAtIndex:row];
-        [weakSelf.mockViewModel buildDataSource];
-        [weakSelf.theTableView reloadData];
-    };
-    
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
@@ -118,7 +121,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 }
 
 - (void) awakeFromNib {
-    [self.theCustomView registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil]];
+    [self.theDropableCustomView registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil]];
 }
 
 #pragma mark - NSView view drag delegate
@@ -160,10 +163,9 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     if ([onTarget isKindOfClass: DroppableNSView.self]) {
         NSLog(@"DroppableNSView drop");
         NSString *stringFromPasteboard = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
-        self.lableDropNotify.stringValue = stringFromPasteboard;
         NSInteger index = [self.mockViewModel.models indexOfObject:stringFromPasteboard];
         if (index != NSNotFound) {
-            deleteRowCallBack(index);
+//            deleteRowCallBack(index);
         }
     }
     
@@ -183,7 +185,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 }
 
 - (void)updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
-//    NSLog(@"updateDraggingItemsForDrag");
+    NSLog(@"updateDraggingItemsForDrag");
 }
 
 - (id<NSPasteboardWriting>)pasteboardWriterWithSource:(id)source forRow:(NSInteger)row {
@@ -195,17 +197,31 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 
 #pragma mark - TableView drop manager
 
-- (CustomDragOperation)tableViewValidateDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)inFilesfo proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
-    
+- (CustomDragOperation)tableViewValidateDropOnTarget:(id)onTarget
+                                        draggingInfo:(id<NSDraggingInfo>)info
+                                         proposedRow:(NSInteger)row
+                               proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+    if ([info.draggingSource isKindOfClass:[DragableButton class]]) {
+        if ([((DragableButton*)info.draggingSource).model isKindOfClass:[SystemMenuButtonModel class]]) {
+            return CustomDragOperation_STOP;
+        }
+    }
     if (dropOperation == NSTableViewDropOn) {
-        
-        return CustomDragOperation_STOP;
-    } else {
+        return CustomDragOperation_LINK;
+    }
+    else {
         return CustomDragOperation_ALLOW;
     }
+    return CustomDragOperation_STOP;
 }
 
 - (BOOL)tableViewAcceptDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
+    
+    if ([info.draggingSource isKindOfClass:[DragableButton class]]) {
+        if ([((DragableButton*)info.draggingSource).model isKindOfClass:[SystemMenuButtonModel class]]) {
+            return NO;
+        }
+    }
     
     if (dropOperation == NSTableViewDropOn) {
         // Donothing
