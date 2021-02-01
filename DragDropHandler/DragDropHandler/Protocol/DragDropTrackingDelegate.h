@@ -29,10 +29,10 @@
 - (BOOL)tableViewAcceptDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation;
 
 #pragma mark TODO
+// Unitfy for 2 kind of list:
 // Collection View:
 // Outline View:
-// Summanry method protocol for list view
-// Change name DragDropTrackingDelegate
+// Summary method protocol for list view
 
 @end
 
