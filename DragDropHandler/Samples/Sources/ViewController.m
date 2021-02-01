@@ -177,6 +177,7 @@
         
         return CustomDragOperation_STOP;
     } else {
+        
         return CustomDragOperation_ALLOW;
     }
 }
@@ -184,7 +185,7 @@
 - (BOOL)tableViewAcceptDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
     
     if (dropOperation == NSTableViewDropOn) {
-        NSLog(@"Drop %lu",(unsigned long)dropOperation);
+        // Donothing
     }
     
     if (dropOperation == NSTableViewDropAbove) {
@@ -209,11 +210,6 @@
     [_theTableView reloadData];
     
     return YES;
-}
-
-
-- (void)tableViewManager:(TableViewManager *)manager itemView:(NSTableCellView *)itemView willLoadData:(id<ListSupplierProtocol>)data forRow:(NSInteger)row {
-    
 }
 
 @end

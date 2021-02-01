@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -711,7 +711,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP" customClass="DragableButton">
-                                <rect key="frame" x="30" y="552" width="48" height="48"/>
+                                <rect key="frame" x="30" y="552" width="48" height="49.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="FNO-bS-l03"/>
                                     <constraint firstAttribute="width" constant="48" id="SpM-EE-fYZ"/>
@@ -722,7 +722,7 @@
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="JkD-ZU-mAM">
-                                <rect key="frame" x="642" y="552" width="48" height="48"/>
+                                <rect key="frame" x="642" y="552" width="48" height="49.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="rtD-Xk-8hP"/>
                                     <constraint firstAttribute="height" constant="48" id="tpG-2v-wwp"/>
@@ -750,7 +750,7 @@
                                 </constraints>
                             </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="FJ9-UL-Phn">
-                                <rect key="frame" x="586" y="552" width="48" height="48"/>
+                                <rect key="frame" x="586" y="552" width="48" height="50.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="3EC-O9-BtW"/>
                                 </constraints>
@@ -761,11 +761,11 @@
                             </button>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0K-E7-FkJ">
                                 <rect key="frame" x="30" y="30" width="300" height="492"/>
-                                <clipView key="contentView" translatesAutoresizingMaskIntoConstraints="NO" id="DFS-IJ-8Ad">
+                                <clipView key="contentView" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFS-IJ-8Ad">
                                     <rect key="frame" x="1" y="1" width="298" height="490"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="f0s-vm-dJ5">
+                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="f0s-vm-dJ5">
                                             <rect key="frame" x="0.0" y="0.0" width="298" height="490"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -783,11 +783,11 @@
                                                     </textFieldCell>
                                                     <prototypeCellViews>
                                                         <tableCellView id="q34-Rx-3He">
-                                                            <rect key="frame" x="0.0" y="0.0" width="286" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Sxo-MF-zZv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="298" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="yBY-Qd-I4u"/>
                                                                     </constraints>
@@ -826,7 +826,7 @@
                                 </scroller>
                             </scrollView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ" customClass="DragableButton">
-                                <rect key="frame" x="88" y="552" width="48" height="48"/>
+                                <rect key="frame" x="88" y="552" width="48" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="vDt-Bo-816"/>
                                 </constraints>
@@ -836,7 +836,7 @@
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
-                                <rect key="frame" x="146" y="552" width="48" height="48"/>
+                                <rect key="frame" x="146" y="552" width="48" height="50.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="iBW-fk-XlJ"/>
                                 </constraints>
@@ -846,7 +846,7 @@
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Td-SxI" customClass="DragableButton">
-                                <rect key="frame" x="204" y="552" width="48" height="48"/>
+                                <rect key="frame" x="204" y="552" width="48" height="49.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="3Fw-rw-G3p"/>
                                 </constraints>
@@ -861,8 +861,8 @@
                             <constraint firstItem="JkD-ZU-mAM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="58g-Ph-Qi2"/>
                             <constraint firstAttribute="trailing" secondItem="TIZ-pV-lUx" secondAttribute="trailing" constant="30" id="9Qd-8a-Zc1"/>
                             <constraint firstItem="TIZ-pV-lUx" firstAttribute="top" secondItem="JkD-ZU-mAM" secondAttribute="bottom" constant="30" id="Gzx-F0-bHy"/>
+                            <constraint firstItem="TIZ-pV-lUx" firstAttribute="leading" secondItem="z0K-E7-FkJ" secondAttribute="trailing" constant="8" symbolic="YES" id="H4a-sO-mRt"/>
                             <constraint firstItem="z0K-E7-FkJ" firstAttribute="top" secondItem="Ol0-q3-oeP" secondAttribute="bottom" constant="30" id="KNB-Jh-oiA"/>
-                            <constraint firstItem="TIZ-pV-lUx" firstAttribute="leading" secondItem="f0s-vm-dJ5" secondAttribute="trailing" constant="9" id="VCO-Fn-UbF"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z2S-Td-SxI" secondAttribute="trailing" constant="10" symbolic="YES" id="Vzj-TD-xdj"/>
                             <constraint firstItem="zz6-i3-UUZ" firstAttribute="top" secondItem="Ol0-q3-oeP" secondAttribute="top" id="Xqr-nk-jr8"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="bottom" secondItem="JkD-ZU-mAM" secondAttribute="bottom" id="auu-qS-6eF"/>
@@ -901,11 +901,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NSTouchBarComposeTemplate" width="21" height="30"/>
-        <image name="NSTouchBarFolderTemplate" width="22" height="30"/>
-        <image name="NSTouchBarMailTemplate" width="21" height="30"/>
-        <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
-        <image name="NSTouchBarUserGroupTemplate" width="24" height="30"/>
-        <image name="NSTouchBarUserTemplate" width="15" height="30"/>
+        <image name="NSTouchBarComposeTemplate" width="17" height="15"/>
+        <image name="NSTouchBarFolderTemplate" width="18" height="14"/>
+        <image name="NSTouchBarMailTemplate" width="18" height="13"/>
+        <image name="NSTouchBarSearchTemplate" width="15" height="15"/>
+        <image name="NSTouchBarUserGroupTemplate" width="21" height="14"/>
+        <image name="NSTouchBarUserTemplate" width="14" height="14"/>
     </resources>
 </document>
