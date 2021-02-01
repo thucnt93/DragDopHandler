@@ -49,20 +49,10 @@
     return self;
 }
 
-
-#pragma mark - DragTrackingDelegate
-
-- (CustomDragOperation)dragBeginWithSource:(id)source
-                                   atPoint:(NSPoint)atPoint {
-    return CustomDragOperation_MOVE;
-}
-
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"Validate dragging info");
-    
     return CustomDragOperation_MOVE;
 }
-
 
 #pragma mark - NSView drop tracking delegate
 
@@ -80,18 +70,7 @@
             self.deleteRowCallBack(stringFromPasteboard);
         }
     }
-    
     return YES;
-}
-
-- (CustomDragOperation)dragMoveWithSource:(id)source
-                                  atPoint:(NSPoint)atPoint {
-    return CustomDragOperation_MOVE;
-}
-
-- (void)dragEndWithSource:(id)source
-                  atPoint:(NSPoint)atPoint {
-    
 }
 
 @end

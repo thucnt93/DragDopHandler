@@ -186,7 +186,6 @@
 - (CustomDragOperation)tableViewValidateDropOnTarget:(id)onTarget draggingInfo:(id<NSDraggingInfo>)inFilesfo proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     
     if (dropOperation == NSTableViewDropOn) {
-        
         return CustomDragOperation_STOP;
     } else {
         
