@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE32685DABC1DB8277A5C7CC /* Assets.xcassets */; };
-		1E5BAEC025C6981C00452C2D /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5BAEBF25C6981C00452C2D /* Test.xib */; };
 		1E71A62925C14093001C01AC /* MockViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E71A62725C14093001C01AC /* MockViewModel.h */; };
 		1E71A62A25C14093001C01AC /* MockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A62825C14093001C01AC /* MockViewModel.m */; };
 		1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E75A95925BECA5300F10EED /* CustomDragOperation.h */; };
@@ -37,11 +36,12 @@
 		1EBF22F925C3B63D00DBCE7F /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EBF22F825C3B63D00DBCE7F /* CellView.xib */; };
 		1EBF230025C3CCF700DBCE7F /* NSView+init.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBF22FF25C3CCF700DBCE7F /* NSView+init.m */; };
 		1EBF230525C3EBEA00DBCE7F /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBF230425C3EBEA00DBCE7F /* CellView.m */; };
+		1EEB3DD725C7C93E00701FB4 /* DropableCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EEB3DD625C7C93E00701FB4 /* DropableCustomView.xib */; };
 		4DE0441A71938AB47C27F389 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3380D9E7C336241329AF /* main.m */; };
 		528B978C4EDC2EEFBBADE41C /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
 		5B37AB47524B3CCA62C81974 /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
 		64C391A025C11284003270D8 /* DragableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919D25C11284003270D8 /* DragableButton.m */; };
-		64C391A125C11284003270D8 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919E25C11284003270D8 /* CustomView.m */; };
+		64C391A125C11284003270D8 /* DropableCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919E25C11284003270D8 /* DropableCustomView.m */; };
 		64C391A225C11284003270D8 /* TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919F25C11284003270D8 /* TableView.m */; };
 		64C391A625C1558E003270D8 /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C391A525C1558E003270D8 /* TableViewModel.m */; };
 		807B76283291F1D46598F6C4 /* DragDropHandler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -105,7 +105,6 @@
 
 /* Begin PBXFileReference section */
 		14A3D1BEA3B90F43C5A47887 /* Samples-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Samples-Debug.xcconfig"; sourceTree = "<group>"; };
-		1E5BAEBF25C6981C00452C2D /* Test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
 		1E71A62725C14093001C01AC /* MockViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockViewModel.h; sourceTree = "<group>"; };
 		1E71A62825C14093001C01AC /* MockViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockViewModel.m; sourceTree = "<group>"; };
 		1E75A95925BECA5300F10EED /* CustomDragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomDragOperation.h; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		1EBF22FF25C3CCF700DBCE7F /* NSView+init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSView+init.m"; sourceTree = "<group>"; };
 		1EBF230325C3EBEA00DBCE7F /* CellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
 		1EBF230425C3EBEA00DBCE7F /* CellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
+		1EEB3DD625C7C93E00701FB4 /* DropableCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropableCustomView.xib; sourceTree = "<group>"; };
 		2028BBDE3B4E7625A3AEA603 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405E3CDD76B02806801BC19F /* DragDropHandlerTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DragDropHandlerTests.xcconfig; sourceTree = "<group>"; };
 		4BB0783768E4C3DFB2B2F88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -146,10 +146,10 @@
 		5FDB284E5CFCE20D10F734D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6015E4026188FEB7DE60B2F8 /* SamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SamplesTests.m; sourceTree = "<group>"; };
 		64C3919A25C11284003270D8 /* TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
-		64C3919B25C11284003270D8 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		64C3919B25C11284003270D8 /* DropableCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropableCustomView.h; sourceTree = "<group>"; };
 		64C3919C25C11284003270D8 /* DragableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragableButton.h; sourceTree = "<group>"; };
 		64C3919D25C11284003270D8 /* DragableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragableButton.m; sourceTree = "<group>"; };
-		64C3919E25C11284003270D8 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		64C3919E25C11284003270D8 /* DropableCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropableCustomView.m; sourceTree = "<group>"; };
 		64C3919F25C11284003270D8 /* TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableView.m; sourceTree = "<group>"; };
 		64C391A425C1558E003270D8 /* TableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewModel.h; sourceTree = "<group>"; };
 		64C391A525C1558E003270D8 /* TableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewModel.m; sourceTree = "<group>"; };
@@ -381,16 +381,16 @@
 			children = (
 				64C3919A25C11284003270D8 /* TableView.h */,
 				64C3919F25C11284003270D8 /* TableView.m */,
-				64C3919B25C11284003270D8 /* CustomView.h */,
-				64C3919E25C11284003270D8 /* CustomView.m */,
+				64C3919B25C11284003270D8 /* DropableCustomView.h */,
+				64C3919E25C11284003270D8 /* DropableCustomView.m */,
+				1EEB3DD625C7C93E00701FB4 /* DropableCustomView.xib */,
 				64C3919C25C11284003270D8 /* DragableButton.h */,
 				64C3919D25C11284003270D8 /* DragableButton.m */,
-				1EBF22F825C3B63D00DBCE7F /* CellView.xib */,
 				1EBF22FE25C3CCF700DBCE7F /* NSView+init.h */,
 				1EBF22FF25C3CCF700DBCE7F /* NSView+init.m */,
 				1EBF230325C3EBEA00DBCE7F /* CellView.h */,
 				1EBF230425C3EBEA00DBCE7F /* CellView.m */,
-				1E5BAEBF25C6981C00452C2D /* Test.xib */,
+				1EBF22F825C3B63D00DBCE7F /* CellView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -598,8 +598,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */,
-				1E5BAEC025C6981C00452C2D /* Test.xib in Resources */,
 				1EBF22F925C3B63D00DBCE7F /* CellView.xib in Resources */,
+				1EEB3DD725C7C93E00701FB4 /* DropableCustomView.xib in Resources */,
 				98E31475C3B145675C0D75CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,7 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C391A125C11284003270D8 /* CustomView.m in Sources */,
+				64C391A125C11284003270D8 /* DropableCustomView.m in Sources */,
 				1EBF230525C3EBEA00DBCE7F /* CellView.m in Sources */,
 				9B478EB4B14F717A5D00B275 /* AppDelegate.m in Sources */,
 				64C391A625C1558E003270D8 /* TableViewModel.m in Sources */,

@@ -14,17 +14,16 @@
 #import "DataProvider.h"
 #import "MockViewModel.h"
 #import "TableView.h"
-#import "CustomView.h"
+#import "DropableCustomView.h"
 #import "DragableButton.h"
 #import "CellView.h"
-
-typedef void(^DeleteRowCallBack)(NSInteger row);
+#import "NSView+init.h"
 
 @interface ViewController()<DragTrackingDelegate, DropTrackingDelegate, TableViewManagerProtocols> {
     TableViewManager *_tableViewManager;
     
     NSUInteger indexTableViewSource;
-    DeleteRowCallBack deleteRowCallBack;
+    
 }
 
 
@@ -37,9 +36,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 @property (weak) IBOutlet NSButton* youButton;
 
 @property (weak) IBOutlet NSTableView* theTableView;
-@property (weak) IBOutlet CustomView* theCustomView;
-@property (weak) IBOutlet NSTextField *lableDropNotify;
-
+@property (weak) IBOutlet NSView* theDropableCustomView;
 @property (strong, nonatomic) MockViewModel *mockViewModel;
 
 @end
@@ -49,6 +46,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
     // Do any additional setup after loading the view.
     [self setupView];
     [self setupDragDropTracking];
@@ -56,17 +54,28 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     indexTableViewSource = -1;
 }
 
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    DropableCustomView *dropView = [[DropableCustomView alloc] init];
+    __weak typeof(self) weakSelf = self;
+    dropView.deleteRowCallBack = ^(NSString *string) {
+        [weakSelf.mockViewModel.models removeObject:string];
+        [weakSelf.mockViewModel buildDataSource];
+        [weakSelf.theTableView reloadData];
+    };
+    [NSView addAutoResizingView:dropView toView:self.theDropableCustomView];
+}
+
 - (void)setupView {
-    
     NSNib *nib = [[NSNib alloc] initWithNibNamed:@"CellView" bundle:nil];
     [_theTableView registerNib:nib forIdentifier:@"CellView"];
-    self.theCustomView.wantsLayer = YES;
-    self.theCustomView.layer.backgroundColor = [[NSColor systemGrayColor] CGColor];
+    self.theDropableCustomView.wantsLayer = YES;
+    self.theDropableCustomView.layer.backgroundColor = [[NSColor systemGreenColor] CGColor];
 }
 
 - (void)setupDragDropTracking {
     self.filesButton.dragTrackingDelegate = self;
-    self.theCustomView.dropTrackingDelegate = self;
+//    self.theDropableCustomView.dropTrackingDelegate = self;
 }
 
 - (void)setupTableViewManagerTracking {
@@ -85,15 +94,6 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     _theTableView.wantsLayer = YES;
     _theTableView.layer.backgroundColor = [[NSColor brownColor] CGColor];
     self.theTableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
-    
-    
-    __weak typeof(self) weakSelf = self;
-    deleteRowCallBack = ^(NSInteger row) {
-        [weakSelf.mockViewModel.models removeObjectAtIndex:row];
-        [weakSelf.mockViewModel buildDataSource];
-        [weakSelf.theTableView reloadData];
-    };
-    
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
@@ -107,7 +107,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 }
 
 - (void) awakeFromNib {
-    [self.theCustomView registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil]];
+    [self.theDropableCustomView registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil]];
 }
 
 #pragma mark - DragTrackingDelegate
@@ -139,10 +139,9 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     if ([onTarget isKindOfClass: DroppableNSView.self]) {
         NSLog(@"DroppableNSView drop");
         NSString *stringFromPasteboard = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
-        self.lableDropNotify.stringValue = stringFromPasteboard;
         NSInteger index = [self.mockViewModel.models indexOfObject:stringFromPasteboard];
         if (index != NSNotFound) {
-            deleteRowCallBack(index);
+//            deleteRowCallBack(index);
         }
     }
     
