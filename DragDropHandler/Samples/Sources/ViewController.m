@@ -148,17 +148,10 @@
     
 }
 
-
-#pragma mark: CALL BACK for DELETE ROW
-
 #pragma mark - TableView drag manager
 
 - (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
-    
     indexTableViewSource = rowIndexes.firstIndex;
-    NSLog(@"dragBeginTableViewWithSource at index %lu", (unsigned long)rowIndexes.firstIndex);
-    
-    
 }
 
 - (void)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
@@ -166,7 +159,7 @@
 }
 
 - (void)updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
-    NSLog(@"updateDraggingItemsForDrag");
+//    NSLog(@"updateDraggingItemsForDrag");
 }
 
 - (id<NSPasteboardWriting>)pasteboardWriterWithSource:(id)source forRow:(NSInteger)row {
@@ -200,20 +193,24 @@
     
     if (dropOperation == NSTableViewDropAbove) {
         if (indexTableViewSource != -1 && indexTableViewSource != NSNotFound) {
-            [_mockViewModel.models removeObjectAtIndex:indexTableViewSource];
-            [_mockViewModel.models insertObject:[info.draggingPasteboard stringForType:NSPasteboardTypeString] atIndex:row];
-        } else {
+            if (indexTableViewSource < row) {
+                [_mockViewModel.models insertObject:[info.draggingPasteboard stringForType:NSPasteboardTypeString] atIndex:row];
+                [_mockViewModel.models removeObjectAtIndex:indexTableViewSource];
+            }
+            else {
+                [_mockViewModel.models removeObjectAtIndex:indexTableViewSource];
+                [_mockViewModel.models insertObject:[info.draggingPasteboard stringForType:NSPasteboardTypeString] atIndex:row];
+            }
+        }
+        else {
             [_mockViewModel.models insertObject:[info.draggingPasteboard stringForType:NSPasteboardTypeString] atIndex:row];
         }
     }
+    
     indexTableViewSource = -1;
     
     [_mockViewModel buildDataSource];
     [_theTableView reloadData];
-    
-    // Update constraint
-    
-    
     
     return YES;
 }
