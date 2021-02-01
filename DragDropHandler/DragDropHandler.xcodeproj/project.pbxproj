@@ -42,7 +42,6 @@
 		5B37AB47524B3CCA62C81974 /* DragDropHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; };
 		64C391A025C11284003270D8 /* DragableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919D25C11284003270D8 /* DragableButton.m */; };
 		64C391A125C11284003270D8 /* DropableCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919E25C11284003270D8 /* DropableCustomView.m */; };
-		64C391A225C11284003270D8 /* TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919F25C11284003270D8 /* TableView.m */; };
 		64C391AB25C7B4FF003270D8 /* TabMenuButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C391AA25C7B4FF003270D8 /* TabMenuButtonModel.m */; };
 		64C391AE25C7B5EC003270D8 /* SystemMenuButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C391AD25C7B5EC003270D8 /* SystemMenuButtonModel.m */; };
 		807B76283291F1D46598F6C4 /* DragDropHandler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -146,12 +145,10 @@
 		5AF246BDF8CB36F647EC63F9 /* DragDropHandler-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "DragDropHandler-Debug.xcconfig"; sourceTree = "<group>"; };
 		5FDB284E5CFCE20D10F734D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6015E4026188FEB7DE60B2F8 /* SamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SamplesTests.m; sourceTree = "<group>"; };
-		64C3919A25C11284003270D8 /* TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
 		64C3919B25C11284003270D8 /* DropableCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropableCustomView.h; sourceTree = "<group>"; };
 		64C3919C25C11284003270D8 /* DragableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragableButton.h; sourceTree = "<group>"; };
 		64C3919D25C11284003270D8 /* DragableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragableButton.m; sourceTree = "<group>"; };
 		64C3919E25C11284003270D8 /* DropableCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropableCustomView.m; sourceTree = "<group>"; };
-		64C3919F25C11284003270D8 /* TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableView.m; sourceTree = "<group>"; };
 		64C391A925C7B4FF003270D8 /* TabMenuButtonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabMenuButtonModel.h; sourceTree = "<group>"; };
 		64C391AA25C7B4FF003270D8 /* TabMenuButtonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabMenuButtonModel.m; sourceTree = "<group>"; };
 		64C391AC25C7B5EC003270D8 /* SystemMenuButtonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMenuButtonModel.h; sourceTree = "<group>"; };
@@ -382,8 +379,6 @@
 		64C3919925C11284003270D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				64C3919A25C11284003270D8 /* TableView.h */,
-				64C3919F25C11284003270D8 /* TableView.m */,
 				64C3919B25C11284003270D8 /* DropableCustomView.h */,
 				64C3919E25C11284003270D8 /* DropableCustomView.m */,
 				1EEB3DD625C7C93E00701FB4 /* DropableCustomView.xib */,
@@ -640,7 +635,6 @@
 				64C391AE25C7B5EC003270D8 /* SystemMenuButtonModel.m in Sources */,
 				1EBF230025C3CCF700DBCE7F /* NSView+init.m in Sources */,
 				64C391A025C11284003270D8 /* DragableButton.m in Sources */,
-				64C391A225C11284003270D8 /* TableView.m in Sources */,
 				E00A44C526D935ED9A7699C4 /* ViewController.m in Sources */,
 				4DE0441A71938AB47C27F389 /* main.m in Sources */,
 				64C391AB25C7B4FF003270D8 /* TabMenuButtonModel.m in Sources */,
