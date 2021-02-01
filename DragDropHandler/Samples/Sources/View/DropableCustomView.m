@@ -22,7 +22,7 @@
     
     // Drawing code here.
     self.wantsLayer = YES;
-    self.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
+    self.layer.backgroundColor = [[NSColor grayColor] CGColor];
 }
 
 - (void)awakeFromNib {
