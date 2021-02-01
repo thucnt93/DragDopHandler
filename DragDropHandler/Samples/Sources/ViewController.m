@@ -18,11 +18,15 @@
 #import "DragableButton.h"
 #import "CellView.h"
 
+typedef void(^DeleteRowCallBack)(NSInteger row);
+
 @interface ViewController()<DragTrackingDelegate, DropTrackingDelegate, TableViewManagerProtocols> {
     TableViewManager *_tableViewManager;
-    MockViewModel *_mockViewModel;
+    
     NSUInteger indexTableViewSource;
+    DeleteRowCallBack deleteRowCallBack;
 }
+
 
 @property (weak) IBOutlet DragableButton* filesButton;
 @property (weak) IBOutlet DragableButton* emailsButton;
@@ -36,7 +40,7 @@
 @property (weak) IBOutlet CustomView* theCustomView;
 @property (weak) IBOutlet NSTextField *lableDropNotify;
 
-
+@property (strong, nonatomic) MockViewModel *mockViewModel;
 
 @end
 
@@ -83,7 +87,12 @@
     self.theTableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyleGap;
     
     
-    
+    __weak typeof(self) weakSelf = self;
+    deleteRowCallBack = ^(NSInteger row) {
+        [weakSelf.mockViewModel.models removeObjectAtIndex:row];
+        [weakSelf.mockViewModel buildDataSource];
+        [weakSelf.theTableView reloadData];
+    };
     
 }
 
@@ -129,10 +138,12 @@
     
     if ([onTarget isKindOfClass: DroppableNSView.self]) {
         NSLog(@"DroppableNSView drop");
-        self.lableDropNotify.stringValue = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
-        
-        
-//        if ()
+        NSString *stringFromPasteboard = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
+        self.lableDropNotify.stringValue = stringFromPasteboard;
+        NSInteger index = [self.mockViewModel.models indexOfObject:stringFromPasteboard];
+        if (index != NSNotFound) {
+            deleteRowCallBack(index);
+        }
     }
     
     return YES;
@@ -156,6 +167,8 @@
 
 - (void)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
     NSLog(@"dragEndTableViewWithSource");
+    
+    
 }
 
 - (void)updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {
@@ -205,10 +218,8 @@
     }
     
     indexTableViewSource = -1;
-    
     [_mockViewModel buildDataSource];
     [_theTableView reloadData];
-    
     return YES;
 }
 
