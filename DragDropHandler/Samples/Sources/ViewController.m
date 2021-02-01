@@ -17,12 +17,16 @@
 #import "CustomView.h"
 #import "DragableButton.h"
 #import "CellView.h"
+#import "TabMenuButtonModel.h"
+#import "SystemMenuButtonModel.h"
 
 typedef void(^DeleteRowCallBack)(NSInteger row);
 
 @interface ViewController()<DragTrackingDelegate, DropTrackingDelegate, TableViewManagerProtocols> {
     TableViewManager *_tableViewManager;
-    
+    MockViewModel *_mockViewModel;
+    TabMenuButtonModel* _tabMenuModel;
+    SystemMenuButtonModel* _systemMenuModel;
     NSUInteger indexTableViewSource;
     DeleteRowCallBack deleteRowCallBack;
 }
@@ -62,6 +66,13 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     [_theTableView registerNib:nib forIdentifier:@"CellView"];
     self.theCustomView.wantsLayer = YES;
     self.theCustomView.layer.backgroundColor = [[NSColor systemGrayColor] CGColor];
+    
+    _tabMenuModel = [[TabMenuButtonModel alloc] init];
+    _systemMenuModel = [[SystemMenuButtonModel alloc] init];
+    self.filesButton.model = _systemMenuModel;
+    self.emailsButton.model = _tabMenuModel;
+    self.notesButton.model = _tabMenuModel;
+    self.contactsButton.model = _systemMenuModel;
 }
 
 - (void)setupDragDropTracking {
@@ -97,7 +108,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
 }
 
 - (CGFloat)tableViewManager:(TableViewManager *)manager heightOfRow:(NSInteger)row byItem:(id)item {
-    return 70;
+    return 40;
 }
 
 - (NSView *)tableViewManager:(TableViewManager *)manager makeViewForRow:(NSInteger)row byItem:(id)item {
@@ -110,7 +121,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     [self.theCustomView registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeString, nil]];
 }
 
-#pragma mark - DragTrackingDelegate
+#pragma mark - NSView view drag delegate
 
 - (CustomDragOperation)dragBeginWithSource:(id)source
                                    atPoint:(NSPoint)atPoint {
@@ -125,6 +136,16 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     }
     
     return CustomDragOperation_MOVE;
+}
+
+- (CustomDragOperation)dragMoveWithSource:(id)source
+                                  atPoint:(NSPoint)atPoint {
+    return CustomDragOperation_MOVE;
+}
+
+- (void)dragEndWithSource:(id)source
+                  atPoint:(NSPoint)atPoint {
+    
 }
 
 
@@ -149,17 +170,7 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
     return YES;
 }
 
-- (CustomDragOperation)dragMoveWithSource:(id)source
-                                  atPoint:(NSPoint)atPoint {
-    return CustomDragOperation_MOVE;
-}
-
-- (void)dragEndWithSource:(id)source
-                  atPoint:(NSPoint)atPoint {
-    
-}
-
-#pragma mark - TableView drag manager
+#pragma mark - Table view drag delegate
 
 - (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
     indexTableViewSource = rowIndexes.firstIndex;
@@ -190,7 +201,6 @@ typedef void(^DeleteRowCallBack)(NSInteger row);
         
         return CustomDragOperation_STOP;
     } else {
-        
         return CustomDragOperation_ALLOW;
     }
 }

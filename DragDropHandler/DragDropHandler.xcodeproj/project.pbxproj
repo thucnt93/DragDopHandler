@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE32685DABC1DB8277A5C7CC /* Assets.xcassets */; };
-		1E5BAEC025C6981C00452C2D /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5BAEBF25C6981C00452C2D /* Test.xib */; };
 		1E71A62925C14093001C01AC /* MockViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E71A62725C14093001C01AC /* MockViewModel.h */; };
 		1E71A62A25C14093001C01AC /* MockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A62825C14093001C01AC /* MockViewModel.m */; };
 		1E75A95B25BECA5300F10EED /* CustomDragOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E75A95925BECA5300F10EED /* CustomDragOperation.h */; };
@@ -43,7 +42,8 @@
 		64C391A025C11284003270D8 /* DragableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919D25C11284003270D8 /* DragableButton.m */; };
 		64C391A125C11284003270D8 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919E25C11284003270D8 /* CustomView.m */; };
 		64C391A225C11284003270D8 /* TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C3919F25C11284003270D8 /* TableView.m */; };
-		64C391A625C1558E003270D8 /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C391A525C1558E003270D8 /* TableViewModel.m */; };
+		64C391AB25C7B4FF003270D8 /* TabMenuButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C391AA25C7B4FF003270D8 /* TabMenuButtonModel.m */; };
+		64C391AE25C7B5EC003270D8 /* SystemMenuButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C391AD25C7B5EC003270D8 /* SystemMenuButtonModel.m */; };
 		807B76283291F1D46598F6C4 /* DragDropHandler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECBECA6757F294A8695F30B /* DragDropHandler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		914353E9AE04549FDD7DC73D /* SamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6015E4026188FEB7DE60B2F8 /* SamplesTests.m */; };
 		98E31475C3B145675C0D75CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA72301B17078A3F85062EB2 /* Main.storyboard */; };
@@ -105,7 +105,6 @@
 
 /* Begin PBXFileReference section */
 		14A3D1BEA3B90F43C5A47887 /* Samples-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Samples-Debug.xcconfig"; sourceTree = "<group>"; };
-		1E5BAEBF25C6981C00452C2D /* Test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
 		1E71A62725C14093001C01AC /* MockViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockViewModel.h; sourceTree = "<group>"; };
 		1E71A62825C14093001C01AC /* MockViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockViewModel.m; sourceTree = "<group>"; };
 		1E75A95925BECA5300F10EED /* CustomDragOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomDragOperation.h; sourceTree = "<group>"; };
@@ -151,8 +150,10 @@
 		64C3919D25C11284003270D8 /* DragableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragableButton.m; sourceTree = "<group>"; };
 		64C3919E25C11284003270D8 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		64C3919F25C11284003270D8 /* TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableView.m; sourceTree = "<group>"; };
-		64C391A425C1558E003270D8 /* TableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewModel.h; sourceTree = "<group>"; };
-		64C391A525C1558E003270D8 /* TableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewModel.m; sourceTree = "<group>"; };
+		64C391A925C7B4FF003270D8 /* TabMenuButtonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabMenuButtonModel.h; sourceTree = "<group>"; };
+		64C391AA25C7B4FF003270D8 /* TabMenuButtonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabMenuButtonModel.m; sourceTree = "<group>"; };
+		64C391AC25C7B5EC003270D8 /* SystemMenuButtonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemMenuButtonModel.h; sourceTree = "<group>"; };
+		64C391AD25C7B5EC003270D8 /* SystemMenuButtonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemMenuButtonModel.m; sourceTree = "<group>"; };
 		6A799CA7E5EF1E07FEDC48DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		712918E11373848020592D00 /* SamplesTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SamplesTests.xcconfig; sourceTree = "<group>"; };
 		7E5F6995A0A5775DF3F178FE /* SamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -385,12 +386,11 @@
 				64C3919E25C11284003270D8 /* CustomView.m */,
 				64C3919C25C11284003270D8 /* DragableButton.h */,
 				64C3919D25C11284003270D8 /* DragableButton.m */,
-				1EBF22F825C3B63D00DBCE7F /* CellView.xib */,
 				1EBF22FE25C3CCF700DBCE7F /* NSView+init.h */,
 				1EBF22FF25C3CCF700DBCE7F /* NSView+init.m */,
 				1EBF230325C3EBEA00DBCE7F /* CellView.h */,
 				1EBF230425C3EBEA00DBCE7F /* CellView.m */,
-				1E5BAEBF25C6981C00452C2D /* Test.xib */,
+				1EBF22F825C3B63D00DBCE7F /* CellView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,8 +398,10 @@
 		64C391A325C15558003270D8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				64C391A425C1558E003270D8 /* TableViewModel.h */,
-				64C391A525C1558E003270D8 /* TableViewModel.m */,
+				64C391A925C7B4FF003270D8 /* TabMenuButtonModel.h */,
+				64C391AA25C7B4FF003270D8 /* TabMenuButtonModel.m */,
+				64C391AC25C7B5EC003270D8 /* SystemMenuButtonModel.h */,
+				64C391AD25C7B5EC003270D8 /* SystemMenuButtonModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -598,7 +600,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CD8FD23AD1DD162A2FD2B0C /* Assets.xcassets in Resources */,
-				1E5BAEC025C6981C00452C2D /* Test.xib in Resources */,
 				1EBF22F925C3B63D00DBCE7F /* CellView.xib in Resources */,
 				98E31475C3B145675C0D75CA /* Main.storyboard in Resources */,
 			);
@@ -632,12 +633,13 @@
 				64C391A125C11284003270D8 /* CustomView.m in Sources */,
 				1EBF230525C3EBEA00DBCE7F /* CellView.m in Sources */,
 				9B478EB4B14F717A5D00B275 /* AppDelegate.m in Sources */,
-				64C391A625C1558E003270D8 /* TableViewModel.m in Sources */,
+				64C391AE25C7B5EC003270D8 /* SystemMenuButtonModel.m in Sources */,
 				1EBF230025C3CCF700DBCE7F /* NSView+init.m in Sources */,
 				64C391A025C11284003270D8 /* DragableButton.m in Sources */,
 				64C391A225C11284003270D8 /* TableView.m in Sources */,
 				E00A44C526D935ED9A7699C4 /* ViewController.m in Sources */,
 				4DE0441A71938AB47C27F389 /* main.m in Sources */,
+				64C391AB25C7B4FF003270D8 /* TabMenuButtonModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

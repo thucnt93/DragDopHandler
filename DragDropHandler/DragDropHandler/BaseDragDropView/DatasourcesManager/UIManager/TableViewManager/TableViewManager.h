@@ -209,7 +209,7 @@
 ///
 - (instancetype _Nullable )initWithTableView:(NSTableView * _Nonnull)tableView
                                       source:(id<TableViewManagerProtocols>_Nullable)source
-                         provider:(DataProvider * _Nonnull)provider;
+                                    provider:(DataProvider * _Nonnull)provider;
 
 /// TableViewManager methods
 ///

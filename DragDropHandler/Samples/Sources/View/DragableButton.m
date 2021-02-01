@@ -15,6 +15,9 @@
     // Drawing code here.
 }
 
-
+- (instancetype) initWithModel: (id) model {
+    self.model = model;
+    return self;
+}
 
 @end

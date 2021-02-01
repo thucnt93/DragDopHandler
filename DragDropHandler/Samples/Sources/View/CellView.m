@@ -14,7 +14,7 @@
     
     // Drawing code here.
     self.wantsLayer = YES;
-    self.layer.backgroundColor = [[NSColor systemYellowColor] CGColor];
+    self.layer.backgroundColor = [[NSColor systemIndigoColor] CGColor];
 }
 
 @end

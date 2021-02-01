@@ -39,7 +39,7 @@
 - (CustomDragOperation)dragMoveWithSource:(id)source atPoint:(NSPoint)atPoint;
 - (void)dragEndWithSource:(id)source atPoint:(NSPoint)atPoint;
 
-#pragma mark - Table view dragging delegate
+#pragma mark - Table view drag delegate
 
 - (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes;
 - (void)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation;
