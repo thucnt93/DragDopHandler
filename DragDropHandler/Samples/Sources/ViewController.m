@@ -112,12 +112,15 @@
 
 #pragma mark - Table view drag delegate
 
-- (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
+- (CustomDragOperation)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes {
     indexTableViewSource = rowIndexes.firstIndex;
+    
+    return CustomDragOperation_MOVE;
 }
 
-- (void)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
+- (CustomDragOperation)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
     NSLog(@"dragEndTableViewWithSource");
+    return CustomDragOperation_MOVE;
 }
 
 - (void)updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo {

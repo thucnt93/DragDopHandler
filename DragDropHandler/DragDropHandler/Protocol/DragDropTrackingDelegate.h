@@ -48,8 +48,8 @@
 
 #pragma mark - Table view drag delegate
 
-- (void)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes;
-- (void)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation;
+- (CustomDragOperation)dragBeginTableViewWithSource:(id)source willBeginAtPoint:(NSPoint)screenPoint forRowIndexes:(NSIndexSet *)rowIndexes;
+- (CustomDragOperation)dragEndTableViewWithSource:(id)source endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation;
 - (void)updateDraggingItemsForDrag:(id<NSDraggingInfo>)draggingInfo;
 - (id<NSPasteboardWriting>)pasteboardWriterWithSource:(id)source forRow:(NSInteger)row;
 

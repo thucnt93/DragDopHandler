@@ -63,7 +63,8 @@
     
     if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(dragBeginTableViewWithSource:willBeginAtPoint:forRowIndexes:)])
     {
-        [_dragTrackingDelegate dragBeginTableViewWithSource:source willBeginAtPoint:screenPoint forRowIndexes:rowIndexes];
+        CustomDragOperation op = [_dragTrackingDelegate dragBeginTableViewWithSource:source willBeginAtPoint:screenPoint forRowIndexes:rowIndexes];
+        [DragOperation changeCursorByOperation:op];
     }
 }
 
@@ -73,7 +74,8 @@
     
     if (_dragTrackingDelegate != nil && [_dragTrackingDelegate respondsToSelector:@selector(dragEndTableViewWithSource:endedAtPoint:operation:)])
     {
-        [_dragTrackingDelegate dragEndTableViewWithSource:source endedAtPoint:screenPoint operation:operation];
+        CustomDragOperation op = [_dragTrackingDelegate dragEndTableViewWithSource:source endedAtPoint:screenPoint operation:operation];
+        [DragOperation changeCursorByOperation:op];
     }
 }
 
