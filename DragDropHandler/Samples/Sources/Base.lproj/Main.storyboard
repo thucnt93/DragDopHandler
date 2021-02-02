@@ -810,7 +810,7 @@
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zz6-i3-UUZ" customClass="DragableButton">
-                                <rect key="frame" x="261" y="273" width="73" height="21"/>
+                                <rect key="frame" x="265" y="273" width="73" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="gDj-S2-fjt"/>
                                 </constraints>
@@ -827,7 +827,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xKz-Pr-ZtB" customClass="DragableButton">
-                                <rect key="frame" x="182" y="274" width="69" height="19"/>
+                                <rect key="frame" x="186" y="274" width="69" height="19"/>
                                 <buttonCell key="cell" type="roundRect" title="Notes" bezelStyle="roundedRect" image="NSTouchBarComposeTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DQ9-iw-7RN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
@@ -851,7 +851,7 @@
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="bottom" secondItem="JkD-ZU-mAM" secondAttribute="bottom" id="dKN-Q3-MMG"/>
                             <constraint firstAttribute="trailing" secondItem="JkD-ZU-mAM" secondAttribute="trailing" constant="30" id="dmV-WD-S0L"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="top" secondItem="JkD-ZU-mAM" secondAttribute="top" id="eM7-vj-6a2"/>
-                            <constraint firstItem="xKz-Pr-ZtB" firstAttribute="leading" secondItem="z2S-Td-SxI" secondAttribute="trailing" constant="46" id="glE-sE-yMn"/>
+                            <constraint firstItem="xKz-Pr-ZtB" firstAttribute="leading" secondItem="z2S-Td-SxI" secondAttribute="trailing" constant="50" id="glE-sE-yMn"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="width" secondItem="JkD-ZU-mAM" secondAttribute="width" id="iwq-WW-ioU"/>
                             <constraint firstItem="zz6-i3-UUZ" firstAttribute="trailing" secondItem="f0s-vm-dJ5" secondAttribute="trailing" id="m4G-iD-CCL"/>
                             <constraint firstItem="Ol0-q3-oeP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="nla-MC-p3u"/>
