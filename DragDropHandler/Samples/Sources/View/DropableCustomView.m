@@ -51,7 +51,11 @@
 
 - (CustomDragOperation)dragUpdatedOnTarget:(id)onTarget withInfo:(id<NSDraggingInfo>)draggingInfo {
     NSLog(@"Validate dragging info");
-    return CustomDragOperation_MOVE;
+    NSString *stringFromPasteboard = [draggingInfo.draggingPasteboard stringForType:NSPasteboardTypeString];
+    if ([stringFromPasteboard isEqualToString:@""]) {
+        return CustomDragOperation_MOVE;
+    }
+    return CustomDragOperation_ALLOW;
 }
 
 #pragma mark - NSView drop tracking delegate

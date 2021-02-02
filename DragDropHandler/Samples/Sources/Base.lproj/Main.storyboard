@@ -710,6 +710,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="748" height="338"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="JHg-Kz-Sfn" customClass="ParentView">
+                                <rect key="frame" x="0.0" y="0.0" width="748" height="338"/>
+                            </customView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-q3-oeP" customClass="DragableButton">
                                 <rect key="frame" x="30" y="260" width="48" height="49.5"/>
                                 <constraints>
@@ -836,6 +839,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="xKz-Pr-ZtB" firstAttribute="centerY" secondItem="zz6-i3-UUZ" secondAttribute="centerY" id="2w5-0O-Ftp"/>
+                            <constraint firstItem="JHg-Kz-Sfn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="4PK-Js-EIf"/>
                             <constraint firstItem="JkD-ZU-mAM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="30" id="58g-Ph-Qi2"/>
                             <constraint firstAttribute="trailing" secondItem="TIZ-pV-lUx" secondAttribute="trailing" constant="30" id="9Qd-8a-Zc1"/>
                             <constraint firstItem="JkD-ZU-mAM" firstAttribute="leading" secondItem="FJ9-UL-Phn" secondAttribute="trailing" constant="10" id="9sv-4D-qip"/>
@@ -846,13 +850,16 @@
                             <constraint firstItem="z2S-Td-SxI" firstAttribute="bottom" secondItem="Ol0-q3-oeP" secondAttribute="bottom" id="HXD-DM-y30"/>
                             <constraint firstItem="z0K-E7-FkJ" firstAttribute="top" secondItem="Ol0-q3-oeP" secondAttribute="bottom" constant="30" id="KNB-Jh-oiA"/>
                             <constraint firstItem="xKz-Pr-ZtB" firstAttribute="height" secondItem="zz6-i3-UUZ" secondAttribute="height" multiplier="0.9" id="Lex-ym-5bi"/>
+                            <constraint firstAttribute="trailing" secondItem="JHg-Kz-Sfn" secondAttribute="trailing" id="Vaz-eF-bF7"/>
                             <constraint firstItem="z2S-Td-SxI" firstAttribute="top" secondItem="Ol0-q3-oeP" secondAttribute="top" id="Vte-zO-kSU"/>
                             <constraint firstItem="z2S-Td-SxI" firstAttribute="leading" secondItem="Ol0-q3-oeP" secondAttribute="trailing" constant="10" id="Y8o-kw-HQp"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="bottom" secondItem="JkD-ZU-mAM" secondAttribute="bottom" id="dKN-Q3-MMG"/>
                             <constraint firstAttribute="trailing" secondItem="JkD-ZU-mAM" secondAttribute="trailing" constant="30" id="dmV-WD-S0L"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="top" secondItem="JkD-ZU-mAM" secondAttribute="top" id="eM7-vj-6a2"/>
+                            <constraint firstAttribute="bottom" secondItem="JHg-Kz-Sfn" secondAttribute="bottom" id="fNA-Hy-pYp"/>
                             <constraint firstItem="xKz-Pr-ZtB" firstAttribute="leading" secondItem="z2S-Td-SxI" secondAttribute="trailing" constant="50" id="glE-sE-yMn"/>
                             <constraint firstItem="FJ9-UL-Phn" firstAttribute="width" secondItem="JkD-ZU-mAM" secondAttribute="width" id="iwq-WW-ioU"/>
+                            <constraint firstItem="JHg-Kz-Sfn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="l1g-TN-lR4"/>
                             <constraint firstItem="zz6-i3-UUZ" firstAttribute="trailing" secondItem="f0s-vm-dJ5" secondAttribute="trailing" id="m4G-iD-CCL"/>
                             <constraint firstItem="Ol0-q3-oeP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="nla-MC-p3u"/>
                             <constraint firstItem="z0K-E7-FkJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="p5k-j9-zhr"/>
